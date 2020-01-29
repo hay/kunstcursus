@@ -1,7 +1,24 @@
 <template>
-    <div class="screen">
-        <h1>Hallo</h1>
-        <img src="/static/img/logo-wordmark.svg" alt="" />
-        <img src="/static/assets/1-sq.jpg" alt="" />
-    </div>
+    <main>
+        <screen-overview v-if="screen === 'overview'"></screen-overview>
+        <screen-splash v-if="screen === 'splash'"></screen-splash>
+    </main>
 </template>
+
+<script>
+    import ScreenOverview from './screen-overview.vue';
+    import ScreenSplash from './screen-splash.vue';
+
+    export default {
+        components : {
+            ScreenOverview,
+            ScreenSplash
+        },
+
+        computed : {
+            screen() {
+                return this.$store.state.screen;
+            }
+        }
+    }
+</script>

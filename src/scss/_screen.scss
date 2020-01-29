@@ -4,4 +4,19 @@
     @include margin-center;
     @include flex-center;
     @include child-margins(2rem);
+    padding: 2rem;
+
+    input,
+    button {
+        padding: 1rem;
+        border: 1px solid black;
+    }
+
+    .overview {
+        list-style: none;
+
+        li {
+            margin: 2rem;
+        }
+    }
 }

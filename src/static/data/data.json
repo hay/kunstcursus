@@ -1,0 +1,49 @@
+{
+    "messages": [
+        {
+            "key": "title",
+            "value": "Kunstkijkcursus"
+        },
+        {
+            "key": "intro",
+            "value": "Leer op een nieuwe manier naar kunst te kijken. We laten de zaalteksten achterwege en gaan samen kunst opnieuw ontdekken uit de collective van Boijmans van Beuningen. Vul je naam in, en ontmoet Nico, je art mediator."
+        },
+        {
+            "key": "btn_start",
+            "value": "Ontdek kunst!"
+        },
+        {
+            "key": "form_name",
+            "value": "Jouw naam hier"
+        },
+        {
+            "key": "credits",
+            "value": "Dit prototype is gemaakt door Brigitte Jansen en Hay Kranen"
+        },
+        {
+            "key": "course_overview",
+            "value": "Hier zie je een overzicht van alle lessen die je kan volgen"
+        },
+        {
+            "key": "btn_back",
+            "value": "Terug"
+        }
+    ],
+    "courses": [
+        {
+            "id": "321-bridge",
+            "title": "3-2-1 Bridge",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua."
+        },
+        {
+            "id": "step-inside",
+            "title": "Step Inside",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua."
+        },
+        {
+            "id": "ten-times-two",
+            "title": "Ten Times Two",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua."
+        }
+    ]
+}
