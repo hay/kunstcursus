@@ -1,0 +1,7 @@
+.screen {
+    width: 100%;
+    max-width: 80rem;
+    @include margin-center;
+    @include flex-center;
+    @include child-margins(2rem);
+}
