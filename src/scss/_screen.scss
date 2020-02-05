@@ -6,7 +6,26 @@
     }
 
     &__flex {
+        position: relative;
+        background: $c-3;
         @include wh(100%, calc(100vh - #{$menu-height}));
+    }
+
+    &__hint {
+        position: absolute;
+        top: 0;
+    }
+
+    &__hint--left {
+        left: $padding;
+    }
+
+    &__hint--right {
+        right: $padding;
+    }
+
+    &__modal {
+        @include transform-center;
     }
 
     &__fixed {

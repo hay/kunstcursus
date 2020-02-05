@@ -1,0 +1,19 @@
+.hint {
+    background: white;
+    padding: $padding / 2 $padding;
+    border-bottom-left-radius: $padding / 2;
+    border-bottom-right-radius: $padding / 2;
+    transition: 300ms;
+    top: -3rem;
+
+    &__text {
+        color: $c-1;
+        text-transform: uppercase;
+        font-size: 1.4rem;
+        white-space: nowrap;
+    }
+
+    &[is-visible] {
+        top: 0;
+    }
+}

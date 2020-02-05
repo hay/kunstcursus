@@ -1,10 +1,14 @@
 .image-viewer {
-    background: $c-3;
     @include wh(100%);
+    transition: 1s;
 
     &__image {
         @include wh(100%);
         object-fit: contain;
         opacity: 0;
+    }
+
+    &[state="blurred"] {
+        filter: blur(10px);
     }
 }

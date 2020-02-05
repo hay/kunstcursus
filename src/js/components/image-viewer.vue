@@ -1,5 +1,6 @@
 <template>
-    <div class="image-viewer">
+    <div class="image-viewer"
+         v-bind:state="state">
         <img v-if="src"
              class="image-viewer__image"
              ref="img"
@@ -23,6 +24,7 @@
 
         data() {
             return {
+                state : 'blurred',
                 viewer : null
             }
         },
@@ -46,6 +48,10 @@
             },
 
             setupViewer() {
+                this.$refs.img.addEventListener('ready', () => {
+                    this.$emit('ready');
+                });
+
                 this.viewer = new Viewer(this.$refs.img, {
                     backdrop: false,
                     button : false,
@@ -59,6 +65,10 @@
                     toolbar : false,
                     tooltip : false
                 });
+            },
+
+            show() {
+                this.state = 'show';
             },
 
             src(type) {
@@ -76,8 +86,8 @@
         },
 
         mounted() {
-            this.setupViewer();
             this.resetWhenZoomedout();
+            this.setupViewer();
         }
     }
 </script>
