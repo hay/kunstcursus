@@ -1,34 +1,23 @@
 <template>
-    <div class="screen">
-        <button v-on:click="back">
-            {{$msg('btn_back')}}
-        </button>
+    <div class="screen screen--course">
+        <div class="screen__flex">
+            <image-viewer></image-viewer>
+        </div>
 
-        <h1>{{course.title}}</h1>
-        <p>{{course.text}}</p>
-
-        <image-viewer></image-viewer>
+        <div class="screen__fixed">
+            <menu-bar></menu-bar>
+        </div>
     </div>
 </template>
 
 <script>
     import ImageViewer from './image-viewer.vue';
+    import MenuBar from './menu-bar.vue';
 
     export default {
         components : {
-            ImageViewer
-        },
-
-        computed : {
-            course() {
-                return this.$store.getters.course;
-            }
-        },
-
-        methods : {
-            back() {
-                this.$store.commit('screen', 'overview');
-            }
+            ImageViewer,
+            MenuBar
         }
     }
 </script>

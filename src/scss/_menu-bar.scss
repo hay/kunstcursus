@@ -1,0 +1,19 @@
+.menu-bar {
+    background: $c-2;
+    display: flex;
+    padding: $padding;
+    @include wh(100%);
+    max-width: $max-width;
+    height: 100%;
+
+    &__button {
+        @include wh($menu-button-size);
+        @include flex-center;
+        border-radius: $padding;
+        background: white;
+    }
+
+    &__button img {
+        @include wh($menu-button-icon-size);
+    }
+}

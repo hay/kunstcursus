@@ -1,6 +1,7 @@
 <template>
     <div class="image-viewer">
         <img v-if="src"
+             class="image-viewer__image"
              ref="img"
              v-bind:src="src('mq')"
              v-bind:alt="alt" />
@@ -48,7 +49,7 @@
         },
 
         mounted() {
-            this.setupViewer();
+            // this.setupViewer();
         }
     }
 </script>

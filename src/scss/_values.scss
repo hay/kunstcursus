@@ -1,3 +1,13 @@
 // Fonts
-$font-family-opensans: 'OpenSans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$font-text: $font-family-opensans;
+$font-family-roboto: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-text: $font-family-roboto;
+
+$c-1: #cf2f79;
+$c-2: #cbcbcb;
+$c-3: #424242;
+
+$padding: 1rem;
+$max-width: 80rem;
+$menu-height: 7.5rem;
+$menu-button-size: $menu-height - ($padding * 2);
+$menu-button-icon-size: $menu-button-size - $padding;

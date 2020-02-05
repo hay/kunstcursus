@@ -1,22 +1,17 @@
 .screen {
-    width: 100%;
-    max-width: 80rem;
-    @include margin-center;
-    @include flex-center;
-    @include child-margins(2rem);
-    padding: 2rem;
-
-    input,
-    button {
-        padding: 1rem;
-        border: 1px solid black;
+    &--course {
+        @include wh(100vw, 100vh);
+        overflow: hidden;
+        @include flex-center;
     }
 
-    .overview {
-        list-style: none;
+    &__flex {
+        @include wh(100%, calc(100vh - #{$menu-height}));
+    }
 
-        li {
-            margin: 2rem;
-        }
+    &__fixed {
+        background: $c-2;
+        @include wh(100%, $menu-height);
+        @include flex-center;
     }
 }
