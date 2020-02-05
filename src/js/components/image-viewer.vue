@@ -10,6 +10,9 @@
 
 <script>
     import Viewer from 'viewerjs';
+    import {
+        MIN_ZOOM_RATIO, MAX_ZOOM_RATIO, ZOOM_BTN_FACTOR
+    } from '../const.js';
 
     export default {
         computed : {
@@ -25,31 +28,57 @@
         },
 
         methods : {
+            resetWhenZoomedout() {
+                // When zoomed out completely, return to center, but make
+                // sure it doesn't interfere with natural things
+                let times = 0;
+
+                this.$refs.img.addEventListener('zoom', (e) => {
+                    if (e.detail.ratio === MIN_ZOOM_RATIO) {
+                        times = times + 1;
+
+                        if (times > 1) {
+                            this.viewer.reset();
+                            times = 0;
+                        }
+                    }
+                });
+            },
+
             setupViewer() {
                 this.viewer = new Viewer(this.$refs.img, {
-                    inline : false,
-                    minZoomRatio : 0.25,
-                    maxZoomRatio : 3,
+                    backdrop: false,
+                    button : false,
+                    fullscreen: false,
+                    inline : true,
+                    minZoomRatio : MIN_ZOOM_RATIO,
+                    maxZoomRatio : MAX_ZOOM_RATIO,
                     navbar : false,
                     rotatable : false,
                     title : false,
                     toolbar : false,
+                    tooltip : false,
                     url : this.src('hq')
                 });
-
-                this.viewer.show();
-
-                console.log(this.viewer);
             },
 
             src(type) {
                 let id = this.$store.getters.course.artwork;
                 return `assets/${id}-${type}.jpg`;
+            },
+
+            zoomIn() {
+                this.viewer.zoom(ZOOM_BTN_FACTOR);
+            },
+
+            zoomOut() {
+                this.viewer.zoom(-ZOOM_BTN_FACTOR);
             }
         },
 
         mounted() {
-            // this.setupViewer();
+            this.setupViewer();
+            this.resetWhenZoomedout();
         }
     }
 </script>

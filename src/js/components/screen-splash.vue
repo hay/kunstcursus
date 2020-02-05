@@ -1,5 +1,5 @@
 <template>
-    <div class="screen">
+    <div class="temp-screen">
         <img src="/static/img/logo-wordmark.svg" alt="" />
         <h1>{{$msg('title')}}</h1>
 

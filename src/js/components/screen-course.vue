@@ -1,11 +1,16 @@
 <template>
     <div class="screen screen--course">
         <div class="screen__flex">
-            <image-viewer></image-viewer>
+            <image-viewer
+                ref="viewer"
+                ></image-viewer>
         </div>
 
         <div class="screen__fixed">
-            <menu-bar></menu-bar>
+            <menu-bar
+                v-on:zoomin="zoomIn"
+                v-on:zoomout="zoomOut"
+                ></menu-bar>
         </div>
     </div>
 </template>
@@ -18,6 +23,16 @@
         components : {
             ImageViewer,
             MenuBar
+        },
+
+        methods : {
+            zoomIn() {
+                this.$refs.viewer.zoomIn();
+            },
+
+            zoomOut() {
+                this.$refs.viewer.zoomOut();
+            }
         }
     }
 </script>

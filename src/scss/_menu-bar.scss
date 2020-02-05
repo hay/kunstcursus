@@ -1,10 +1,24 @@
 .menu-bar {
     background: $c-2;
     display: flex;
+    justify-content: space-between;
     padding: $padding;
     @include wh(100%);
     max-width: $max-width;
     height: 100%;
+
+    &__group {
+        display: flex;
+    }
+
+    // Can we solve this nicer with grid?
+    &__group > * {
+        margin-right: $padding;
+    }
+
+    &__group :last-child {
+        margin-right: 0;
+    }
 
     &__button {
         @include wh($menu-button-size);

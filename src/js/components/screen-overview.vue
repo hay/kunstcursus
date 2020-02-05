@@ -1,5 +1,5 @@
 <template>
-    <div class="screen">
+    <div class="temp-screen">
         <h1>
             De lessen voor {{name}}
         </h1>
