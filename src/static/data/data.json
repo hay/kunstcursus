@@ -33,17 +33,20 @@
         {
             "id": "321-bridge",
             "title": "3-2-1 Bridge",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua."
+            "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua.",
+            "artwork": 1
         },
         {
             "id": "step-inside",
             "title": "Step Inside",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua."
+            "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua.",
+            "artwork": 2
         },
         {
             "id": "ten-times-two",
             "title": "Ten Times Two",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua."
+            "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua.",
+            "artwork": 3
         }
     ]
 }
