@@ -3,7 +3,7 @@
         <img v-if="src"
              class="image-viewer__image"
              ref="img"
-             v-bind:src="src('mq')"
+             v-bind:src="src('nq')"
              v-bind:alt="alt" />
     </div>
 </template>
@@ -57,8 +57,7 @@
                     rotatable : false,
                     title : false,
                     toolbar : false,
-                    tooltip : false,
-                    url : this.src('hq')
+                    tooltip : false
                 });
             },
 
