@@ -4,7 +4,7 @@
         <img v-if="src"
              class="image-viewer__image"
              ref="img"
-             v-bind:src="src('nq')"
+             v-bind:src="imageSrc"
              v-bind:alt="alt" />
     </div>
 </template>
@@ -24,44 +24,54 @@
 
         data() {
             return {
+                imageSrc : null,
+                minZoomRatio : 0,
+                maxZoomRatio : 1,
                 state : 'blurred',
-                viewer : null
+                viewer : null,
             }
         },
 
         methods : {
-            resetWhenZoomedout() {
-                // When zoomed out completely, return to center, but make
-                // sure it doesn't interfere with natural things
-                let times = 0;
+            setupBoundary() {
+                const observer = new MutationObserver((mutations) => {
+                    mutations.forEach((e) => {
+                        let left = e.target.style.marginLeft;
+                        let top = e.target.style.marginTop;
+                        console.log(left, top);
+                    });
+                });
 
-                this.$refs.img.addEventListener('zoom', (e) => {
-                    if (e.detail.ratio === MIN_ZOOM_RATIO) {
-                        times = times + 1;
+                let el = this.$el.querySelector('.viewer-move');
 
-                        if (times > 1) {
-                            this.viewer.reset();
-                            times = 0;
-                        }
-                    }
+                observer.observe(el, {
+                    attributes : true,
+                    attribueFilter : ['style']
                 });
             },
 
             setupViewer() {
-                this.$refs.img.addEventListener('ready', () => {
+                let img = this.$refs.img;
+
+                img.addEventListener('ready', () => {
                     this.$emit('ready');
                 });
 
-                this.viewer = new Viewer(this.$refs.img, {
+                img.addEventListener('viewed', () => {
+                    this.setupBoundary();
+                });
+
+                this.viewer = new Viewer(img, {
                     backdrop: false,
                     button : false,
                     fullscreen: false,
                     inline : true,
-                    minZoomRatio : MIN_ZOOM_RATIO,
-                    maxZoomRatio : MAX_ZOOM_RATIO,
+                    minZoomRatio : this.minZoomRatio,
+                    maxZoomRatio : this.maxZoomRatio,
                     navbar : false,
                     rotatable : false,
                     title : false,
+                    toggleOnDblclick : false,
                     toolbar : false,
                     tooltip : false
                 });
@@ -86,8 +96,15 @@
         },
 
         mounted() {
-            this.resetWhenZoomedout();
-            this.setupViewer();
+            // this.setupViewer();
+            let img = this.$refs.img;
+
+            img.addEventListener('load', () => {
+                this.minZoomRatio = window.innerWidth / img.width;
+                this.setupViewer();
+            });
+
+            this.imageSrc = this.src('nq');
         }
     }
 </script>
