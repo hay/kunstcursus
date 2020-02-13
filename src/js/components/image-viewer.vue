@@ -27,55 +27,14 @@
                 imageSrc : null,
                 minZoomRatio : 0,
                 maxZoomRatio : 1,
+                originalLeft : 0,
+                originalTop : 0,
                 state : 'blurred',
                 viewer : null,
             }
         },
 
         methods : {
-            setupBoundary() {
-                let el = this.$el.querySelector('.viewer-move');
-                let canvas = this.$el.querySelector('.viewer-canvas');
-                let canvasRect = canvas.getBoundingClientRect();
-
-                const observer = new MutationObserver((mutations) => {
-                    mutations.forEach((e) => {
-                        let left = e.target.style.marginLeft;
-                        let top = e.target.style.marginTop;
-                        left = parseFloat(left.replace('px', ''));
-                        top = parseFloat(top.replace('px', ''));
-
-                        let container = this.viewer.containerData;
-                        let minRatio = this.viewer.options.minZoomRatio;
-                        let curRatio = this.viewer.imageData.ratio;
-
-                        console.log(left, top, minRatio, curRatio);
-
-                        if (curRatio > minRatio) {
-                            return;
-                        }
-
-                        if (left < 0) {
-                            this.viewer.moveTo(0, top);
-                        }
-
-                        if (top < 0) {
-                            this.viewer.moveTo(left, 0);
-                        }
-
-                        if (left > container.width) {
-                            this.viewer.moveTo(container.width, top);
-                        }
-                    });
-                });
-
-
-                observer.observe(el, {
-                    attributes : true,
-                    attribueFilter : ['style']
-                });
-            },
-
             setupViewer() {
                 let img = this.$refs.img;
 
@@ -84,12 +43,25 @@
                 });
 
                 img.addEventListener('viewed', () => {
-                    this.setupBoundary();
-
                     // This is needed because otherwise the ratio gets
                     // smaller (?)
                     this.viewer.zoomTo(this.minZoomRatio);
+
+                    // Note the current left/top
+                    let canvas = this.$el.querySelector('.viewer-canvas img');
+                    let left = canvas.style.marginLeft;
+                    let top = canvas.style.marginTop;
+                    this.originalLeft = parseFloat(left.replace('px', ''));
+                    this.originalTop = parseFloat(top.replace('px', ''));
                 });
+
+                img.addEventListener('zoomed', () => {
+                    if (this.viewer.imageData.ratio <= this.minZoomRatio) {
+                        // Move to center and zoom to original ratio
+                        this.viewer.zoomTo(this.minZoomRatio);
+                        this.viewer.moveTo(this.originalLeft, this.originalTop);
+                    }
+                })
 
                 this.viewer = new Viewer(img, {
                     backdrop: false,
@@ -117,7 +89,6 @@
             },
 
             zoomIn() {
-                console.log('zoom', ZOOM_BTN_FACTOR);
                 this.viewer.zoom(ZOOM_BTN_FACTOR);
             },
 
