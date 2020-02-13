@@ -20,8 +20,8 @@
 
             <el-question
                 ref="question"
-                v-bind:visible="questionsShown"
                 v-bind:text="step.text"
+                v-bind:visible="questionsShown"
                 v-on:submit="submit"></el-question>
 
             <modal-dialog
@@ -105,10 +105,26 @@
                 this.$store.commit('screen', 'overview');
             },
 
+            courseDone() {
+                this.viewerShown = false;
+                this.$refs.viewer.hide();
+                this.questionsShown = false;
+                this.courseReady = true;
+            },
+
+            focusQuestion() {
+                this.$refs.question.focus();
+            },
+
             showQuestions() {
                 this.$refs.viewer.reset();
                 this.stepIndex = 1;
                 this.questionsShown = true;
+
+                // FIXME, this is ugly
+                window.setTimeout(() => {
+                    this.$refs.question.focus();
+                }, 200);
             },
 
             showViewer() {
@@ -143,10 +159,7 @@
                 this.$refs.question.clear();
 
                 if (this.stepIndex === (this.courseData.length - 1)) {
-                    this.viewerShown = false;
-                    this.$refs.viewer.hide();
-                    this.questionsShown = false;
-                    this.courseReady = true;
+                    this.courseDone();
                 } else {
                     this.stepIndex += 1;
                 }

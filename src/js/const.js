@@ -1,4 +1,5 @@
 export const DEFAULT_SCREEN = 'splash';
+export const MIN_QUESTION_LENGTH = 5;
 export const MIN_ZOOM_RATIO = 0.25;
 export const MAX_ZOOM_RATIO = 1.5;
 export const PAINTING_VIEW_TIME = 60;

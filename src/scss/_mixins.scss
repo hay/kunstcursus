@@ -5,6 +5,11 @@
     background: white;
 
     img {
+        transition: 300ms;
         @include wh($menu-button-icon-size);
+    }
+
+    &[disabled] img {
+        filter: grayscale(1) opacity(0.5);
     }
 }

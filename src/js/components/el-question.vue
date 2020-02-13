@@ -13,6 +13,7 @@
 
             <button
                 v-on:click="submit"
+                v-bind:disabled="buttonDisabled"
                 class="el-question__button">
                 <img src="/static/img/icon-send.svg"
                      alt="Verstuur" />
@@ -22,7 +23,15 @@
 </template>
 
 <script>
+    import { MIN_QUESTION_LENGTH } from '../const.js';
+
     export default {
+        computed : {
+            buttonDisabled() {
+                return this.input.length < this.minlength;
+            }
+        },
+
         data() {
             return {
                 input : ''
@@ -32,15 +41,26 @@
         methods : {
             clear() {
                 this.input = '';
+                this.focus();
+            },
+
+            focus() {
                 this.$refs.form.focus();
             },
 
             submit() {
-                this.$emit('submit');
+                if (!this.buttonDisabled) {
+                    this.$emit('submit');
+                }
             }
         },
 
         props : {
+            minlength : {
+                default : MIN_QUESTION_LENGTH,
+                type : Number
+            },
+
             text : {
                 type : String
             },
