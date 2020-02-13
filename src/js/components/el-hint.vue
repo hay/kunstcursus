@@ -1,5 +1,6 @@
 <template>
     <div class="screen__hint hint"
+         v-on:click="click"
          v-bind:align="align"
          v-bind:is-visible="visible">
         <p class="hint__text">
@@ -11,6 +12,12 @@
 
 <script>
     export default {
+        methods : {
+            click() {
+                this.$emit('click');
+            }
+        },
+
         props : {
             align : {
                 type : String,

@@ -15,6 +15,7 @@
             <el-hint
                 v-bind:visible="viewerShown"
                 align="right"
+                v-on:click="skipTime"
                 v-bind:text="time"></el-hint>
 
             <modal-dialog
@@ -35,11 +36,12 @@
 </template>
 
 <script>
+    import Timer from 'easytimer.js';
     import ElHint from './el-hint.vue';
     import ImageViewer from './image-viewer.vue';
     import MenuBar from './menu-bar.vue';
     import ModalDialog from './modal-dialog.vue';
-    import Timer from '../timer.js';
+    import { formatMs } from '../util.js';
 
     export default {
         components : {
@@ -54,6 +56,7 @@
                 isViewerReady : false,
                 startTime : null,
                 time : '0',
+                timer : null,
                 viewerShown : false
             }
         },
@@ -65,12 +68,19 @@
                 this.startTimer();
             },
 
+            skipTime() {
+                this.timer.updateSeconds(60);
+            },
+
             startTimer() {
-                let timer = new Timer();
+                this.timer = new Timer();
 
-                timer.onUpdate(t => this.time = t);
+                this.timer.addEventListener('secondsUpdated', () => {
+                    let t = this.timer.getTotalTimeValues();
+                    this.time = formatMs(t.seconds);
+                });
 
-                timer.start();
+                this.timer.start();
             },
 
             viewerReady() {
@@ -83,6 +93,12 @@
 
             zoomOut() {
                 this.$refs.viewer.zoomOut();
+            }
+        },
+
+        mounted() {
+            if (this.$store.state.skipIntro) {
+                this.showViewer();
             }
         }
     }

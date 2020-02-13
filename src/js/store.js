@@ -15,6 +15,7 @@ export class Store {
                 courses : model.getCourses(),
                 messages : model.getMessages(),
                 screen : null,
+                skipIntro : false,
                 userName : null
             };
         }
@@ -41,6 +42,10 @@ export class Store {
 
                 screen(state, id) {
                     state.screen = id;
+                },
+
+                skipIntro(state) {
+                    state.skipIntro = true;
                 },
 
                 userName(state, name) {
