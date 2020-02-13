@@ -1,5 +1,8 @@
 .el-question {
     @include flex-center;
+    @include margin-center;
+    width: 100%;
+    max-width: $max-width;
     padding: $padding;
     background: rgba($c-2, 0.9);
     transition: 300ms;
