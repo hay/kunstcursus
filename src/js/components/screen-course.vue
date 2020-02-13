@@ -6,20 +6,16 @@
                 v-on:ready="viewerReady"
                 ></image-viewer>
 
-            <div class="screen__hint screen__hint--left hint"
-                 v-bind:is-visible="viewerShown">
-                <p class="hint__text">
-                    <strong>1/4</strong>
-                    Bekijk het schilderij
-                </p>
-            </div>
+            <el-hint
+                v-bind:visible="viewerShown"
+                align="left"
+                prefix="1/4"
+                text="Bekijk het schilderij"></el-hint>
 
-            <div class="screen__hint screen__hint--right hint"
-                 v-bind:is-visible="viewerShown">
-                <p class="hint__text">
-                    <strong>{{time}}</strong>
-                </p>
-            </div>
+            <el-hint
+                v-bind:visible="viewerShown"
+                align="right"
+                v-bind:text="time"></el-hint>
 
             <modal-dialog
                 v-show="!viewerShown"
@@ -39,12 +35,14 @@
 </template>
 
 <script>
+    import ElHint from './el-hint.vue';
     import ImageViewer from './image-viewer.vue';
     import MenuBar from './menu-bar.vue';
     import ModalDialog from './modal-dialog.vue';
 
     export default {
         components : {
+            ElHint,
             ImageViewer,
             MenuBar,
             ModalDialog
@@ -54,7 +52,7 @@
             return {
                 isViewerReady : false,
                 startTime : null,
-                time : 0,
+                time : '0',
                 viewerShown : false
             }
         },
@@ -85,17 +83,12 @@
             },
 
             zoomIn() {
-                console.log('zoomIn');
                 this.$refs.viewer.zoomIn();
             },
 
             zoomOut() {
                 this.$refs.viewer.zoomOut();
             }
-        },
-
-        mounted() {
-            this.showViewer();
         }
     }
 </script>

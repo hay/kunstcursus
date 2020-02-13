@@ -101,7 +101,12 @@
             let img = this.$refs.img;
 
             img.addEventListener('load', () => {
-                this.minZoomRatio = window.innerWidth / img.width;
+                // Get the minimal zoom ratio
+                this.minZoomRatio = Math.min(
+                    window.innerWidth / img.width,
+                    window.innerHeight / img.height
+                );
+
                 this.setupViewer();
             });
 
