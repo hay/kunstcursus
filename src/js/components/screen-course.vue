@@ -85,12 +85,17 @@
             },
 
             zoomIn() {
+                console.log('zoomIn');
                 this.$refs.viewer.zoomIn();
             },
 
             zoomOut() {
                 this.$refs.viewer.zoomOut();
             }
+        },
+
+        mounted() {
+            this.showViewer();
         }
     }
 </script>

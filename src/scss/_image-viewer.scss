@@ -4,6 +4,7 @@
 
     &__image {
         opacity: 0;
+        pointer-events: none; // Not quite sure why this is needed
     }
 
     &[state="blurred"] {

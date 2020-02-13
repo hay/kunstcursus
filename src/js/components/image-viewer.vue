@@ -34,15 +34,41 @@
 
         methods : {
             setupBoundary() {
+                let el = this.$el.querySelector('.viewer-move');
+                let canvas = this.$el.querySelector('.viewer-canvas');
+                let canvasRect = canvas.getBoundingClientRect();
+
                 const observer = new MutationObserver((mutations) => {
                     mutations.forEach((e) => {
                         let left = e.target.style.marginLeft;
                         let top = e.target.style.marginTop;
-                        console.log(left, top);
+                        left = parseFloat(left.replace('px', ''));
+                        top = parseFloat(top.replace('px', ''));
+
+                        let container = this.viewer.containerData;
+                        let minRatio = this.viewer.options.minZoomRatio;
+                        let curRatio = this.viewer.imageData.ratio;
+
+                        console.log(left, top, minRatio, curRatio);
+
+                        if (curRatio > minRatio) {
+                            return;
+                        }
+
+                        if (left < 0) {
+                            this.viewer.moveTo(0, top);
+                        }
+
+                        if (top < 0) {
+                            this.viewer.moveTo(left, 0);
+                        }
+
+                        if (left > container.width) {
+                            this.viewer.moveTo(container.width, top);
+                        }
                     });
                 });
 
-                let el = this.$el.querySelector('.viewer-move');
 
                 observer.observe(el, {
                     attributes : true,
@@ -59,6 +85,10 @@
 
                 img.addEventListener('viewed', () => {
                     this.setupBoundary();
+
+                    // This is needed because otherwise the ratio gets
+                    // smaller (?)
+                    this.viewer.zoomTo(this.minZoomRatio);
                 });
 
                 this.viewer = new Viewer(img, {
@@ -67,7 +97,7 @@
                     fullscreen: false,
                     inline : true,
                     minZoomRatio : this.minZoomRatio,
-                    maxZoomRatio : this.maxZoomRatio,
+                    maxZoomRatio : 1.5,
                     navbar : false,
                     rotatable : false,
                     title : false,
@@ -87,6 +117,7 @@
             },
 
             zoomIn() {
+                console.log('zoom', ZOOM_BTN_FACTOR);
                 this.viewer.zoom(ZOOM_BTN_FACTOR);
             },
 
@@ -96,7 +127,6 @@
         },
 
         mounted() {
-            // this.setupViewer();
             let img = this.$refs.img;
 
             img.addEventListener('load', () => {
