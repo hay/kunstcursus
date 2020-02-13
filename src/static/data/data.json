@@ -48,5 +48,35 @@
             "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua.",
             "artwork": 3
         }
+    ],
+    "321-bridge": [
+        {
+            "action": "view",
+            "step": 1,
+            "steplabel": "Bekijk",
+            "text": null,
+            "times": null
+        },
+        {
+            "action": "question",
+            "step": 2,
+            "steplabel": "Drie woorden",
+            "text": "Noem drie woorden waar jij aan denkt bij dit werk",
+            "times": 3
+        },
+        {
+            "action": "question",
+            "step": 3,
+            "steplabel": "Twee vragen",
+            "text": "Bedenk twee vragen die jij je afvraagt bij het werk",
+            "times": 2
+        },
+        {
+            "action": "question",
+            "step": 4,
+            "steplabel": "Een situatie",
+            "text": "Aan welke situatie of welk object doet jij dit aan denken",
+            "times": 1
+        }
     ]
 }

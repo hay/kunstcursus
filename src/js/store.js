@@ -7,7 +7,6 @@ Vue.use(Vuex);
 export class Store {
     constructor() {
         const model = new Model();
-        model.load();
 
         function getInitialState() {
             return {

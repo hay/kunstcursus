@@ -2,7 +2,7 @@
 const fs = require('fs').promises;
 const config = require('./config.json');
 const { ExcelReader, GoogleDocFetcher } = require('kndlib/node');
-const TMP_XLSX_PATH = `${__dirname}/../tmp/gsheet.xlsx`;
+const TMP_XLSX_PATH = `${__dirname}/../_tmp/gsheet.xlsx`;
 
 (async function() {
     // Show the configuration for debugging purposes

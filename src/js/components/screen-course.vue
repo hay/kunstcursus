@@ -42,6 +42,8 @@
     import MenuBar from './menu-bar.vue';
     import ModalDialog from './modal-dialog.vue';
 
+    let timer;
+
     export default {
         components : {
             ElHint,
@@ -53,6 +55,7 @@
         data() {
             return {
                 isViewerReady : false,
+                questionsShown : false,
                 startTime : null,
                 time : '0',
                 timer : null,
@@ -61,6 +64,10 @@
         },
 
         methods : {
+            showQuestions() {
+                this.questionsShown = true;
+            },
+
             showViewer() {
                 this.viewerShown = true;
                 this.$refs.viewer.show();
@@ -68,12 +75,25 @@
             },
 
             skipTime() {
-                this.timer.updateSeconds(59);
+                timer.updateSeconds(59);
             },
 
             startTimer() {
-                this.timer = new ClockTimer(t => this.time = t);
-                this.timer.start();
+                timer = new ClockTimer({
+                    callback: (e) => {
+                        if (e.type === 'update') {
+                            this.time = e.data;
+                        }
+
+                        if (e.type === 'target') {
+                            this.showQuestions();
+                        }
+                    },
+
+                    targets : [ 60 ]
+                });
+
+                timer.start();
             },
 
             viewerReady() {

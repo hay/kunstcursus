@@ -35,6 +35,12 @@
         },
 
         methods : {
+            reset() {
+                // Move to center and zoom to original ratio
+                this.viewer.zoomTo(this.minZoomRatio);
+                this.viewer.moveTo(this.originalLeft, this.originalTop);
+            },
+
             setupViewer() {
                 let img = this.$refs.img;
 
@@ -57,9 +63,7 @@
 
                 img.addEventListener('zoomed', () => {
                     if (this.viewer.imageData.ratio <= this.minZoomRatio) {
-                        // Move to center and zoom to original ratio
-                        this.viewer.zoomTo(this.minZoomRatio);
-                        this.viewer.moveTo(this.originalLeft, this.originalTop);
+                        this.reset();
                     }
                 })
 
