@@ -35,6 +35,10 @@
         },
 
         methods : {
+            hide() {
+                this.state = 'blurred';
+            },
+
             reset() {
                 // Move to center and zoom to original ratio
                 this.viewer.zoomTo(this.minZoomRatio);

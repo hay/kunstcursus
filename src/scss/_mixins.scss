@@ -1,0 +1,10 @@
+@mixin button {
+    @include wh($menu-button-size);
+    @include flex-center;
+    border-radius: $padding;
+    background: white;
+
+    img {
+        @include wh($menu-button-icon-size);
+    }
+}

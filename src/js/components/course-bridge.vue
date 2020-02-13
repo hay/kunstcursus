@@ -9,21 +9,33 @@
             <el-hint
                 v-bind:visible="viewerShown"
                 align="left"
-                prefix="1/4"
-                text="Bekijk het schilderij"></el-hint>
+                v-bind:prefix="step.step + '/' + maxStep"
+                v-bind:text="step.steplabel"></el-hint>
 
             <el-hint
-                v-bind:visible="viewerShown"
+                v-bind:visible="viewerShown && !!time"
                 align="right"
                 v-on:click="skipTime"
                 v-bind:text="time"></el-hint>
 
+            <el-question
+                ref="question"
+                v-bind:visible="questionsShown"
+                v-bind:text="step.text"
+                v-on:submit="submit"></el-question>
+
             <modal-dialog
                 v-show="!viewerShown"
                 class="screen__modal"
-                text="Welkom bij de eerste les, klik op OK om te beginnen."
+                v-bind:text="courseDescription"
                 v-bind:disabled="!isViewerReady"
                 v-on:ok="showViewer"></modal-dialog>
+
+            <modal-dialog
+                v-show="courseReady"
+                class="screen__modal"
+                v-bind:text="$msg('course_done')"
+                v-on:ok="back"></modal-dialog>
         </div>
 
         <div class="screen__fixed">
@@ -37,7 +49,9 @@
 
 <script>
     import ClockTimer from '../clocktimer.js';
+    import { PAINTING_VIEW_TIME } from '../const.js';
     import ElHint from './el-hint.vue';
+    import ElQuestion from './el-question.vue';
     import ImageViewer from './image-viewer.vue';
     import MenuBar from './menu-bar.vue';
     import ModalDialog from './modal-dialog.vue';
@@ -47,24 +61,53 @@
     export default {
         components : {
             ElHint,
+            ElQuestion,
             ImageViewer,
             MenuBar,
             ModalDialog
         },
 
+        computed : {
+            courseData() {
+                return this.$store.getters.course.data;
+            },
+
+            courseDescription() {
+                return this.$store.getters.course.modaltext;
+            },
+
+            maxStep() {
+                return Math.max.apply(
+                    this, this.courseData.map(d => parseInt(d.step))
+                );
+            },
+
+            step() {
+                return this.courseData[this.stepIndex];
+            }
+        },
+
         data() {
             return {
+                courseReady : false,
                 isViewerReady : false,
                 questionsShown : false,
+                stepIndex : 0,
                 startTime : null,
-                time : '0',
+                time : null,
                 timer : null,
                 viewerShown : false
             }
         },
 
         methods : {
+            back() {
+                this.$store.commit('screen', 'overview');
+            },
+
             showQuestions() {
+                this.$refs.viewer.reset();
+                this.stepIndex = 1;
                 this.questionsShown = true;
             },
 
@@ -75,7 +118,7 @@
             },
 
             skipTime() {
-                timer.updateSeconds(59);
+                timer.updateSeconds(PAINTING_VIEW_TIME - 1);
             },
 
             startTimer() {
@@ -90,10 +133,23 @@
                         }
                     },
 
-                    targets : [ 60 ]
+                    targets : [ PAINTING_VIEW_TIME ]
                 });
 
                 timer.start();
+            },
+
+            submit() {
+                this.$refs.question.clear();
+
+                if (this.stepIndex === (this.courseData.length - 1)) {
+                    this.viewerShown = false;
+                    this.$refs.viewer.hide();
+                    this.questionsShown = false;
+                    this.courseReady = true;
+                } else {
+                    this.stepIndex += 1;
+                }
             },
 
             viewerReady() {

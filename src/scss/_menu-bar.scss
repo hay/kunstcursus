@@ -21,13 +21,6 @@
     }
 
     &__button {
-        @include wh($menu-button-size);
-        @include flex-center;
-        border-radius: $padding;
-        background: white;
-    }
-
-    &__button img {
-        @include wh($menu-button-icon-size);
+        @include button;
     }
 }

@@ -11,7 +11,7 @@
                 v-on:click="setCourse(index)">
                 <img v-bind:src="'assets/' + (index + 1) + '-sq.jpg'" alt="" />
                 <h2>{{course.title}}</h2>
-                <p>{{course.text}}</p>
+                <p>{{course.description}}</p>
             </li>
         </ul>
 
