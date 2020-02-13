@@ -36,12 +36,11 @@
 </template>
 
 <script>
-    import Timer from 'easytimer.js';
+    import ClockTimer from '../clocktimer.js';
     import ElHint from './el-hint.vue';
     import ImageViewer from './image-viewer.vue';
     import MenuBar from './menu-bar.vue';
     import ModalDialog from './modal-dialog.vue';
-    import { formatMs } from '../util.js';
 
     export default {
         components : {
@@ -69,17 +68,11 @@
             },
 
             skipTime() {
-                this.timer.updateSeconds(60);
+                this.timer.updateSeconds(59);
             },
 
             startTimer() {
-                this.timer = new Timer();
-
-                this.timer.addEventListener('secondsUpdated', () => {
-                    let t = this.timer.getTotalTimeValues();
-                    this.time = formatMs(t.seconds);
-                });
-
+                this.timer = new ClockTimer(t => this.time = t);
                 this.timer.start();
             },
 
