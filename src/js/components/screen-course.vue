@@ -39,6 +39,7 @@
     import ImageViewer from './image-viewer.vue';
     import MenuBar from './menu-bar.vue';
     import ModalDialog from './modal-dialog.vue';
+    import Timer from '../timer.js';
 
     export default {
         components : {
@@ -65,17 +66,11 @@
             },
 
             startTimer() {
-                this.startTime = Date.now();
-                this.updateTime();
-            },
+                let timer = new Timer();
 
-            updateTime() {
-                const diff = Date.now() - this.startTime;
-                const seconds = Math.round(diff / 1000);
-                let date = new Date(null);
-                date.setSeconds(seconds);
-                this.time = date.toISOString().substr(14, 5);
-                window.setTimeout(this.updateTime.bind(this), 300);
+                timer.onUpdate(t => this.time = t);
+
+                timer.start();
             },
 
             viewerReady() {
