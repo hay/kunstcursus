@@ -20,7 +20,8 @@
 
         computed : {
             courseId() {
-                if (this.$store.state.courseIndex && this.screen === 'course') {
+                if (this.$store.state.courseIndex !== null &&
+                    this.screen === 'course') {
                     return this.$store.getters.course.id;
                 } else {
                     return false;
