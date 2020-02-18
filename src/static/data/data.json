@@ -29,10 +29,6 @@
             "value": "Terug"
         },
         {
-            "key": "course_done",
-            "value": "Goed gedaan! Klik op 'ok' om terug te gaan naar je cursusoverzicht."
-        },
-        {
             "key": "intro_movie",
             "value": "Hallo, ik ben Joost, je Art mediator. Tof dat je meedoet aan deze cursus. Samen gaan we aan de slag met een nieuwe manier om naar kunst te kijken. We laten de zaalteksten achterwege en gaan samen onderzoeken wat we over het kunstwerk kunnen ontdekken.\nWe gaan een aantal van de werken bekijken uit de enorme collectie van Museum Boijmans van Beuningen. Ik ben benieuwd wat je van die werken vindt. Tijdens de cursus daag ik je in verschillende opdrachten uit langer naar de kunstwerken te kijken. Zo ga je ontdekken wat je van de werken vindt, want het gaat allemaal om jouw interpretatie, er is geen goed of fout. We kijken ook wat andere mensen van het kunstwerk vonden. En als je deze cursus hebt gedaan, kun je dit ook zelf doen, in het museum."
         },
@@ -43,39 +39,34 @@
     ],
     "courses": [
         {
-            "id": "321-bridge",
+            "course": "321-bridge",
             "title": "3-2-1 Bridge",
             "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua.",
-            "artwork": 1,
-            "modaltext": "Kijk 60 secondes naar het kunstwerk. Daarna krijg je een aantal vragen."
+            "artwork": 1
         },
         {
-            "id": "321-bridge",
-            "title": "3-2-1 Bridge",
+            "course": "step-inside",
+            "title": "Step Inside",
             "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua.",
-            "artwork": 2,
-            "modaltext": "Kijk 60 secondes naar het kunstwerk. Daarna krijg je een aantal vragen."
+            "artwork": 2
         },
         {
-            "id": "321-bridge",
+            "course": "321-bridge",
             "title": "3-2-1 Bridge",
             "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua.",
-            "artwork": 3,
-            "modaltext": "Kijk 60 secondes naar het kunstwerk. Daarna krijg je een aantal vragen."
+            "artwork": 3
         },
         {
-            "id": "321-bridge",
+            "course": "321-bridge",
             "title": "3-2-1 Bridge",
             "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua.",
-            "artwork": 4,
-            "modaltext": "Kijk 60 secondes naar het kunstwerk. Daarna krijg je een aantal vragen."
+            "artwork": 4
         },
         {
-            "id": "321-bridge",
+            "course": "321-bridge",
             "title": "3-2-1 Bridge",
             "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua.",
-            "artwork": 5,
-            "modaltext": "Kijk 60 secondes naar het kunstwerk. Daarna krijg je een aantal vragen."
+            "artwork": 5
         }
     ],
     "321-bridge": [
@@ -83,7 +74,7 @@
             "action": "view",
             "step": 1,
             "steplabel": "Bekijk",
-            "text": "Het is tijd om een kunstwerk écht goed tot je te nemen. Je krijgt een minuut de tijd. Zodra je op oké klikt begin je.",
+            "text1": "Het is tijd om een kunstwerk écht goed tot je te nemen. Je krijgt een minuut de tijd. Zodra je op OK klikt begin je.",
             "text2": "Wat vond je ervan? Eén minuut is nog helemaal niet zo lang, hé. Je krijgt nu drie korte vragen. Je antwoorden kan je steeds in het tekstveld invullen en met de knop versturen. Denk eraan: er zijn geen foute antwoorden. Het gaat namelijk over jouw interpretatie van het werk.",
             "times": null,
             "audio1": "bridge_01",
@@ -93,7 +84,7 @@
             "action": "question",
             "step": 2,
             "steplabel": "Drie woorden",
-            "text": "Geef drie woorden die in je opkomen.",
+            "text1": "Geef drie woorden die in je opkomen.",
             "text2": null,
             "times": 3,
             "audio1": "bridge_03",
@@ -103,7 +94,7 @@
             "action": "question",
             "step": 3,
             "steplabel": "Twee vragen",
-            "text": "Welke twee vragen komen in je op?",
+            "text1": "Welke twee vragen komen in je op?",
             "text2": null,
             "times": 2,
             "audio1": "bridge_04",
@@ -113,11 +104,73 @@
             "action": "question",
             "step": 4,
             "steplabel": "Een situatie",
-            "text": "Omschrijf een object of situatie uit jouw leven waar dit werk je aan doet denken.",
+            "text1": "Omschrijf een object of situatie uit jouw leven waar dit werk je aan doet denken.",
             "text2": "Zo, wat vond je ervan? Heeft deze opdracht je anders naar het kunstwerk laten kijken?",
             "times": 1,
             "audio1": "bridge_05",
             "audio2": "bridge_06"
+        }
+    ],
+    "step-inside": [
+        {
+            "action": "view",
+            "step": 1,
+            "steplabel": "Bekijk",
+            "text1": "Bij deze opdracht gaan we ons inleven in dit portret. Neem weer de tijd om het werk goed te bestuderen voordat we aan de slag gaan met de oefening.",
+            "text2": null,
+            "times": null,
+            "audio1": "stepin_01",
+            "audio2": null
+        },
+        {
+            "action": "question",
+            "step": 2,
+            "steplabel": "Horen",
+            "text1": "Leef je in. Wat hoort deze persoon? En kun je uitleggen waarom je dat denkt?",
+            "text2": null,
+            "times": null,
+            "audio1": "stepin_02",
+            "audio2": null
+        },
+        {
+            "action": "question",
+            "step": 3,
+            "steplabel": "Zien",
+            "text1": "En wat ziet deze persoon?",
+            "text2": null,
+            "times": null,
+            "audio1": "stepin_03",
+            "audio2": null
+        },
+        {
+            "action": "question",
+            "step": 4,
+            "steplabel": "Ruiken",
+            "text1": "Wat zal deze persoon ruiken en waar zie je dit aan?",
+            "text2": null,
+            "times": null,
+            "audio1": "stepin_04",
+            "audio2": null
+        },
+        {
+            "action": "answers",
+            "step": 5,
+            "steplabel": "Antwoorden",
+            "text1": "Benieuwd wat andere cursisten dachten? Hier lees je hun antwoorden.",
+            "text2": null,
+            "times": null,
+            "audio1": "stepin_05",
+            "audio2": null
+        },
+        {
+            "action": "question",
+            "step": 6,
+            "steplabel": "Bordje",
+            "text1": "Je hebt het kunstwerk nu uitgebreid bekeken en je ingeleefd in het portret. Bedenk nu een titel die omschrijft wat het werk voor jou betekent en schrijf hier een bordje bij.",
+            "text2": null,
+            "times": null,
+            "audio1": "stepin_06",
+            "audio2": null
         }
     ]
 }

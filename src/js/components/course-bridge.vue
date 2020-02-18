@@ -25,7 +25,7 @@
                 v-on:submit="submit"></el-question>
 
             <modal-dialog
-                v-show="!viewerShown"
+                v-show="!viewerShown && !courseReady"
                 v-bind:text="firstStep.text"
                 v-bind:disabled="!isViewerReady"
                 v-on:ok="showViewer"></modal-dialog>
