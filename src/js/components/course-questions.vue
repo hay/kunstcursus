@@ -20,13 +20,13 @@
 
             <el-question
                 ref="question"
-                v-bind:text="step.text"
+                v-bind:text="step.text1"
                 v-bind:visible="questionsShown"
                 v-on:submit="submit"></el-question>
 
             <modal-dialog
                 v-show="!viewerShown && !courseReady"
-                v-bind:text="firstStep.text"
+                v-bind:text="firstStep.text1"
                 v-bind:disabled="!isViewerReady"
                 v-on:ok="showViewer"></modal-dialog>
 
@@ -52,6 +52,7 @@
 </template>
 
 <script>
+    // Used for both 321-bridge and step-inside
     import { first, last } from 'lodash';
     import ClockTimer from '../clocktimer.js';
     import { PAINTING_VIEW_TIME } from '../const.js';
@@ -75,10 +76,6 @@
         computed : {
             courseData() {
                 return this.$store.getters.course.data;
-            },
-
-            courseDescription() {
-                return this.$store.getters.course.modaltext;
             },
 
             firstStep() {

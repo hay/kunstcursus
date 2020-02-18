@@ -4,8 +4,8 @@ import data from '../static/data/data.json';
 export class Model {
     getCourses() {
         return data.courses.map((course) => {
-            if (course.id in data) {
-                course.data = data[course.id];
+            if (course.datasheet in data) {
+                course.data = data[course.datasheet];
             }
 
             return course;

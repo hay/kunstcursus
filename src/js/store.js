@@ -41,6 +41,10 @@ export class Store {
                     state.courseIndex = courseIndex;
                 },
 
+                muted(state) {
+                    state.muted = true;
+                },
+
                 playSound(state, sound) {
                     state.soundPlaying = sound;
                 },

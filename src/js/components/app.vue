@@ -1,6 +1,6 @@
 <template>
     <main>
-        <course-bridge v-if="courseId === '321-bridge'"></course-bridge>
+        <course-questions v-if="courseId === 'questions'"></course-questions>
         <screen-overview v-if="screen === 'overview'"></screen-overview>
         <screen-splash v-if="screen === 'splash'"></screen-splash>
         <screen-slideshow v-if="screen === 'slideshow'"></screen-slideshow>
@@ -8,14 +8,14 @@
 </template>
 
 <script>
-    import CourseBridge from './course-bridge.vue';
+    import CourseQuestions from './course-questions.vue';
     import ScreenOverview from './screen-overview.vue';
     import ScreenSplash from './screen-splash.vue';
     import ScreenSlideshow from './screen-slideshow.vue';
 
     export default {
         components : {
-            CourseBridge,
+            CourseQuestions,
             ScreenOverview,
             ScreenSplash,
             ScreenSlideshow
@@ -25,7 +25,7 @@
             courseId() {
                 if (this.$store.state.courseIndex !== null &&
                     this.screen === 'course') {
-                    return this.$store.getters.course.id;
+                    return this.$store.getters.course.course;
                 } else {
                     return false;
                 }

@@ -39,31 +39,36 @@
     ],
     "courses": [
         {
-            "course": "321-bridge",
+            "course": "questions",
+            "datasheet": "321-bridge",
             "title": "3-2-1 Bridge",
             "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua.",
             "artwork": 1
         },
         {
-            "course": "step-inside",
+            "course": "questions",
+            "datasheet": "step-inside",
             "title": "Step Inside",
             "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua.",
             "artwork": 2
         },
         {
-            "course": "321-bridge",
+            "course": "questions",
+            "datasheet": "321-bridge",
             "title": "3-2-1 Bridge",
             "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua.",
             "artwork": 3
         },
         {
-            "course": "321-bridge",
+            "course": "questions",
+            "datasheet": "321-bridge",
             "title": "3-2-1 Bridge",
             "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua.",
             "artwork": 4
         },
         {
-            "course": "321-bridge",
+            "course": "questions",
+            "datasheet": "321-bridge",
             "title": "3-2-1 Bridge",
             "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua.",
             "artwork": 5
