@@ -5,7 +5,13 @@ export const AUDIO_FILES = [
     'bridge_03',
     'bridge_04',
     'bridge_05',
-    'bridge_06'
+    'bridge_06',
+    'stepin_01',
+    'stepin_02',
+    'stepin_03',
+    'stepin_04',
+    'stepin_05',
+    'stepin_06'
 ];
 export const DEFAULT_SCREEN = 'splash';
 export const MIN_QUESTION_LENGTH = 5;

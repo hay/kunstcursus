@@ -32,7 +32,7 @@
 
             text : {
                 required : true,
-                type : String
+                validator: v => typeof v === 'string' || v === null
             }
         }
     }

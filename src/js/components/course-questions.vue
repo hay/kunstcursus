@@ -22,7 +22,12 @@
                 ref="question"
                 v-bind:text="step.text1"
                 v-bind:visible="questionsShown"
-                v-on:submit="submit"></el-question>
+                v-on:submit="nextStep"></el-question>
+
+            <el-comments
+                v-bind:title="step.text1"
+                v-on:click="hideComments"
+                v-bind:visible="commentsShown"></el-comments>
 
             <modal-dialog
                 v-show="!viewerShown && !courseReady"
@@ -31,12 +36,13 @@
                 v-on:ok="showViewer"></modal-dialog>
 
             <modal-dialog
+                v-if="firstStep.text1"
                 v-show="readyForQuestions"
                 v-bind:text="firstStep.text2"
                 v-on:ok="showQuestions"></modal-dialog>
 
-
             <modal-dialog
+                v-if="lastStep.text2"
                 v-show="courseReady"
                 v-bind:text="lastStep.text2"
                 v-on:ok="back"></modal-dialog>
@@ -56,16 +62,19 @@
     import { first, last } from 'lodash';
     import ClockTimer from '../clocktimer.js';
     import { PAINTING_VIEW_TIME } from '../const.js';
+    import ElComments from './el-comments.vue';
     import ElHint from './el-hint.vue';
     import ElQuestion from './el-question.vue';
     import ImageViewer from './image-viewer.vue';
     import MenuBar from './menu-bar.vue';
     import ModalDialog from './modal-dialog.vue';
+    import { timeout } from '../util.js';
 
     let timer;
 
     export default {
         components : {
+            ElComments,
             ElHint,
             ElQuestion,
             ImageViewer,
@@ -99,6 +108,7 @@
 
         data() {
             return {
+                commentsShown : false,
                 courseReady : false,
                 isViewerReady : false,
                 questionsShown : false,
@@ -116,28 +126,49 @@
                 this.$store.commit('screen', 'overview');
             },
 
-            courseDone() {
+            async courseDone() {
                 this.viewerShown = false;
                 this.$refs.viewer.hide();
                 this.questionsShown = false;
                 this.courseReady = true;
-                this.$store.commit('playSound', this.lastStep.audio2);
+
+                if (this.lastStep.audio2) {
+                    this.$store.commit('playSound', this.lastStep.audio2);
+                } else {
+                    // FIXME
+                    await timeout(1000);
+                    this.back();
+                }
             },
 
             focusQuestion() {
                 this.$refs.question.focus();
             },
 
-            showQuestions() {
+            hideComments() {
+                this.commentsShown = false;
+                this.showQuestions(this.stepIndex + 1)
+            },
+
+            nextStep() {
+                this.$refs.question.clear();
+
+                if (this.stepIndex === (this.courseData.length - 1)) {
+                    this.courseDone();
+                } else {
+                    this.stepIndex += 1;
+                }
+            },
+
+            async showQuestions(index = 1) {
                 this.readyForQuestions = false;
                 this.$refs.viewer.reset();
-                this.stepIndex = 1;
+                this.stepIndex = index;
                 this.questionsShown = true;
 
                 // FIXME, this is ugly
-                window.setTimeout(() => {
-                    this.$refs.question.focus();
-                }, 200);
+                await timeout(200);
+                this.$refs.question.focus();
             },
 
             showViewer() {
@@ -157,9 +188,13 @@
                             this.time = e.data;
                         }
 
-                        if (e.type === 'target') {
+                        if (e.type === 'target' && this.firstStep.text2) {
                             this.readyForQuestions = true;
                             this.$store.commit('playSound', this.firstStep.audio2);
+                        }
+
+                        if (e.type === 'target' && !this.firstStep.text2) {
+                            this.showQuestions();
                         }
                     },
 
@@ -167,16 +202,6 @@
                 });
 
                 timer.start();
-            },
-
-            submit() {
-                this.$refs.question.clear();
-
-                if (this.stepIndex === (this.courseData.length - 1)) {
-                    this.courseDone();
-                } else {
-                    this.stepIndex += 1;
-                }
             },
 
             viewerReady() {
@@ -203,6 +228,12 @@
         watch : {
             step() {
                 this.$store.commit('playSound', this.step.audio1);
+                console.log('step!', this.step.action);
+
+                if (this.step.action === 'comments') {
+                    this.commentsShown = true;
+                    this.questionsShown = false;
+                }
             }
         }
     }

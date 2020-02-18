@@ -1,0 +1,37 @@
+.el-comments {
+    @include flex-center;
+    @include margin-center;
+    width: 100%;
+    max-width: $max-width;
+    padding: $padding;
+    background: rgba($c-2, 0.9);
+    transition: 300ms;
+    bottom: -100vh;
+
+    &__title {
+        text-align: left;
+        font-size: 1.8rem;
+        color: $c-1;
+        margin-bottom: 1rem;
+    }
+
+    &__list {
+        margin-bottom: 1rem;
+        list-style: none;
+    }
+
+    &__list li {
+        margin-bottom: 1rem;
+        font-size: 1.8rem;
+    }
+
+    &__button {
+        @include text-button;
+        display: block;
+        margin: 0 auto $padding auto;
+    }
+
+    &[is-visible] {
+        bottom: 0;
+    }
+}
