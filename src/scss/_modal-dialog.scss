@@ -1,5 +1,5 @@
 .modal-dialog {
-    width: 100%;
+    width: calc(100% - #{$padding * 4});
     max-width: 50rem;
     background: white;
     border-radius: $padding;
@@ -7,16 +7,9 @@
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
     @include flex-center;
     @include child-margins($child-margins);
+    text-align: center;
 
     &__button {
-        background: $c-1;
-        color: white;
-        padding: $padding;
-        border-radius: $padding;
-        transition: 300ms;
-    }
-
-    &__button[disabled] {
-        background: $c-2;
+        @include text-button;
     }
 }

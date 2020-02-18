@@ -38,9 +38,9 @@ import { Store } from './store.js';
                 });
 
                 soundManager = new SoundManager({
-                    players : soundFiles,
-                    muted : this.$store.state.muted,
                     loop : false,
+                    muted : this.$store.state.muted,
+                    players : soundFiles,
                     playFromStart : true,
                     single : true
                 });

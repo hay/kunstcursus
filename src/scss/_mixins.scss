@@ -20,6 +20,7 @@
     padding: $padding;
     border-radius: $padding;
     transition: 300ms;
+    min-width: 10rem;
 
     [disabled] {
         background: $c-2;
