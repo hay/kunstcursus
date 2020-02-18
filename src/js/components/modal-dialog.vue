@@ -1,5 +1,5 @@
 <template>
-    <div class="modal-dialog">
+    <div class="modal-dialog screen__modal">
         <p class="modal-dialog__text">{{text}}</p>
 
         <button

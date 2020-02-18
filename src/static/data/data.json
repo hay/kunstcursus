@@ -2,11 +2,11 @@
     "messages": [
         {
             "key": "title",
-            "value": "Kunstkijkcursus"
+            "value": "Kunst kijken met Boijmans!"
         },
         {
             "key": "intro",
-            "value": "Leer op een nieuwe manier naar kunst te kijken. We laten de zaalteksten achterwege en gaan samen kunst opnieuw ontdekken uit de collective van Boijmans van Beuningen. Vul je naam in, en ontmoet Nico, je art mediator."
+            "value": "Kijk op een nieuwe manier naar kunst. We laten de zaalteksten achterwege en gaan samen kunst opnieuw ontdekken met de collectie van Museum Boijmans Van Beuningen. Vul je naam in en ontmoet Nico, je art mediator."
         },
         {
             "key": "btn_start",
@@ -31,6 +31,14 @@
         {
             "key": "course_done",
             "value": "Goed gedaan! Klik op 'ok' om terug te gaan naar je cursusoverzicht."
+        },
+        {
+            "key": "intro_movie",
+            "value": "Hallo, ik ben Joost, je Art mediator. Tof dat je meedoet aan deze cursus. Samen gaan we aan de slag met een nieuwe manier om naar kunst te kijken. We laten de zaalteksten achterwege en gaan samen onderzoeken wat we over het kunstwerk kunnen ontdekken.\nWe gaan een aantal van de werken bekijken uit de enorme collectie van Museum Boijmans van Beuningen. Ik ben benieuwd wat je van die werken vindt. Tijdens de cursus daag ik je in verschillende opdrachten uit langer naar de kunstwerken te kijken. Zo ga je ontdekken wat je van de werken vindt, want het gaat allemaal om jouw interpretatie, er is geen goed of fout. We kijken ook wat andere mensen van het kunstwerk vonden. En als je deze cursus hebt gedaan, kun je dit ook zelf doen, in het museum."
+        },
+        {
+            "key": "profile_intro",
+            "value": "Voordat we van start gaan wil ik je graag wat beter leren kennen. Kan je me iets meer over jezelf vertellen?"
         }
     ],
     "courses": [
@@ -75,29 +83,41 @@
             "action": "view",
             "step": 1,
             "steplabel": "Bekijk",
-            "text": null,
-            "times": null
+            "text": "Het is tijd om een kunstwerk écht goed tot je te nemen. Je krijgt een minuut de tijd. Zodra je op oké klikt begin je.",
+            "text2": "Wat vond je ervan? Eén minuut is nog helemaal niet zo lang, hé. Je krijgt nu drie korte vragen. Je antwoorden kan je steeds in het tekstveld invullen en met de knop versturen. Denk eraan: er zijn geen foute antwoorden. Het gaat namelijk over jouw interpretatie van het werk.",
+            "times": null,
+            "audio1": "bridge_01",
+            "audio2": "bridge_02"
         },
         {
             "action": "question",
             "step": 2,
             "steplabel": "Drie woorden",
-            "text": "Noem drie woorden waar jij aan denkt bij dit werk",
-            "times": 3
+            "text": "Geef drie woorden die in je opkomen.",
+            "text2": null,
+            "times": 3,
+            "audio1": "bridge_03",
+            "audio2": null
         },
         {
             "action": "question",
             "step": 3,
             "steplabel": "Twee vragen",
-            "text": "Bedenk twee vragen die jij je afvraagt bij het werk",
-            "times": 2
+            "text": "Welke twee vragen komen in je op?",
+            "text2": null,
+            "times": 2,
+            "audio1": "bridge_04",
+            "audio2": null
         },
         {
             "action": "question",
             "step": 4,
             "steplabel": "Een situatie",
-            "text": "Aan welke situatie of welk object doet jij dit aan denken",
-            "times": 1
+            "text": "Omschrijf een object of situatie uit jouw leven waar dit werk je aan doet denken.",
+            "text2": "Zo, wat vond je ervan? Heeft deze opdracht je anders naar het kunstwerk laten kijken?",
+            "times": 1,
+            "audio1": "bridge_05",
+            "audio2": "bridge_06"
         }
     ]
 }

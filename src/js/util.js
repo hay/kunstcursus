@@ -3,3 +3,9 @@ export function formatMs(seconds) {
     date.setSeconds(seconds);
     return date.toISOString().substr(14, 5);
 }
+
+export function timeout(ms) {
+    return new Promise((resolve) => {
+        window.setTimeout(resolve, ms);
+    });
+}

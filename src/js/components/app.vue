@@ -3,6 +3,7 @@
         <course-bridge v-if="courseId === '321-bridge'"></course-bridge>
         <screen-overview v-if="screen === 'overview'"></screen-overview>
         <screen-splash v-if="screen === 'splash'"></screen-splash>
+        <screen-slideshow v-if="screen === 'slideshow'"></screen-slideshow>
     </main>
 </template>
 
@@ -10,12 +11,14 @@
     import CourseBridge from './course-bridge.vue';
     import ScreenOverview from './screen-overview.vue';
     import ScreenSplash from './screen-splash.vue';
+    import ScreenSlideshow from './screen-slideshow.vue';
 
     export default {
         components : {
             CourseBridge,
             ScreenOverview,
-            ScreenSplash
+            ScreenSplash,
+            ScreenSlideshow
         },
 
         computed : {

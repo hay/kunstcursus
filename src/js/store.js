@@ -13,8 +13,10 @@ export class Store {
                 courseIndex: null,
                 courses : model.getCourses(),
                 messages : model.getMessages(),
+                muted : false,
                 screen : null,
                 skipIntro : false,
+                soundPlaying : null,
                 userName : null
             };
         }
@@ -39,7 +41,12 @@ export class Store {
                     state.courseIndex = courseIndex;
                 },
 
+                playSound(state, sound) {
+                    state.soundPlaying = sound;
+                },
+
                 screen(state, id) {
+                    state.soundPlaying = null;
                     state.screen = id;
                 },
 

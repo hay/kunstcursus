@@ -1,0 +1,30 @@
+.screen-slideshow {
+    &__link {
+        background: white;
+        position: absolute;
+        top: 0;
+        @include transform-center-horizontal;
+        padding: 1rem;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        text-align: center;
+        text-decoration: underline;
+        z-index: 1;
+    }
+
+    &__image {
+        position: absolute;
+        @include pos(0);
+        @include wh(100%);
+        object-fit: cover;
+        transition: 10s linear;
+    }
+
+    &__image[state="in"] {
+        transform: scale(1);
+    }
+
+    &__image[state="out"] {
+        transform: scale(1.5);
+    }
+}

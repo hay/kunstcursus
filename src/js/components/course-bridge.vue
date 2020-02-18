@@ -26,15 +26,19 @@
 
             <modal-dialog
                 v-show="!viewerShown"
-                class="screen__modal"
-                v-bind:text="courseDescription"
+                v-bind:text="firstStep.text"
                 v-bind:disabled="!isViewerReady"
                 v-on:ok="showViewer"></modal-dialog>
 
             <modal-dialog
+                v-show="readyForQuestions"
+                v-bind:text="firstStep.text2"
+                v-on:ok="showQuestions"></modal-dialog>
+
+
+            <modal-dialog
                 v-show="courseReady"
-                class="screen__modal"
-                v-bind:text="$msg('course_done')"
+                v-bind:text="lastStep.text2"
                 v-on:ok="back"></modal-dialog>
         </div>
 
@@ -48,6 +52,7 @@
 </template>
 
 <script>
+    import { first, last } from 'lodash';
     import ClockTimer from '../clocktimer.js';
     import { PAINTING_VIEW_TIME } from '../const.js';
     import ElHint from './el-hint.vue';
@@ -76,6 +81,14 @@
                 return this.$store.getters.course.modaltext;
             },
 
+            firstStep() {
+                return first(this.courseData);
+            },
+
+            lastStep() {
+                return last(this.courseData);
+            },
+
             maxStep() {
                 return Math.max.apply(
                     this, this.courseData.map(d => parseInt(d.step))
@@ -92,6 +105,7 @@
                 courseReady : false,
                 isViewerReady : false,
                 questionsShown : false,
+                readyForQuestions : false,
                 stepIndex : 0,
                 startTime : null,
                 time : null,
@@ -110,6 +124,7 @@
                 this.$refs.viewer.hide();
                 this.questionsShown = false;
                 this.courseReady = true;
+                this.$store.commit('playSound', this.lastStep.audio2);
             },
 
             focusQuestion() {
@@ -117,6 +132,7 @@
             },
 
             showQuestions() {
+                this.readyForQuestions = false;
                 this.$refs.viewer.reset();
                 this.stepIndex = 1;
                 this.questionsShown = true;
@@ -145,7 +161,8 @@
                         }
 
                         if (e.type === 'target') {
-                            this.showQuestions();
+                            this.readyForQuestions = true;
+                            this.$store.commit('playSound', this.firstStep.audio2);
                         }
                     },
 
@@ -181,6 +198,14 @@
         mounted() {
             if (this.$store.state.skipIntro) {
                 this.showViewer();
+            }
+
+            this.$store.commit('playSound', this.courseData[0].audio1);
+        },
+
+        watch : {
+            step() {
+                this.$store.commit('playSound', this.step.audio1);
             }
         }
     }

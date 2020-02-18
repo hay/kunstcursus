@@ -1,3 +1,12 @@
+export const AUDIO_FILES = [
+    'intro_01',
+    'bridge_01',
+    'bridge_02',
+    'bridge_03',
+    'bridge_04',
+    'bridge_05',
+    'bridge_06'
+];
 export const DEFAULT_SCREEN = 'splash';
 export const MIN_QUESTION_LENGTH = 5;
 export const MIN_ZOOM_RATIO = 0.25;
