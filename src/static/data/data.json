@@ -2,11 +2,11 @@
     "messages": [
         {
             "key": "title",
-            "value": "Kunst kijken met Boijmans!"
+            "value": "Kunst<br />kijken met<br />Boijmans!"
         },
         {
             "key": "intro",
-            "value": "Kijk op een nieuwe manier naar kunst. We laten de zaalteksten achterwege en gaan samen kunst opnieuw ontdekken met de collectie van Museum Boijmans Van Beuningen. Vul je naam in en ontmoet Nico, je art mediator."
+            "value": "<p>Daag jezelf met deze cursus uit om op een andere manier naar kunst te kijken. Leer meer over je eigen blik en ontdek de collectie van Museum Boijmans van Beuningen op een verrassende manier.</p>\n<p>Vul je naam in en ontmoet Joost, je art mediator.</p>"
         },
         {
             "key": "btn_start",
@@ -14,7 +14,7 @@
         },
         {
             "key": "form_name",
-            "value": "Jouw naam hier"
+            "value": "Vul je naam hier in"
         },
         {
             "key": "credits",

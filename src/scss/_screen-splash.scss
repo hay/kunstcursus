@@ -1,0 +1,55 @@
+.screen-splash {
+    background: url('../static/img/logo-splash.png') no-repeat center center;
+    width: 100%;
+    min-height: 100vh;
+
+    &__content {
+        width: 100%;
+        min-height: 100vh;
+        max-width: $max-width;
+        @include flex-center;
+        padding: $padding;
+    }
+
+    &__title {
+        text-align: center;
+        font-size: 7rem;
+        line-height: 0.8;
+        margin-bottom: 5rem;
+    }
+
+    &__text {
+        @include child-margins(2rem);
+        margin-bottom: 5rem;
+        text-align: center;
+        max-width: 35rem;
+    }
+
+    &__form {
+        @include flex-center;
+    }
+
+    &__name {
+        margin-bottom: 2rem;
+        border-radius: $padding;
+        border: 1px solid $c-3;
+        padding: $padding;
+        text-align: center;
+        font-style: italic;
+    }
+
+    &__start {
+        border-radius: $padding;
+        border: 1px solid $c-3;
+        padding: $padding ($padding * 2);
+        text-align: center;
+        background: white;
+        transition: 300ms;
+        color: $c-1;
+        font-weight: bold;
+    }
+
+    &__start[disabled] {
+        color: $c-3;
+    }
+}

@@ -1,21 +1,26 @@
 <template>
-    <div class="temp-screen">
-        <img src="/static/img/logo-wordmark.svg" alt="" />
-        <h1>{{$msg('title')}}</h1>
+    <div class="screen screen-splash">
+        <div class="screen-splash__content">
+            <h1 class="screen-splash__title"
+                v-html="$msg('title')"></h1>
 
-        <p>{{$msg('intro')}}</p>
+            <article class="screen-splash__text"
+                     v-html="$msg('intro')"></article>
 
-        <form>
-            <input type="text"
-                   v-model="name"
-                   v-bind:placeholder="$msg('form_name')" />
-        </form>
+            <form class="screen-splash__form">
+                <input class="screen-splash__name"
+                       type="text"
+                       v-model="name"
+                       v-bind:placeholder="$msg('form_name')" />
 
-        <button
-            v-bind:disabled="!isValidName"
-            v-on:click="start">
-            {{$msg('btn_start')}}
-        </button>
+                <button
+                    class="screen-splash__start"
+                    v-bind:disabled="!isValidName"
+                    v-on:click="start">
+                    {{$msg('btn_start')}}
+                </button>
+            </form>
+        </div>
     </div>
 </template>
 
