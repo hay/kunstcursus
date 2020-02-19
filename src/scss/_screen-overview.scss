@@ -1,0 +1,27 @@
+.screen-overview {
+    &__content {
+        width: 100%;
+        min-height: 100vh;
+        @include margin-center;
+        max-width: $max-width;
+        @include flex-center;
+        padding: $padding;
+    }
+
+    &__title {
+        text-align: center;
+        font-size: 5rem;
+        line-height: 0.8;
+        margin-bottom: 2rem;
+    }
+
+    &__description {
+        text-align: center;
+        margin-bottom: 2rem;
+        font-size: 1.8rem;
+    }
+
+    &__description strong {
+        color: $c-1;
+    }
+}

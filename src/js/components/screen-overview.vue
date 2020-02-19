@@ -1,23 +1,42 @@
 <template>
-    <div class="temp-screen">
-        <h1>
-            De lessen voor {{name}}
-        </h1>
+    <div class="screen screen-overview">
+        <div class="screen-overview__content">
+            <h1 class="screen-overview__title"
+                v-html="$msg('title')"></h1>
 
-        <p>{{$msg('course_overview')}}</p>
+            <p class="screen-overview__description">
+                Hee <strong>{{name}}</strong>! {{$msg('course_overview')}}
+            </p>
 
-        <ul class="overview">
-            <li v-for="(course, index) in courses"
-                v-on:click="setCourse(index)">
-                <img v-bind:src="'assets/' + (index + 1) + '-sq.jpg'" alt="" />
-                <h2>{{course.title}}</h2>
-                <p>{{course.description}}</p>
-            </li>
-        </ul>
+            <ul class="course-list">
+                <li v-for="(course, index) in courses"
+                    class="course-list__item">
+                    <header class="course-list__itemheader">
+                        <h2 class="course-list__title">
+                            <strong>Opdracht {{index + 1}}</strong>
+                            <span>{{course.title}}</span>
+                        </h2>
 
-        <button v-on:click="back">
-            {{$msg('btn_back')}}
-        </button>
+                        <menu class="course-list__status">
+                            <button v-on:click="toggle(index)">
+                                <span v-if="course.collapsed">open</span>
+                                <span v-if="!course.collapsed">sluit</span>
+                            </button>
+                        </menu>
+                    </header>
+
+                    <article
+                        v-show="index === courseOpen"
+                        class="course-list__info">
+                        <p>{{course.description}}</p>
+
+                        <button v-on:click="setCourse(index)">
+                            Doe deze les
+                        </button>
+                    </article>
+                </li>
+            </ul>
+        </div>
     </div>
 </template>
 
@@ -25,12 +44,21 @@
     export default {
         computed : {
             courses() {
-                return this.$store.state.courses;
+                return this.$store.state.courses.map((course) => {
+                    course.collapsed = true;
+                    return course;
+                });
             },
 
             name() {
                 return this.$store.state.userName;
             }
+        },
+
+        data() {
+            return {
+                courseOpen : -1
+            };
         },
 
         methods : {
@@ -41,6 +69,10 @@
             setCourse(index) {
                 this.$store.commit('courseIndex', index);
                 this.$store.commit('screen', 'course');
+            },
+
+            toggle(index) {
+                this.courseOpen = index;
             }
         }
     }

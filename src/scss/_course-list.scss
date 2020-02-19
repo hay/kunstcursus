@@ -1,0 +1,45 @@
+.course-list {
+    list-style: none;
+    @include flex-center;
+    width: 100%;
+
+    &__item {
+        margin-bottom: 1rem;
+        padding: $padding;
+        border-radius: $padding;
+        border: 1px solid $c-2;
+        width: 100%;
+    }
+
+    &__itemheader {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__title strong {
+        color: $c-1;
+    }
+
+    &__title,
+    &__status,
+    &__description,
+    &__info {
+        font-size: 1.8rem;
+        font-weight: normal;
+    }
+
+    &__info {
+        margin-top: 1rem;
+        @include child-margins(1rem);
+    }
+
+    &__info button {
+        @include text-button;
+    }
+
+    button {
+        text-decoration: underline;
+    }
+}
