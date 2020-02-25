@@ -31,6 +31,14 @@ export class Store {
                     return state.lastCourse >= state.courses.length;
                 },
 
+                artwork(state, getters) {
+                    if (getters.step && getters.step.action === 'judge') {
+                        return getters.step.meta;
+                    } else {
+                        return getters.course.artwork;
+                    }
+                },
+
                 course(state) {
                     return state.courses[state.courseIndex];
                 },
@@ -86,7 +94,6 @@ export class Store {
                     state.skipIntro = true;
                 },
 
-                // Purely a debug thing
                 stepIndex(state, index) {
                     state.stepIndex = parseInt(index);
                 },
@@ -101,15 +108,15 @@ export class Store {
             },
 
             actions : {
-                nextStep({ state, getters }) {
+                nextStep({ state, getters, commit }) {
                     if (!getters.courseDone) {
-                        state.stepIndex = state.stepIndex + 1;
+                        commit('stepIndex', state.stepIndex + 1);
                     }
                 },
 
                 previousStep({ state }) {
                     if (state.stepIndex > 0) {
-                        state.stepIndex = state.stepIndex - 1;
+                        commit('stepIndex', state.stepIndex - 1);
                     }
                 }
             }

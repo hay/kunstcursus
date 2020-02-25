@@ -11,7 +11,11 @@ export const AUDIO_FILES = [
     'stepin_03',
     'stepin_04',
     'stepin_05',
-    'stepin_06'
+    'stepin_06',
+    'tinder_01',
+    'tinder_02',
+    'tinder_03',
+    'tinder_04'
 ];
 export const DEFAULT_SCREEN = 'splash';
 export const MIN_QUESTION_LENGTH = 5;

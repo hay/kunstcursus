@@ -54,10 +54,10 @@
         },
         {
             "course": "questions",
-            "datasheet": "321-bridge",
-            "title": "3-2-1 Bridge",
+            "datasheet": "art-tinder",
+            "title": "Art Tinder",
             "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua.",
-            "artwork": 2
+            "artwork": null
         },
         {
             "course": "questions",
@@ -219,6 +219,107 @@
             "text": "Dat was het. Klik op 'Klaar' om terug te gaan naar het overzicht.",
             "audio": null,
             "button": "Klaar",
+            "meta": null
+        }
+    ],
+    "art-tinder": [
+        {
+            "action": "notice",
+            "step": 1,
+            "steplabel": "Bekijk",
+            "text": "Yes, we gaan kunst kijken! Het schijnt dat we gemiddeld maar 8 seconden naar een kunstwerk in het museum kijken. Kan jij net zo vliegensvlug de volgende kunstwerken beoordelen? Geef met de knoppen onder het kunstwerk aan wat je ervan vindt.",
+            "audio": "tinder_01",
+            "button": "Start",
+            "meta": null
+        },
+        {
+            "action": "starttimer",
+            "step": 1,
+            "steplabel": "Bekijk",
+            "text": null,
+            "audio": null,
+            "button": null,
+            "meta": null
+        },
+        {
+            "action": "judge",
+            "step": 1,
+            "steplabel": "Bekijk",
+            "text": null,
+            "audio": null,
+            "button": null,
+            "meta": 10
+        },
+        {
+            "action": "judge",
+            "step": 1,
+            "steplabel": "Bekijk",
+            "text": null,
+            "audio": null,
+            "button": null,
+            "meta": 11
+        },
+        {
+            "action": "judge",
+            "step": 1,
+            "steplabel": "Bekijk",
+            "text": null,
+            "audio": null,
+            "button": null,
+            "meta": 12
+        },
+        {
+            "action": "judge",
+            "step": 1,
+            "steplabel": "Bekijk",
+            "text": null,
+            "audio": null,
+            "button": null,
+            "meta": 13
+        },
+        {
+            "action": "judge",
+            "step": 1,
+            "steplabel": "Bekijk",
+            "text": null,
+            "audio": null,
+            "button": null,
+            "meta": 14
+        },
+        {
+            "action": "judge",
+            "step": 1,
+            "steplabel": "Bekijk",
+            "text": null,
+            "audio": null,
+            "button": null,
+            "meta": 15
+        },
+        {
+            "action": "timefeedback",
+            "step": 2,
+            "steplabel": "Tijd",
+            "text": "Phoe dat ging snel. Heb je de smaak te pakken? Ga snel door naar de volgende opdracht.",
+            "audio": "tinder_02",
+            "button": null,
+            "meta": "<60"
+        },
+        {
+            "action": "timefeedback",
+            "step": 2,
+            "steplabel": "Tijd",
+            "text": "Je kijkt al wat langer dan de gemiddelde museumbezoeker!",
+            "audio": "tinder_03",
+            "button": null,
+            "meta": ">60"
+        },
+        {
+            "action": "notice",
+            "step": 3,
+            "steplabel": "Klaar",
+            "text": "Heb je de smaak te pakken? Ga snel door naar de volgende opdracht.",
+            "audio": "tinder_04",
+            "button": "Ga verder",
             "meta": null
         }
     ]

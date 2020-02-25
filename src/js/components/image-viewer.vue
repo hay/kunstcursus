@@ -19,12 +19,15 @@
         computed : {
             alt() {
                 return 'Hier moet een alt text komen';
+            },
+
+            imageSrc() {
+                return this.src('nq');
             }
         },
 
         data() {
             return {
-                imageSrc : null,
                 minZoomRatio : 0,
                 maxZoomRatio : 1,
                 originalLeft : 0,
@@ -92,7 +95,7 @@
             },
 
             src(type) {
-                let id = this.$store.getters.course.artwork;
+                let id = this.$store.getters.artwork;
                 return `assets/${id}-${type}.jpg`;
             },
 
@@ -117,8 +120,6 @@
 
                 this.setupViewer();
             });
-
-            this.imageSrc = this.src('nq');
         }
     }
 </script>

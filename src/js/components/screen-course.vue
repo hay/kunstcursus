@@ -3,6 +3,7 @@
         <div class="screen__flex">
             <image-viewer
                 ref="viewer"
+                v-bind:key="artwork"
                 v-on:ready="viewerReady"
                 ></image-viewer>
 
@@ -38,7 +39,6 @@
                 v-bind:text="step.text">
                 <el-button
                     align="center"
-                    type="text"
                     v-bind:text="step.button"
                     v-on:click="nextStep"></el-notice>
             </el-message>
@@ -50,14 +50,30 @@
 
                 <menu class="el-message__menu">
                     <el-button
-                        type="text"
                         text="Ja, stop de les"
                         v-on:click="exit"></el-button>
 
                     <el-button
-                        type="text"
                         text="Nee, ga verder"
                         v-on:click="confirmExit = false"></el-button>
+                </menu>
+            </el-message>
+
+            <el-message
+                class="screen-course__bottom"
+                v-bind:visible="step.action === 'judge'"
+                text="Wat vind je van dit kunstwerk?">
+
+                <menu class="el-message__menu">
+                    <el-button
+                        icon="like"
+                        text="Vind ik leuk"
+                        v-on:click="nextStep"></el-button>
+
+                    <el-button
+                        icon="notlike"
+                        text="Vind ik niet leuk"
+                        v-on:click="nextStep"></el-button>
                 </menu>
             </el-message>
         </div>
@@ -98,6 +114,10 @@
         },
 
         computed : {
+            artwork() {
+                return this.$store.getters.artwork;
+            },
+
             maxStep() {
                 return this.$store.getters.maxStep;
             },
@@ -142,17 +162,16 @@
                 }
             },
 
-            showStudyViewer() {
+            showViewer() {
                 this.viewerShown = true;
                 this.$refs.viewer.show();
-                this.startTimer();
             },
 
             skipTime() {
                 timer.updateSeconds(PAINTING_VIEW_TIME - 1);
             },
 
-            startTimer() {
+            startTimer(targets = []) {
                 timer = new ClockTimer({
                     callback: (e) => {
                         if (e.type === 'update') {
@@ -164,7 +183,7 @@
                         }
                     },
 
-                    targets : [ PAINTING_VIEW_TIME ]
+                    targets : targets
                 });
 
                 timer.start();
@@ -192,21 +211,39 @@
         },
 
         watch : {
-            step() {
+            async step() {
                 if (this.$store.getters.courseDone) {
                     this.courseDone();
                 } else {
-                    this.$refs.question.clear();
-                    this.playSound();
+                    if (this.step.action === 'timefeedback') {
+                        // TOOD: implement
+                        this.nextStep();
+                        return;
+                    }
 
                     if (this.step.action === 'study') {
-                        this.showStudyViewer();
+                        this.showViewer();
+                        this.startTimer([ PAINTING_VIEW_TIME ]);
+                    }
+
+                    if (this.step.action === 'starttimer') {
+                        this.startTimer();
+                        this.nextStep();
+                    }
+
+                    if (this.step.action === 'judge') {
+                        // FIXME
+                        await timeout(250);
+                        this.showViewer();
                     }
 
                     if (this.step.action === 'resetcenter') {
                         this.$refs.viewer.reset();
                         this.nextStep();
                     }
+
+                    this.$refs.question.clear();
+                    this.playSound();
                 }
             }
         }
