@@ -1,5 +1,5 @@
 <template>
-    <div class="screen screen--course">
+    <div class="screen screen-course">
         <div class="screen__flex">
             <image-viewer
                 ref="viewer"
@@ -20,32 +20,21 @@
 
             <el-question
                 ref="question"
-                v-bind:text="step.text1"
-                v-bind:visible="questionsShown"
+                class="screen-course__bottom"
+                v-bind:text="step.text"
+                v-bind:visible="step.action === 'question'"
                 v-on:submit="nextStep"></el-question>
 
             <el-comments
-                v-bind:title="step.text1"
-                v-on:click="hideComments"
-                v-bind:visible="commentsShown"></el-comments>
+                v-bind:title="step.text"
+                v-on:click="nextStep"
+                v-bind:visible="step.action === 'comments'"></el-comments>
 
-            <modal-dialog
-                v-show="!viewerShown && !courseReady"
-                v-bind:text="firstStep.text1"
-                v-bind:disabled="!isViewerReady"
-                v-on:ok="showViewer"></modal-dialog>
-
-            <modal-dialog
-                v-if="firstStep.text1"
-                v-show="readyForQuestions"
-                v-bind:text="firstStep.text2"
-                v-on:ok="showQuestions"></modal-dialog>
-
-            <modal-dialog
-                v-if="lastStep.text2"
-                v-show="courseReady"
-                v-bind:text="lastStep.text2"
-                v-on:ok="back"></modal-dialog>
+            <el-message
+                v-bind:visible="step.action === 'message'"
+                v-bind:text="step.text"
+                v-bind:button="step.button"
+                v-on:click="nextStep"></el-message>
         </div>
 
         <div class="screen__fixed">
@@ -58,16 +47,13 @@
 </template>
 
 <script>
-    // Used for both 321-bridge and step-inside
-    import { first, last } from 'lodash';
     import ClockTimer from '../clocktimer.js';
-    import { PAINTING_VIEW_TIME } from '../const.js';
     import ElComments from './el-comments.vue';
     import ElHint from './el-hint.vue';
+    import ElMessage from './el-message.vue';
     import ElQuestion from './el-question.vue';
     import ImageViewer from './image-viewer.vue';
     import MenuBar from './menu-bar.vue';
-    import ModalDialog from './modal-dialog.vue';
     import { timeout } from '../util.js';
 
     let timer;
@@ -76,23 +62,15 @@
         components : {
             ElComments,
             ElHint,
+            ElMessage,
             ElQuestion,
             ImageViewer,
-            MenuBar,
-            ModalDialog
+            MenuBar
         },
 
         computed : {
             courseData() {
                 return this.$store.getters.course.data;
-            },
-
-            firstStep() {
-                return first(this.courseData);
-            },
-
-            lastStep() {
-                return last(this.courseData);
             },
 
             maxStep() {
@@ -108,11 +86,7 @@
 
         data() {
             return {
-                commentsShown : false,
-                courseReady : false,
                 isViewerReady : false,
-                questionsShown : false,
-                readyForQuestions : false,
                 stepIndex : 0,
                 startTime : null,
                 time : null,

@@ -4,17 +4,16 @@
 @import "fonts";
 @import "mixins";
 @import "base";
-@import "screen";
-@import "temp-screen";
+@import "course-list";
+@import "el-comments";
+@import "el-message";
+@import "el-question";
+@import "hint";
 @import "image-viewer";
 @import "menu-bar";
 @import "modal-dialog";
-@import "hint";
-@import "el-question";
-@import "el-comments";
+@import "screen";
+@import "screen-course";
+@import "screen-overview";
 @import "screen-slideshow";
 @import "screen-splash";
-
-@import "screen-overview";
-
-@import "course-list";

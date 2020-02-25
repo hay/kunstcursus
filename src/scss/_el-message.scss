@@ -1,0 +1,24 @@
+.el-comments {
+    @include margin-center;
+    display: flex;
+    width: 100%;
+    max-width: $max-width;
+    padding: $padding;
+    background: rgba($c-2, 0.9);
+    transition: 300ms;
+    bottom: -100vh;
+
+    &__text {
+        text-align: left;
+        font-size: 1.8rem;
+        color: $c-1;
+    }
+
+    &__button {
+        @include text-button;
+    }
+
+    &[is-visible] {
+        bottom: 0;
+    }
+}

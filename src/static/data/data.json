@@ -54,7 +54,7 @@
         },
         {
             "course": "questions",
-            "datasheet": "321-bridge",
+            "datasheet": "321-bridge-v2",
             "title": "3-2-1 Bridge",
             "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua.",
             "artwork": 2
@@ -114,6 +114,71 @@
             "times": 1,
             "audio1": "bridge_05",
             "audio2": "bridge_06"
+        }
+    ],
+    "321-bridge-v2": [
+        {
+            "action": "message",
+            "step": 1,
+            "steplabel": "Bekijk",
+            "text": "Het is tijd om een kunstwerk écht goed tot je te nemen. Je krijgt een minuut de tijd. Zodra je op OK klikt begin je.",
+            "audio": "bridge_01",
+            "button": "OK",
+            "meta": null
+        },
+        {
+            "action": "study",
+            "step": 1,
+            "steplabel": "Bekijk",
+            "text": null,
+            "audio": null,
+            "button": null,
+            "meta": 60
+        },
+        {
+            "action": "message",
+            "step": 1,
+            "steplabel": "Bekijk",
+            "text": "Wat vond je ervan? Eén minuut is nog helemaal niet zo lang, hé. Je krijgt nu drie korte vragen. Je antwoorden kan je steeds in het tekstveld invullen en met de knop versturen. Denk eraan: er zijn geen foute antwoorden. Het gaat namelijk over jouw interpretatie van het werk.",
+            "audio": "bridge_02",
+            "button": "Bekijk vragen",
+            "meta": null
+        },
+        {
+            "action": "question",
+            "step": 2,
+            "steplabel": "Drie woorden",
+            "text": "Geef drie woorden die in je opkomen.",
+            "audio": "bridge_03",
+            "button": null,
+            "meta": null
+        },
+        {
+            "action": "question",
+            "step": 3,
+            "steplabel": "Twee vragen",
+            "text": "Welke twee vragen komen in je op?",
+            "audio": "bridge_04",
+            "button": null,
+            "meta": null
+        },
+        {
+            "action": "question",
+            "step": 4,
+            "steplabel": "Een situatie",
+            "text": "Omschrijf een object of situatie uit jouw leven waar dit werk je aan doet denken.",
+            "audio": "bridge_05",
+            "button": null,
+            "meta": null
+        },
+        {
+            "action": "message",
+            "step": 5,
+            "steplabel": "Afsluiting",
+            "text": "Zo, wat vond je ervan? Heeft deze opdracht je anders naar het kunstwerk laten kijken?",
+            "audio": "bridge_06",
+            "button": "Terug naar overzicht",
+            "meta": null
         }
     ],
     "step-inside": [

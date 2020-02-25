@@ -1,39 +1,8 @@
 .screen {
-    &--course {
-        @include wh(100vw, 100vh);
-        overflow: hidden;
-        @include flex-center;
-    }
-
     &__flex {
         position: relative;
         background: $c-3;
         @include wh(100%, calc(100vh - #{$menu-height}));
-    }
-
-    &__hint {
-        position: absolute;
-        top: 0;
-        z-index: 1;
-    }
-
-    &__hint[align="left"] {
-        left: $padding;
-    }
-
-    &__hint[align="right"] {
-        right: $padding;
-    }
-
-    &__question {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-    }
-
-    &__modal {
-        @include transform-center;
     }
 
     &__fixed {
