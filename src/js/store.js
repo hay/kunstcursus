@@ -1,3 +1,4 @@
+import { map, max } from 'lodash';
 import Vue from 'vue'
 import Vuex from 'vuex'
 import { Model } from './model.js';
@@ -17,6 +18,7 @@ export class Store {
                 screen : null,
                 skipIntro : false,
                 soundPlaying : null,
+                stepIndex : null,
                 userName : null
             };
         }
@@ -29,15 +31,32 @@ export class Store {
                     return state.courses[state.courseIndex];
                 },
 
+                courseData(state, getters) {
+                    return getters.course.data;
+                },
+
+                courseDone(state, getters) {
+                    return state.stepIndex === (getters.courseData.length - 1);
+                },
+
+                maxStep(state, getters) {
+                    return max(getters.courseData.map(d => parseInt(d.step)));
+                },
+
                 message(state, getters) {
                     return function(id, data) {
                         return state.messages[id];
                     }
+                },
+
+                step(state, getters) {
+                    return getters.courseData[state.stepIndex];
                 }
             },
 
             mutations : {
                 courseIndex(state, courseIndex) {
+                    state.stepIndex = 0;
                     state.courseIndex = courseIndex;
                 },
 
@@ -60,6 +79,14 @@ export class Store {
 
                 userName(state, name) {
                     state.userName = name;
+                }
+            },
+
+            actions : {
+                nextStep({ state, getters }) {
+                    if (!getters.courseDone) {
+                        state.stepIndex = state.stepIndex + 1;
+                    }
                 }
             }
         });

@@ -71,25 +71,18 @@
         },
 
         computed : {
-            courseData() {
-                return this.$store.getters.course.data;
-            },
-
             maxStep() {
-                return Math.max.apply(
-                    this, this.courseData.map(d => parseInt(d.step))
-                );
+                return this.$store.getters.maxStep;
             },
 
             step() {
-                return this.courseData[this.stepIndex];
+                return this.$store.getters.step;
             }
         },
 
         data() {
             return {
                 isViewerReady : false,
-                stepIndex : 0,
                 startTime : null,
                 time : null,
                 timer : null,
@@ -113,15 +106,8 @@
                 this.back();
             },
 
-
             nextStep() {
-                this.$refs.question.clear();
-
-                if (this.stepIndex === (this.courseData.length - 1)) {
-                    this.courseDone();
-                } else {
-                    this.stepIndex += 1;
-                }
+                this.$store.dispatch('nextStep');
             },
 
             playSound() {
@@ -181,15 +167,11 @@
 
         watch : {
             step() {
+                this.$refs.question.clear();
                 this.playSound();
 
                 if (this.step.action === 'study') {
                     this.showStudyViewer();
-                }
-
-                if (this.step.action === 'comments') {
-                    this.commentsShown = true;
-                    this.questionsShown = false;
                 }
             }
         }
