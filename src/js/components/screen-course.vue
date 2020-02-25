@@ -26,6 +26,7 @@
                 v-on:submit="nextStep"></el-question>
 
             <el-comments
+                v-bind:button="step.button"
                 v-bind:title="step.text"
                 v-on:click="nextStep"
                 v-bind:visible="step.action === 'comments'"></el-comments>

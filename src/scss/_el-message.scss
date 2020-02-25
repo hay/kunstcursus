@@ -42,6 +42,16 @@
         margin-right: $padding * 2;
     }
 
+    &__list {
+        margin-bottom: 1rem;
+        list-style: none;
+    }
+
+    &__list li {
+        margin-bottom: 1rem;
+        font-size: 1.8rem;
+    }
+
     &__icon-button {
         @include button;
     }

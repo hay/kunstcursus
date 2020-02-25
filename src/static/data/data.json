@@ -47,7 +47,7 @@
         },
         {
             "course": "questions",
-            "datasheet": "step-inside",
+            "datasheet": "step-inside-v2",
             "title": "Step Inside",
             "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua.",
             "artwork": 4
@@ -178,6 +178,80 @@
             "text": "Zo, wat vond je ervan? Heeft deze opdracht je anders naar het kunstwerk laten kijken?",
             "audio": "bridge_06",
             "button": "Terug naar overzicht",
+            "meta": null
+        }
+    ],
+    "step-inside-v2": [
+        {
+            "action": "message",
+            "step": 1,
+            "steplabel": "Bekijk",
+            "text": "Bij deze opdracht gaan we ons inleven in dit portret. Neem weer de tijd om het werk goed te bestuderen voordat we aan de slag gaan met de oefening.",
+            "audio": "stepin_01",
+            "button": "Start",
+            "meta": null
+        },
+        {
+            "action": "study",
+            "step": 1,
+            "steplabel": "Bekijk",
+            "text": null,
+            "audio": null,
+            "button": null,
+            "meta": 60
+        },
+        {
+            "action": "question",
+            "step": 2,
+            "steplabel": "Horen",
+            "text": "Leef je in. Wat hoort deze persoon? En kun je uitleggen waarom je dat denkt?",
+            "audio": "stepin_02",
+            "button": null,
+            "meta": null
+        },
+        {
+            "action": "question",
+            "step": 3,
+            "steplabel": "Zien",
+            "text": "En wat ziet deze persoon?",
+            "audio": "stepin_03",
+            "button": null,
+            "meta": null
+        },
+        {
+            "action": "question",
+            "step": 4,
+            "steplabel": "Ruiken",
+            "text": "Wat zal deze persoon ruiken en waar zie je dit aan?",
+            "audio": "stepin_04",
+            "button": null,
+            "meta": null
+        },
+        {
+            "action": "comments",
+            "step": 5,
+            "steplabel": "Antwoorden",
+            "text": "Benieuwd wat andere cursisten dachten? Hier lees je hun antwoorden.",
+            "audio": "stepin_05",
+            "button": null,
+            "meta": null
+        },
+        {
+            "action": "question",
+            "step": 6,
+            "steplabel": "Bordje",
+            "text": "Je hebt het kunstwerk nu uitgebreid bekeken en je ingeleefd in het portret. Bedenk nu een titel die omschrijft wat het werk voor jou betekent en schrijf hier een bordje bij.",
+            "audio": "stepin_06",
+            "button": null,
+            "meta": null
+        },
+        {
+            "action": "message",
+            "step": 7,
+            "steplabel": "Einde",
+            "text": "Dat was het. Klik op 'Klaar' om terug te gaan naar het overzicht.",
+            "audio": null,
+            "button": "Klaar",
             "meta": null
         }
     ],

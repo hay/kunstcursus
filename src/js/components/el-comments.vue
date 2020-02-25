@@ -1,12 +1,9 @@
 <template>
-    <div class="el-comments"
-         v-bind:is-visible="visible">
-        <div class="el-comments__content">
-            <h2 class="el-comments__title">
-                {{title}}
-            </h2>
-
-            <ul class="el-comments__list">
+    <el-message
+        v-bind:visible="visible"
+        v-bind:button="button"
+        v-bind:text="text">
+            <ul class="el-message__list">
                 <li>
                     <strong>Hay (36, Amsterdam)</strong>
                     <p>Ik denk dat ze iemand hoort roepen, ze ziet niks, want ze heeft haar ogen dicht, en ze ruikt verse bloemen.</p>
@@ -17,24 +14,27 @@
                     <p>Ze hoort muziek, ziet haar buurvrouw en ruikt vers gebakken brood.</p>
                 </li>
             </ul>
-
-            <button v-on:click="click"
-                    class="el-comments__button">
-                Gelezen
-            </button>
         </div>
-    </div>
+    </el-message>
 </template>
 
 <script>
+    import ElMessage from './el-message.vue';
+
     export default {
-        methods : {
-            click() {
-                this.$emit('click');
-            }
+        components : {
+            ElMessage
         },
 
         props : {
+            button : {
+                type : String,
+            },
+
+            text : {
+                type : String
+            },
+
             title : {
                 type : String
             },
