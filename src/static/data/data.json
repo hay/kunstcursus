@@ -47,14 +47,14 @@
         },
         {
             "course": "questions",
-            "datasheet": "step-inside-v2",
+            "datasheet": "step-inside",
             "title": "Step Inside",
             "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua.",
             "artwork": 4
         },
         {
             "course": "questions",
-            "datasheet": "321-bridge-v2",
+            "datasheet": "321-bridge",
             "title": "3-2-1 Bridge",
             "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua.",
             "artwork": 2
@@ -75,48 +75,6 @@
         }
     ],
     "321-bridge": [
-        {
-            "action": "view",
-            "step": 1,
-            "steplabel": "Bekijk",
-            "text1": "Het is tijd om een kunstwerk écht goed tot je te nemen. Je krijgt een minuut de tijd. Zodra je op OK klikt begin je.",
-            "text2": "Wat vond je ervan? Eén minuut is nog helemaal niet zo lang, hé. Je krijgt nu drie korte vragen. Je antwoorden kan je steeds in het tekstveld invullen en met de knop versturen. Denk eraan: er zijn geen foute antwoorden. Het gaat namelijk over jouw interpretatie van het werk.",
-            "times": null,
-            "audio1": "bridge_01",
-            "audio2": "bridge_02"
-        },
-        {
-            "action": "question",
-            "step": 2,
-            "steplabel": "Drie woorden",
-            "text1": "Geef drie woorden die in je opkomen.",
-            "text2": null,
-            "times": 3,
-            "audio1": "bridge_03",
-            "audio2": null
-        },
-        {
-            "action": "question",
-            "step": 3,
-            "steplabel": "Twee vragen",
-            "text1": "Welke twee vragen komen in je op?",
-            "text2": null,
-            "times": 2,
-            "audio1": "bridge_04",
-            "audio2": null
-        },
-        {
-            "action": "question",
-            "step": 4,
-            "steplabel": "Een situatie",
-            "text1": "Omschrijf een object of situatie uit jouw leven waar dit werk je aan doet denken.",
-            "text2": "Zo, wat vond je ervan? Heeft deze opdracht je anders naar het kunstwerk laten kijken?",
-            "times": 1,
-            "audio1": "bridge_05",
-            "audio2": "bridge_06"
-        }
-    ],
-    "321-bridge-v2": [
         {
             "action": "notice",
             "step": 1,
@@ -181,7 +139,7 @@
             "meta": null
         }
     ],
-    "step-inside-v2": [
+    "step-inside": [
         {
             "action": "notice",
             "step": 1,
@@ -253,68 +211,6 @@
             "audio": null,
             "button": "Klaar",
             "meta": null
-        }
-    ],
-    "step-inside": [
-        {
-            "action": "view",
-            "step": 1,
-            "steplabel": "Bekijk",
-            "text1": "Bij deze opdracht gaan we ons inleven in dit portret. Neem weer de tijd om het werk goed te bestuderen voordat we aan de slag gaan met de oefening.",
-            "text2": null,
-            "times": null,
-            "audio1": "stepin_01",
-            "audio2": null
-        },
-        {
-            "action": "question",
-            "step": 2,
-            "steplabel": "Horen",
-            "text1": "Leef je in. Wat hoort deze persoon? En kun je uitleggen waarom je dat denkt?",
-            "text2": null,
-            "times": null,
-            "audio1": "stepin_02",
-            "audio2": null
-        },
-        {
-            "action": "question",
-            "step": 3,
-            "steplabel": "Zien",
-            "text1": "En wat ziet deze persoon?",
-            "text2": null,
-            "times": null,
-            "audio1": "stepin_03",
-            "audio2": null
-        },
-        {
-            "action": "question",
-            "step": 4,
-            "steplabel": "Ruiken",
-            "text1": "Wat zal deze persoon ruiken en waar zie je dit aan?",
-            "text2": null,
-            "times": null,
-            "audio1": "stepin_04",
-            "audio2": null
-        },
-        {
-            "action": "comments",
-            "step": 5,
-            "steplabel": "Antwoorden",
-            "text1": "Benieuwd wat andere cursisten dachten? Hier lees je hun antwoorden.",
-            "text2": null,
-            "times": null,
-            "audio1": "stepin_05",
-            "audio2": null
-        },
-        {
-            "action": "question",
-            "step": 6,
-            "steplabel": "Bordje",
-            "text1": "Je hebt het kunstwerk nu uitgebreid bekeken en je ingeleefd in het portret. Bedenk nu een titel die omschrijft wat het werk voor jou betekent en schrijf hier een bordje bij.",
-            "text2": null,
-            "times": null,
-            "audio1": "stepin_06",
-            "audio2": null
         }
     ]
 }
