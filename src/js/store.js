@@ -83,6 +83,10 @@ export class Store {
                     state.stepIndex = parseInt(index);
                 },
 
+                toggleMute(state) {
+                    state.muted = !state.muted;
+                },
+
                 userName(state, name) {
                     state.userName = name;
                 }
@@ -92,6 +96,12 @@ export class Store {
                 nextStep({ state, getters }) {
                     if (!getters.courseDone) {
                         state.stepIndex = state.stepIndex + 1;
+                    }
+                },
+
+                previousStep({ state }) {
+                    if (state.stepIndex > 0) {
+                        state.stepIndex = state.stepIndex - 1;
                     }
                 }
             }

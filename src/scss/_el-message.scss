@@ -53,7 +53,7 @@
     }
 
     &__icon-button {
-        @include button;
+        @include icon-button;
     }
 
     &[is-visible] {

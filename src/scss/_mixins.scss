@@ -1,4 +1,4 @@
-@mixin button {
+@mixin icon-button {
     @include wh($menu-button-size);
     @include flex-center;
     border-radius: $padding;

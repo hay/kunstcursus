@@ -1,8 +1,8 @@
 .menu-bar {
-    background: $c-2;
+    background: white;
     display: flex;
     justify-content: space-between;
-    padding: $padding;
+    padding: ($padding / 2);
     @include wh(100%);
     max-width: $max-width;
     height: 100%;
@@ -18,9 +18,5 @@
 
     &__group :last-child {
         margin-right: 0;
-    }
-
-    &__button {
-        @include button;
     }
 }

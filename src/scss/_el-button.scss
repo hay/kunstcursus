@@ -1,0 +1,9 @@
+.el-button {
+    &--icon {
+        @include icon-button;
+    }
+
+    &--text {
+        @include text-button;
+    }
+}

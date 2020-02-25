@@ -8,7 +8,7 @@ $c-3: #424242;
 
 $padding: 1rem;
 $max-width: 80rem;
-$menu-height: 7.5rem;
-$menu-button-size: $menu-height - ($padding * 2);
+$menu-height: 6rem;
+$menu-button-size: $menu-height - $padding;
 $menu-button-icon-size: $menu-button-size - $padding;
 $child-margins: 3rem;
