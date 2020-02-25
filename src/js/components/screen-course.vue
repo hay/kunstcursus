@@ -156,6 +156,47 @@
                 this.$store.dispatch('nextStep');
             },
 
+            async parseStep() {
+                if (this.$store.getters.courseDone) {
+                    this.courseDone();
+                } else {
+                    if (this.step.action === 'timefeedback') {
+                        // TOOD: implement
+                        this.nextStep();
+                        return;
+                    }
+
+                    if (this.step.action === 'study') {
+                        this.showViewer();
+                        this.startTimer([ PAINTING_VIEW_TIME ]);
+                    }
+
+                    if (this.step.action === 'starttimer') {
+                        this.startTimer();
+                        this.nextStep();
+                    }
+
+                    if (this.step.action === 'judge') {
+                        // FIXME
+                        await timeout(250);
+                        this.showViewer();
+                    }
+
+                    if (this.step.action === 'resetcenter') {
+                        this.$refs.viewer.reset();
+                        this.nextStep();
+                    }
+
+                    if (this.step.action === 'showviewer') {
+                        this.showViewer();
+                        this.nextStep();
+                    }
+
+                    this.$refs.question.clear();
+                    this.playSound();
+                }
+            },
+
             playSound() {
                 if (this.step.audio) {
                     this.$sounds.play(this.step.audio);
@@ -203,48 +244,12 @@
         },
 
         mounted() {
-            if (this.$store.state.skipIntro) {
-                this.showViewer();
-            }
-
-            this.playSound();
+            this.parseStep();
         },
 
         watch : {
-            async step() {
-                if (this.$store.getters.courseDone) {
-                    this.courseDone();
-                } else {
-                    if (this.step.action === 'timefeedback') {
-                        // TOOD: implement
-                        this.nextStep();
-                        return;
-                    }
-
-                    if (this.step.action === 'study') {
-                        this.showViewer();
-                        this.startTimer([ PAINTING_VIEW_TIME ]);
-                    }
-
-                    if (this.step.action === 'starttimer') {
-                        this.startTimer();
-                        this.nextStep();
-                    }
-
-                    if (this.step.action === 'judge') {
-                        // FIXME
-                        await timeout(250);
-                        this.showViewer();
-                    }
-
-                    if (this.step.action === 'resetcenter') {
-                        this.$refs.viewer.reset();
-                        this.nextStep();
-                    }
-
-                    this.$refs.question.clear();
-                    this.playSound();
-                }
+            step() {
+                this.parseStep();
             }
         }
     }

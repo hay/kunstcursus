@@ -42,35 +42,35 @@
             "course": "questions",
             "datasheet": "321-bridge",
             "title": "3-2-1 Bridge",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua.",
+            "description": null,
             "artwork": 1
         },
         {
             "course": "questions",
             "datasheet": "step-inside",
             "title": "Step Inside",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua.",
+            "description": null,
             "artwork": 4
         },
         {
             "course": "questions",
             "datasheet": "art-tinder",
             "title": "Art Tinder",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua.",
-            "artwork": null
+            "description": null,
+            "artwork": "placeholder"
         },
         {
             "course": "questions",
             "datasheet": "321-bridge",
             "title": "3-2-1 Bridge",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua.",
+            "description": null,
             "artwork": 3
         },
         {
             "course": "questions",
             "datasheet": "321-bridge",
             "title": "3-2-1 Bridge",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua.",
+            "description": null,
             "artwork": 5
         }
     ],
@@ -224,6 +224,15 @@
     ],
     "art-tinder": [
         {
+            "action": "showviewer",
+            "step": 1,
+            "steplabel": "Bekijk",
+            "text": null,
+            "audio": null,
+            "button": null,
+            "meta": null
+        },
+        {
             "action": "notice",
             "step": 1,
             "steplabel": "Bekijk",
@@ -312,6 +321,15 @@
             "audio": "tinder_03",
             "button": null,
             "meta": ">60"
+        },
+        {
+            "action": "showviewer",
+            "step": 3,
+            "steplabel": "Klaar",
+            "text": null,
+            "audio": null,
+            "button": null,
+            "meta": null
         },
         {
             "action": "notice",
