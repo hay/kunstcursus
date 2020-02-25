@@ -94,6 +94,15 @@
             "meta": 60
         },
         {
+            "action": "resetcenter",
+            "step": 1,
+            "steplabel": "Bekijk",
+            "text": null,
+            "audio": null,
+            "button": null,
+            "meta": null
+        },
+        {
             "action": "notice",
             "step": 1,
             "steplabel": "Bekijk",

@@ -80,7 +80,7 @@
 
         data() {
             return {
-                courseOpen : -1
+                courseOpen : this.$store.state.lastCourse
             };
         },
 

@@ -202,6 +202,11 @@
                     if (this.step.action === 'study') {
                         this.showStudyViewer();
                     }
+
+                    if (this.step.action === 'resetcenter') {
+                        this.$refs.viewer.reset();
+                        this.nextStep();
+                    }
                 }
             }
         }
