@@ -1,9 +1,9 @@
 <template>
-    <div class="screen__hint hint"
+    <div class="screen-course__hint el-hint"
          v-on:click="click"
          v-bind:align="align"
          v-bind:is-visible="visible">
-        <p class="hint__text">
+        <p class="el-hint__text">
             <strong v-if="prefix">{{prefix}}</strong>
             <span v-html="text"></span>
         </p>

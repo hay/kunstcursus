@@ -1,20 +1,17 @@
 <template>
-    <div class="el-question screen__question"
-         v-bind:is-visible="visible">
-        <div class="el-question__text">
-            <p v-html="text"></p>
-        </div>
-
-        <div class="el-question__input">
+    <el-message
+        v-bind:visible="visible"
+        v-bind:text="text">
+        <div class="el-message__input">
             <textarea
-                class="el-question__form"
+                class="el-message__form"
                 ref="form"
                 v-model="input"></textarea>
 
             <button
                 v-on:click="submit"
                 v-bind:disabled="buttonDisabled"
-                class="el-question__button">
+                class="el-message__icon-button">
                 <img src="/static/img/icon-send.svg"
                      alt="Verstuur" />
             </button>
@@ -24,11 +21,16 @@
 
 <script>
     import { MIN_QUESTION_LENGTH } from '../const.js';
+    import ElMessage from './el-message.vue';
 
     export default {
+        components : {
+            ElMessage
+        },
+
         computed : {
             buttonDisabled() {
-                return this.input.length < this.minlength;
+                return this.input.length < MIN_QUESTION_LENGTH;
             }
         },
 
@@ -56,11 +58,6 @@
         },
 
         props : {
-            minlength : {
-                default : MIN_QUESTION_LENGTH,
-                type : Number
-            },
-
             text : {
                 type : String
             },

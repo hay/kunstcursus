@@ -1,12 +1,18 @@
 <template>
-    <div class="el-message screen__bottom"
+    <div class="el-message screen-course__bottom"
          v-bind:is-visible="visible">
-        <p class="el-message__text"
-           v-html="text"></p>
+
+        <div class="el-message__text"
+             v-if="text">
+            <p v-html="text"></p>
+        </div>
+
+        <slot></slot>
 
         <button v-on:click="click"
                 v-html="button"
-                class="el-message__button"></button>
+                v-if="button"
+                class="el-message__text-button"></button>
     </div>
 </template>
 

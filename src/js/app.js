@@ -59,8 +59,6 @@ import { Store } from './store.js';
 
         watch : {
             soundPlaying(newSound) {
-                console.log("SOUND", newSound);
-
                 if (newSound === null) {
                     soundManager.pause();
                 } else {

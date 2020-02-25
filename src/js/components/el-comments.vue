@@ -1,5 +1,5 @@
 <template>
-    <div class="el-comments screen__question"
+    <div class="el-comments"
          v-bind:is-visible="visible">
         <div class="el-comments__content">
             <h2 class="el-comments__title">

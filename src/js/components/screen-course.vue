@@ -54,6 +54,7 @@
     import ElQuestion from './el-question.vue';
     import ImageViewer from './image-viewer.vue';
     import MenuBar from './menu-bar.vue';
+    import { PAINTING_VIEW_TIME } from '../const.js';
     import { timeout } from '../util.js';
 
     let timer;
@@ -106,23 +107,11 @@
                 this.questionsShown = false;
                 this.courseReady = true;
 
-                if (this.lastStep.audio2) {
-                    this.$store.commit('playSound', this.lastStep.audio2);
-                } else {
-                    // FIXME
-                    await timeout(1000);
-                    this.back();
-                }
+                // FIXME
+                await timeout(1000);
+                this.back();
             },
 
-            focusQuestion() {
-                this.$refs.question.focus();
-            },
-
-            hideComments() {
-                this.commentsShown = false;
-                this.showQuestions(this.stepIndex + 1)
-            },
 
             nextStep() {
                 this.$refs.question.clear();
@@ -134,18 +123,13 @@
                 }
             },
 
-            async showQuestions(index = 1) {
-                this.readyForQuestions = false;
-                this.$refs.viewer.reset();
-                this.stepIndex = index;
-                this.questionsShown = true;
-
-                // FIXME, this is ugly
-                await timeout(200);
-                this.$refs.question.focus();
+            playSound() {
+                if (this.step.audio) {
+                    this.$store.commit('playSound', this.step.audio);
+                }
             },
 
-            showViewer() {
+            showStudyViewer() {
                 this.viewerShown = true;
                 this.$refs.viewer.show();
                 this.startTimer();
@@ -162,13 +146,8 @@
                             this.time = e.data;
                         }
 
-                        if (e.type === 'target' && this.firstStep.text2) {
-                            this.readyForQuestions = true;
-                            this.$store.commit('playSound', this.firstStep.audio2);
-                        }
-
-                        if (e.type === 'target' && !this.firstStep.text2) {
-                            this.showQuestions();
+                        if (e.type === 'target') {
+                            this.nextStep();
                         }
                     },
 
@@ -196,13 +175,16 @@
                 this.showViewer();
             }
 
-            this.$store.commit('playSound', this.courseData[0].audio1);
+            this.playSound();
         },
 
         watch : {
             step() {
-                this.$store.commit('playSound', this.step.audio1);
-                console.log('step!', this.step.action);
+                this.playSound();
+
+                if (this.step.action === 'study') {
+                    this.showStudyViewer();
+                }
 
                 if (this.step.action === 'comments') {
                     this.commentsShown = true;

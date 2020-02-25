@@ -1,24 +1,52 @@
-.el-comments {
+.el-message {
     @include margin-center;
     display: flex;
-    width: 100%;
+    width: calc(100% - #{$padding * 2});
     max-width: $max-width;
-    padding: $padding;
-    background: rgba($c-2, 0.9);
-    transition: 300ms;
-    bottom: -100vh;
+    padding: $padding * 2;
+    background: rgba($c-2, 0.8);
+    bottom: 0;
+    display: none;
+    border-top-left-radius: $padding;
+    border-top-right-radius: $padding;
 
     &__text {
-        text-align: left;
-        font-size: 1.8rem;
-        color: $c-1;
+        margin-bottom: $padding;
+        text-align: center;
     }
 
-    &__button {
+    &__text p {
+        font-size: 1.8rem;
+        color: black;
+        line-height: 1.25;
+    }
+
+    &__text-button {
         @include text-button;
+        @include margin-center;
+        display: block;
+    }
+
+    &__input {
+        display: flex;
+        width: 100%;
+    }
+
+    &__form {
+        border-radius: $padding;
+        background: white;
+        padding: .5rem;
+        width: 100%;
+        border: 1px solid $c-3;
+        flex: 1;
+        margin-right: $padding * 2;
+    }
+
+    &__icon-button {
+        @include button;
     }
 
     &[is-visible] {
-        bottom: 0;
+        display: block;
     }
 }

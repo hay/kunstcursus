@@ -18,9 +18,6 @@ export function parseHash() {
                 console.error(`Unknown action or mutation: ${key}`);
             }
         });
-
-        // Set the debug flag
-        this.$store.commit('debug', true);
     } else {
         // Why not put the default state in store.js?
         // If the first screen is *not* the splash screen we'll

@@ -5,8 +5,8 @@
     max-width: $max-width;
     padding: $padding;
     background: rgba($c-2, 0.9);
-    transition: 300ms;
-    bottom: -100vh;
+    display: none;
+    bottom: 0;
 
     &__title {
         text-align: left;
@@ -32,6 +32,6 @@
     }
 
     &[is-visible] {
-        bottom: 0;
+        display: block;
     }
 }
