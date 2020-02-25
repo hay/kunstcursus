@@ -1,5 +1,6 @@
 <template>
-    <div class="el-message screen-course__bottom"
+    <div class="el-message"
+         v-bind:class="'el-message--' + type"
          v-bind:is-visible="visible">
         <div class="el-message__text"
              v-if="text">
@@ -20,6 +21,11 @@
 
         props : {
             text : {
+                type : String
+            },
+
+            type : {
+                default : 'default',
                 type : String
             },
 

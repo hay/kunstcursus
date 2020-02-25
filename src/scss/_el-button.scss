@@ -1,4 +1,9 @@
 .el-button {
+    &--center {
+        @include margin-center;
+        display: block;
+    }
+
     &--icon {
         @include icon-button;
     }

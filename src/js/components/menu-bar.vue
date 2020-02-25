@@ -4,7 +4,7 @@
             <el-button
                 icon="exit"
                 text="Terug naar overzicht"
-                v-on:click="back"></el-button>
+                v-on:click="exit"></el-button>
         </div>
 
         <div class="menu-bar__group">
@@ -50,8 +50,8 @@
                 this.$store.dispatch('previousStep');
             },
 
-            back() {
-                this.$store.commit('screen', 'overview');
+            exit() {
+                this.$emit('exit');
             },
 
             mute() {

@@ -26,20 +26,45 @@
                 v-on:submit="nextStep"></el-question>
 
             <el-comments
+                class="screen-course__bottom"
                 v-bind:button="step.button"
                 v-bind:text="step.text"
                 v-on:click="nextStep"
                 v-bind:visible="step.action === 'comments'"></el-comments>
 
-            <el-notice
+            <el-message
+                class="screen-course__bottom"
                 v-bind:visible="step.action === 'notice'"
-                v-bind:text="step.text"
-                v-bind:button="step.button"
-                v-on:click="nextStep"></el-notice>
+                v-bind:text="step.text">
+                <el-button
+                    align="center"
+                    type="text"
+                    v-bind:text="step.button"
+                    v-on:click="nextStep"></el-notice>
+            </el-message>
+
+            <el-message
+                type="modal"
+                v-bind:visible="confirmExit"
+                text="Weet je zeker dat je deze les wilt verlaten?">
+
+                <menu class="el-message__menu">
+                    <el-button
+                        type="text"
+                        text="Ja, stop de les"
+                        v-on:click="exit"></el-button>
+
+                    <el-button
+                        type="text"
+                        text="Nee, ga verder"
+                        v-on:click="confirmExit = false"></el-button>
+                </menu>
+            </el-message>
         </div>
 
         <div class="screen__fixed">
             <menu-bar
+                v-on:exit="confirmExit = true"
                 v-on:zoomin="zoomIn"
                 v-on:zoomout="zoomOut"
                 ></menu-bar>
@@ -49,9 +74,10 @@
 
 <script>
     import ClockTimer from '../clocktimer.js';
+    import ElButton from './el-button.vue';
     import ElComments from './el-comments.vue';
     import ElHint from './el-hint.vue';
-    import ElNotice from './el-notice.vue';
+    import ElMessage from './el-message.vue';
     import ElQuestion from './el-question.vue';
     import ImageViewer from './image-viewer.vue';
     import MenuBar from './menu-bar.vue';
@@ -62,9 +88,10 @@
 
     export default {
         components : {
+            ElButton,
             ElComments,
             ElHint,
-            ElNotice,
+            ElMessage,
             ElQuestion,
             ImageViewer,
             MenuBar
@@ -82,6 +109,7 @@
 
         data() {
             return {
+                confirmExit : false,
                 isViewerReady : false,
                 startTime : null,
                 time : null,
@@ -96,6 +124,11 @@
                 this.$refs.viewer.hide();
                 await timeout(1000);
                 this.$store.commit('screen', 'overview');
+            },
+
+            exit() {
+                this.confirmExit = false;
+                this.courseDone();
             },
 
             nextStep() {

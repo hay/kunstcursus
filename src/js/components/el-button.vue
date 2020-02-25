@@ -1,7 +1,7 @@
 <template>
     <button class="el-button"
             v-bind:disabled="disabled"
-            v-bind:class="'el-button--' + type"
+            v-bind:class="classes"
             v-on:click="click">
 
         <img v-if="type === 'icon'"
@@ -16,6 +16,16 @@
 <script>
     export default {
         computed : {
+            classes() {
+                const classes = ['el-button--' + this.type];
+
+                if (this.align) {
+                    classes.push('el-button--' + this.align);
+                }
+
+                return classes;
+            },
+
             type() {
                 return this.icon && this.text ? 'icon' : 'text';
             }
@@ -28,6 +38,10 @@
         },
 
         props : {
+            align : {
+                type : String
+            },
+
             disabled : {
                 type : Boolean,
                 default : false
