@@ -1,7 +1,6 @@
 <template>
-    <el-message
-        v-bind:visible="visible"
-        v-bind:text="text">
+    <el-message v-bind:visible="visible"
+                v-bind:text="text">
         <div class="el-message__input">
             <textarea
                 class="el-message__form"
@@ -16,7 +15,7 @@
                      alt="Verstuur" />
             </button>
         </div>
-    </div>
+    </el-message>
 </template>
 
 <script>
@@ -27,6 +26,8 @@
         components : {
             ElMessage
         },
+
+        extends : ElMessage,
 
         computed : {
             buttonDisabled() {
@@ -54,17 +55,6 @@
                 if (!this.buttonDisabled) {
                     this.$emit('submit');
                 }
-            }
-        },
-
-        props : {
-            text : {
-                type : String
-            },
-
-            visible : {
-                default : true,
-                type : Boolean
             }
         }
     }

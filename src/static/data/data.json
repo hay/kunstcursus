@@ -118,7 +118,7 @@
     ],
     "321-bridge-v2": [
         {
-            "action": "message",
+            "action": "notice",
             "step": 1,
             "steplabel": "Bekijk",
             "text": "Het is tijd om een kunstwerk écht goed tot je te nemen. Je krijgt een minuut de tijd. Zodra je op OK klikt begin je.",
@@ -136,7 +136,7 @@
             "meta": 60
         },
         {
-            "action": "message",
+            "action": "notice",
             "step": 1,
             "steplabel": "Bekijk",
             "text": "Wat vond je ervan? Eén minuut is nog helemaal niet zo lang, hé. Je krijgt nu drie korte vragen. Je antwoorden kan je steeds in het tekstveld invullen en met de knop versturen. Denk eraan: er zijn geen foute antwoorden. Het gaat namelijk over jouw interpretatie van het werk.",
@@ -172,7 +172,7 @@
             "meta": null
         },
         {
-            "action": "message",
+            "action": "notice",
             "step": 5,
             "steplabel": "Afsluiting",
             "text": "Zo, wat vond je ervan? Heeft deze opdracht je anders naar het kunstwerk laten kijken?",
@@ -183,7 +183,7 @@
     ],
     "step-inside-v2": [
         {
-            "action": "message",
+            "action": "notice",
             "step": 1,
             "steplabel": "Bekijk",
             "text": "Bij deze opdracht gaan we ons inleven in dit portret. Neem weer de tijd om het werk goed te bestuderen voordat we aan de slag gaan met de oefening.",
@@ -233,7 +233,7 @@
             "steplabel": "Antwoorden",
             "text": "Benieuwd wat andere cursisten dachten? Hier lees je hun antwoorden.",
             "audio": "stepin_05",
-            "button": null,
+            "button": "Ga verder",
             "meta": null
         },
         {
@@ -246,7 +246,7 @@
             "meta": null
         },
         {
-            "action": "message",
+            "action": "notice",
             "step": 7,
             "steplabel": "Einde",
             "text": "Dat was het. Klik op 'Klaar' om terug te gaan naar het overzicht.",

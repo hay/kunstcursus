@@ -36,7 +36,7 @@ export class Store {
                 },
 
                 courseDone(state, getters) {
-                    return state.stepIndex === (getters.courseData.length - 1);
+                    return state.stepIndex === (getters.courseData.length);
                 },
 
                 maxStep(state, getters) {
@@ -50,7 +50,8 @@ export class Store {
                 },
 
                 step(state, getters) {
-                    return getters.courseData[state.stepIndex];
+                    const step = getters.courseData[state.stepIndex];
+                    return step === undefined ? 0 : step;
                 }
             },
 
@@ -75,6 +76,11 @@ export class Store {
 
                 skipIntro(state) {
                     state.skipIntro = true;
+                },
+
+                // Purely a debug thing
+                stepIndex(state, index) {
+                    state.stepIndex = parseInt(index);
                 },
 
                 userName(state, name) {

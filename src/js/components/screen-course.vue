@@ -27,15 +27,15 @@
 
             <el-comments
                 v-bind:button="step.button"
-                v-bind:title="step.text"
+                v-bind:text="step.text"
                 v-on:click="nextStep"
                 v-bind:visible="step.action === 'comments'"></el-comments>
 
-            <el-message
-                v-bind:visible="step.action === 'message'"
+            <el-notice
+                v-bind:visible="step.action === 'notice'"
                 v-bind:text="step.text"
                 v-bind:button="step.button"
-                v-on:click="nextStep"></el-message>
+                v-on:click="nextStep"></el-notice>
         </div>
 
         <div class="screen__fixed">
@@ -51,7 +51,7 @@
     import ClockTimer from '../clocktimer.js';
     import ElComments from './el-comments.vue';
     import ElHint from './el-hint.vue';
-    import ElMessage from './el-message.vue';
+    import ElNotice from './el-notice.vue';
     import ElQuestion from './el-question.vue';
     import ImageViewer from './image-viewer.vue';
     import MenuBar from './menu-bar.vue';
@@ -64,7 +64,7 @@
         components : {
             ElComments,
             ElHint,
-            ElMessage,
+            ElNotice,
             ElQuestion,
             ImageViewer,
             MenuBar
@@ -91,19 +91,11 @@
         },
 
         methods : {
-            back() {
-                this.$store.commit('screen', 'overview');
-            },
-
             async courseDone() {
                 this.viewerShown = false;
                 this.$refs.viewer.hide();
-                this.questionsShown = false;
-                this.courseReady = true;
-
-                // FIXME
                 await timeout(1000);
-                this.back();
+                this.$store.commit('screen', 'overview');
             },
 
             nextStep() {
@@ -167,11 +159,15 @@
 
         watch : {
             step() {
-                this.$refs.question.clear();
-                this.playSound();
+                if (this.$store.getters.courseDone) {
+                    this.courseDone();
+                } else {
+                    this.$refs.question.clear();
+                    this.playSound();
 
-                if (this.step.action === 'study') {
-                    this.showStudyViewer();
+                    if (this.step.action === 'study') {
+                        this.showStudyViewer();
+                    }
                 }
             }
         }
