@@ -123,6 +123,7 @@
                 this.viewerShown = false;
                 this.$refs.viewer.hide();
                 await timeout(1000);
+                this.$store.commit('courseDone');
                 this.$store.commit('screen', 'overview');
             },
 

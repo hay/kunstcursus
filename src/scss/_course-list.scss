@@ -11,6 +11,10 @@
         width: 100%;
     }
 
+    &__item[disabled] {
+        background: $c-2;
+    }
+
     &__itemheader {
         display: flex;
         width: 100%;
@@ -33,13 +37,5 @@
     &__info {
         margin-top: 1rem;
         @include child-margins(1rem);
-    }
-
-    &__info button {
-        @include text-button;
-    }
-
-    button {
-        text-decoration: underline;
     }
 }

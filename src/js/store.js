@@ -13,6 +13,7 @@ export class Store {
             return {
                 courseIndex: null,
                 courses : model.getCourses(),
+                lastCourse : 0,
                 messages : model.getMessages(),
                 muted : false,
                 screen : null,
@@ -26,6 +27,10 @@ export class Store {
             state : getInitialState(),
 
             getters : {
+                allDone(state) {
+                    return state.lastCourse >= state.courses.length;
+                },
+
                 course(state) {
                     return state.courses[state.courseIndex];
                 },
@@ -55,9 +60,18 @@ export class Store {
             },
 
             mutations : {
+                courseDone(state) {
+                    state.lastCourse = state.lastCourse + 1;
+                },
+
                 courseIndex(state, courseIndex) {
                     state.stepIndex = 0;
                     state.courseIndex = courseIndex;
+                },
+
+                // Another debug thing
+                lastCourse(state, course) {
+                    state.lastCourse = course;
                 },
 
                 muted(state) {

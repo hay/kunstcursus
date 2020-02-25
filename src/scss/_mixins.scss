@@ -19,10 +19,11 @@
     color: white;
     padding: $padding;
     border-radius: $padding;
+    border: 1px solid white;
     transition: 300ms;
     min-width: 10rem;
 
-    [disabled] {
+    &[disabled] {
         background: $c-2;
     }
 }
