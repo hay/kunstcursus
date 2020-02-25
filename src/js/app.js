@@ -1,9 +1,9 @@
 import 'regenerator-runtime/runtime';
 import Vue from 'vue';
 import App from './components/app.vue';
-import { AUDIO_FILES } from './const.js';
 import { parseHash } from './router.js';
-import { SoundManager } from './sound-manager.js';
+
+import Sounds from './sounds.js';
 import { Store } from './store.js';
 
 (async function() {
@@ -16,8 +16,8 @@ import { Store } from './store.js';
         components : { App },
 
         computed : {
-            soundPlaying() {
-                return this.$store.state.soundPlaying;
+            muted() {
+                return this.$store.state.muted;
             }
         },
 
@@ -31,18 +31,8 @@ import { Store } from './store.js';
             parseHash : parseHash,
 
             setupSound() {
-                let soundFiles = {};
-
-                AUDIO_FILES.forEach((id) => {
-                    soundFiles[id] = `audio/${id}.mp3`;
-                });
-
-                soundManager = new SoundManager({
-                    loop : false,
-                    muted : this.$store.state.muted,
-                    players : soundFiles,
-                    playFromStart : true,
-                    single : true
+                Vue.prototype.$sounds = new Sounds({
+                    muted : this.$store.state.muted
                 });
             }
         },
@@ -58,16 +48,8 @@ import { Store } from './store.js';
         store : store.getStore(),
 
         watch : {
-            soundPlaying(newSound) {
-                if (newSound === null) {
-                    soundManager.pause();
-                } else {
-                    if (soundManager.hasPlayer(newSound)) {
-                        soundManager.play(newSound);
-                    } else {
-                        console.log('Sound does not exist', newSound);
-                    }
-                }
+            muted() {
+                this.$sounds.setMuted(this.$store.state.muted);
             }
         }
     });

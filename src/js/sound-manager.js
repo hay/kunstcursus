@@ -68,6 +68,8 @@ export class SoundManager {
         }
 
         this.players[id].play();
+
+        return this.players[id];
     }
 
     set(name, val) {

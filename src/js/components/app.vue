@@ -25,6 +25,13 @@
             screen() {
                 return this.$store.state.screen;
             }
+        },
+
+        watch : {
+            screen() {
+                // Pause audio when changing screens
+                this.$sounds.pause();
+            }
         }
     }
 </script>

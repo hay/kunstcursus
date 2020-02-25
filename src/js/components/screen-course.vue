@@ -137,7 +137,7 @@
 
             playSound() {
                 if (this.step.audio) {
-                    this.$store.commit('playSound', this.step.audio);
+                    this.$sounds.play(this.step.audio);
                 }
             },
 

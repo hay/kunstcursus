@@ -41,6 +41,12 @@
         },
 
         mounted() {
+            const sound = this.$sounds.play('intro_01');
+
+            sound.player.addEventListener('ended', () => {
+                this.skip();
+            });
+
             this.nextAsset();
         }
     }

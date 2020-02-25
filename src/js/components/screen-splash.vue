@@ -42,7 +42,6 @@
             start() {
                 this.$store.commit('userName', this.name);
                 this.$store.commit('screen', 'slideshow');
-                this.$store.commit('playSound', 'intro_01');
             }
         }
     }

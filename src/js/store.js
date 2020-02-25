@@ -17,7 +17,6 @@ export class Store {
                 muted : false,
                 screen : null,
                 skipIntro : false,
-                soundPlaying : null,
                 stepIndex : null,
                 userName : null
             };
@@ -65,12 +64,7 @@ export class Store {
                     state.muted = true;
                 },
 
-                playSound(state, sound) {
-                    state.soundPlaying = sound;
-                },
-
                 screen(state, id) {
-                    state.soundPlaying = null;
                     state.screen = id;
                 },
 
