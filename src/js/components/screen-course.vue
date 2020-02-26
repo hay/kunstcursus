@@ -148,6 +148,7 @@
             },
 
             exit() {
+                this.$store.commit('log', `action:exit`);
                 this.confirmExit = false;
                 this.courseDone();
             },

@@ -18,6 +18,7 @@ export const AUDIO_FILES = [
     'tinder_04'
 ];
 export const DEFAULT_SCREEN = 'splash';
+export const LOG_API = 'https://projects.haykranen.nl/kunstcursus/api/log.php';
 export const MIN_QUESTION_LENGTH = 5;
 export const MIN_ZOOM_RATIO = 0.25;
 export const MAX_ZOOM_RATIO = 1.5;
