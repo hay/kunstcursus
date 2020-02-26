@@ -6,7 +6,7 @@
         },
         {
             "key": "intro",
-            "value": "<p>Daag jezelf met deze cursus uit om op een andere manier naar kunst te kijken. Leer meer over je eigen blik en ontdek de collectie van Museum Boijmans van Beuningen op een verrassende manier.</p>\n<p>Vul je naam in en ontmoet Joost, je art mediator.</p>"
+            "value": "<p>Daag jezelf met deze cursus uit om op een andere manier naar kunst te kijken. Leer meer over je eigen blik en ontdek de collectie van Museum Boijmans Van Beuningen op een verrassende manier.</p>\n<p>Vul je naam in en ontmoet Joost, je art mediator.</p>"
         },
         {
             "key": "btn_start",
@@ -18,7 +18,7 @@
         },
         {
             "key": "credits",
-            "value": "Dit prototype is gemaakt door Brigitte Jansen en Hay Kranen"
+            "value": "Dit prototype is gemaakt door Brigitte Jansen en Hay Kranen in samenwerking met Museum Boijmans Van Beuningen."
         },
         {
             "key": "course_overview",
@@ -30,7 +30,7 @@
         },
         {
             "key": "intro_movie",
-            "value": "Hallo, ik ben Joost, je Art mediator. Tof dat je meedoet aan deze cursus. Samen gaan we aan de slag met een nieuwe manier om naar kunst te kijken. We laten de zaalteksten achterwege en gaan samen onderzoeken wat we over het kunstwerk kunnen ontdekken.\nWe gaan een aantal van de werken bekijken uit de enorme collectie van Museum Boijmans van Beuningen. Ik ben benieuwd wat je van die werken vindt. Tijdens de cursus daag ik je in verschillende opdrachten uit langer naar de kunstwerken te kijken. Zo ga je ontdekken wat je van de werken vindt, want het gaat allemaal om jouw interpretatie, er is geen goed of fout. We kijken ook wat andere mensen van het kunstwerk vonden. En als je deze cursus hebt gedaan, kun je dit ook zelf doen, in het museum."
+            "value": "Hallo, ik ben Joost, je Art mediator. Tof dat je meedoet aan deze cursus. Samen gaan we aan de slag met een nieuwe manier om naar kunst te kijken. We laten de zaalteksten achterwege en gaan samen onderzoeken wat we over het kunstwerk kunnen ontdekken.\nWe gaan een aantal van de werken bekijken uit de enorme collectie van Museum Boijmans Van Beuningen. Ik ben benieuwd wat je van die werken vindt. Tijdens de cursus daag ik je in verschillende opdrachten uit langer naar de kunstwerken te kijken. Zo ga je ontdekken wat je van de werken vindt, want het gaat allemaal om jouw interpretatie, er is geen goed of fout. We kijken ook wat andere mensen van het kunstwerk vonden. En als je deze cursus hebt gedaan, kun je dit ook zelf doen, in het museum."
         },
         {
             "key": "profile_intro",
@@ -40,10 +40,17 @@
     "courses": [
         {
             "course": "questions",
+            "datasheet": "art-tinder",
+            "title": "Art Tinder",
+            "description": null,
+            "artwork": 10
+        },
+        {
+            "course": "questions",
             "datasheet": "321-bridge",
             "title": "3-2-1 Bridge",
             "description": null,
-            "artwork": 1
+            "artwork": 5
         },
         {
             "course": "questions",
@@ -51,13 +58,6 @@
             "title": "Step Inside",
             "description": null,
             "artwork": 4
-        },
-        {
-            "course": "questions",
-            "datasheet": "art-tinder",
-            "title": "Art Tinder",
-            "description": null,
-            "artwork": "placeholder"
         },
         {
             "course": "questions",
@@ -71,167 +71,10 @@
             "datasheet": "321-bridge",
             "title": "3-2-1 Bridge",
             "description": null,
-            "artwork": 5
-        }
-    ],
-    "321-bridge": [
-        {
-            "action": "notice",
-            "step": 1,
-            "steplabel": "Bekijk",
-            "text": "Het is tijd om een kunstwerk écht goed tot je te nemen. Je krijgt een minuut de tijd. Zodra je op OK klikt begin je.",
-            "audio": "bridge_01",
-            "button": "OK",
-            "meta": null
-        },
-        {
-            "action": "study",
-            "step": 1,
-            "steplabel": "Bekijk",
-            "text": null,
-            "audio": null,
-            "button": null,
-            "meta": 60
-        },
-        {
-            "action": "resetcenter",
-            "step": 1,
-            "steplabel": "Bekijk",
-            "text": null,
-            "audio": null,
-            "button": null,
-            "meta": null
-        },
-        {
-            "action": "notice",
-            "step": 1,
-            "steplabel": "Bekijk",
-            "text": "Wat vond je ervan? Eén minuut is nog helemaal niet zo lang, hé. Je krijgt nu drie korte vragen. Je antwoorden kan je steeds in het tekstveld invullen en met de knop versturen. Denk eraan: er zijn geen foute antwoorden. Het gaat namelijk over jouw interpretatie van het werk.",
-            "audio": "bridge_02",
-            "button": "Bekijk vragen",
-            "meta": null
-        },
-        {
-            "action": "question",
-            "step": 2,
-            "steplabel": "Drie woorden",
-            "text": "Geef drie woorden die in je opkomen.",
-            "audio": "bridge_03",
-            "button": null,
-            "meta": null
-        },
-        {
-            "action": "question",
-            "step": 3,
-            "steplabel": "Twee vragen",
-            "text": "Welke twee vragen komen in je op?",
-            "audio": "bridge_04",
-            "button": null,
-            "meta": null
-        },
-        {
-            "action": "question",
-            "step": 4,
-            "steplabel": "Een situatie",
-            "text": "Omschrijf een object of situatie uit jouw leven waar dit werk je aan doet denken.",
-            "audio": "bridge_05",
-            "button": null,
-            "meta": null
-        },
-        {
-            "action": "notice",
-            "step": 5,
-            "steplabel": "Afsluiting",
-            "text": "Zo, wat vond je ervan? Heeft deze opdracht je anders naar het kunstwerk laten kijken?",
-            "audio": "bridge_06",
-            "button": "Terug naar overzicht",
-            "meta": null
-        }
-    ],
-    "step-inside": [
-        {
-            "action": "notice",
-            "step": 1,
-            "steplabel": "Bekijk",
-            "text": "Bij deze opdracht gaan we ons inleven in dit portret. Neem weer de tijd om het werk goed te bestuderen voordat we aan de slag gaan met de oefening.",
-            "audio": "stepin_01",
-            "button": "Start",
-            "meta": null
-        },
-        {
-            "action": "study",
-            "step": 1,
-            "steplabel": "Bekijk",
-            "text": null,
-            "audio": null,
-            "button": null,
-            "meta": 60
-        },
-        {
-            "action": "question",
-            "step": 2,
-            "steplabel": "Horen",
-            "text": "Leef je in. Wat hoort deze persoon? En kun je uitleggen waarom je dat denkt?",
-            "audio": "stepin_02",
-            "button": null,
-            "meta": null
-        },
-        {
-            "action": "question",
-            "step": 3,
-            "steplabel": "Zien",
-            "text": "En wat ziet deze persoon?",
-            "audio": "stepin_03",
-            "button": null,
-            "meta": null
-        },
-        {
-            "action": "question",
-            "step": 4,
-            "steplabel": "Ruiken",
-            "text": "Wat zal deze persoon ruiken en waar zie je dit aan?",
-            "audio": "stepin_04",
-            "button": null,
-            "meta": null
-        },
-        {
-            "action": "comments",
-            "step": 5,
-            "steplabel": "Antwoorden",
-            "text": "Benieuwd wat andere cursisten dachten? Hier lees je hun antwoorden.",
-            "audio": "stepin_05",
-            "button": "Ga verder",
-            "meta": null
-        },
-        {
-            "action": "question",
-            "step": 6,
-            "steplabel": "Bordje",
-            "text": "Je hebt het kunstwerk nu uitgebreid bekeken en je ingeleefd in het portret. Bedenk nu een titel die omschrijft wat het werk voor jou betekent en schrijf hier een bordje bij.",
-            "audio": "stepin_06",
-            "button": null,
-            "meta": null
-        },
-        {
-            "action": "notice",
-            "step": 7,
-            "steplabel": "Einde",
-            "text": "Dat was het. Klik op 'Klaar' om terug te gaan naar het overzicht.",
-            "audio": null,
-            "button": "Klaar",
-            "meta": null
+            "artwork": 1
         }
     ],
     "art-tinder": [
-        {
-            "action": "showviewer",
-            "step": 1,
-            "steplabel": "Bekijk",
-            "text": null,
-            "audio": null,
-            "button": null,
-            "meta": null
-        },
         {
             "action": "notice",
             "step": 1,
@@ -239,6 +82,15 @@
             "text": "Yes, we gaan kunst kijken! Het schijnt dat we gemiddeld maar 8 seconden naar een kunstwerk in het museum kijken. Kan jij net zo vliegensvlug de volgende kunstwerken beoordelen? Geef met de knoppen onder het kunstwerk aan wat je ervan vindt.",
             "audio": "tinder_01",
             "button": "Start",
+            "meta": null
+        },
+        {
+            "action": "showviewer",
+            "step": 1,
+            "steplabel": "Bekijk",
+            "text": null,
+            "audio": null,
+            "button": null,
             "meta": null
         },
         {
@@ -323,9 +175,38 @@
             "meta": ">60"
         },
         {
-            "action": "showviewer",
+            "action": "notice",
             "step": 3,
             "steplabel": "Klaar",
+            "text": "Heb je de smaak te pakken? Ga snel door naar de volgende opdracht.",
+            "audio": "tinder_04",
+            "button": "Afronden",
+            "meta": null
+        }
+    ],
+    "321-bridge": [
+        {
+            "action": "notice",
+            "step": 1,
+            "steplabel": "Bekijk",
+            "text": "Het is tijd om een kunstwerk écht goed tot je te nemen. Je krijgt een minuut de tijd. Zodra je op OK klikt begin je.",
+            "audio": "bridge_01",
+            "button": "OK",
+            "meta": null
+        },
+        {
+            "action": "study",
+            "step": 1,
+            "steplabel": "Bekijk",
+            "text": null,
+            "audio": null,
+            "button": null,
+            "meta": 60
+        },
+        {
+            "action": "resetcenter",
+            "step": 1,
+            "steplabel": "Bekijk",
             "text": null,
             "audio": null,
             "button": null,
@@ -333,11 +214,121 @@
         },
         {
             "action": "notice",
+            "step": 1,
+            "steplabel": "Bekijk",
+            "text": "Wat vond je ervan? Eén minuut is nog helemaal niet zo lang, hé. Je krijgt nu drie korte vragen. Je antwoorden kan je steeds in het tekstveld invullen en met de knop versturen. Denk eraan: er zijn geen foute antwoorden. Het gaat namelijk over jouw interpretatie van het werk.",
+            "audio": "bridge_02",
+            "button": "Bekijk vragen",
+            "meta": null
+        },
+        {
+            "action": "question",
+            "step": 2,
+            "steplabel": "Drie woorden",
+            "text": "Geef drie woorden die in je opkomen.",
+            "audio": "bridge_03",
+            "button": null,
+            "meta": null
+        },
+        {
+            "action": "question",
             "step": 3,
-            "steplabel": "Klaar",
-            "text": "Heb je de smaak te pakken? Ga snel door naar de volgende opdracht.",
-            "audio": "tinder_04",
+            "steplabel": "Twee vragen",
+            "text": "Welke twee vragen komen in je op?",
+            "audio": "bridge_04",
+            "button": null,
+            "meta": null
+        },
+        {
+            "action": "question",
+            "step": 4,
+            "steplabel": "Een situatie",
+            "text": "Omschrijf een object of situatie uit jouw leven waar dit werk je aan doet denken.",
+            "audio": "bridge_05",
+            "button": null,
+            "meta": null
+        },
+        {
+            "action": "notice",
+            "step": 5,
+            "steplabel": "Afsluiting",
+            "text": "Zo, wat vond je ervan? Heeft deze opdracht je anders naar het kunstwerk laten kijken?",
+            "audio": "bridge_06",
+            "button": "Afronden",
+            "meta": null
+        }
+    ],
+    "step-inside": [
+        {
+            "action": "notice",
+            "step": 1,
+            "steplabel": "Bekijk",
+            "text": "Bij deze opdracht gaan we ons inleven in dit portret. Neem weer de tijd om het werk goed te bestuderen voordat we aan de slag gaan met de oefening.",
+            "audio": "stepin_01",
+            "button": "Start",
+            "meta": null
+        },
+        {
+            "action": "study",
+            "step": 1,
+            "steplabel": "Bekijk",
+            "text": null,
+            "audio": null,
+            "button": null,
+            "meta": 60
+        },
+        {
+            "action": "question",
+            "step": 2,
+            "steplabel": "Horen",
+            "text": "Leef je in. Wat hoort deze persoon? En kun je uitleggen waarom je dat denkt?",
+            "audio": "stepin_02",
+            "button": null,
+            "meta": null
+        },
+        {
+            "action": "question",
+            "step": 3,
+            "steplabel": "Zien",
+            "text": "En wat ziet deze persoon?",
+            "audio": "stepin_03",
+            "button": null,
+            "meta": null
+        },
+        {
+            "action": "question",
+            "step": 4,
+            "steplabel": "Ruiken",
+            "text": "Wat zal deze persoon ruiken en waar zie je dit aan?",
+            "audio": "stepin_04",
+            "button": null,
+            "meta": null
+        },
+        {
+            "action": "comments",
+            "step": 5,
+            "steplabel": "Antwoorden",
+            "text": "Benieuwd wat andere cursisten dachten? Hier lees je hun antwoorden.",
+            "audio": "stepin_05",
             "button": "Ga verder",
+            "meta": null
+        },
+        {
+            "action": "question",
+            "step": 6,
+            "steplabel": "Bordje",
+            "text": "Je hebt het kunstwerk nu uitgebreid bekeken en je ingeleefd in het portret. Bedenk nu een titel die omschrijft wat het werk voor jou betekent en schrijf hier een bordje bij.",
+            "audio": "stepin_06",
+            "button": null,
+            "meta": null
+        },
+        {
+            "action": "notice",
+            "step": 7,
+            "steplabel": "Einde",
+            "text": "Dat was het. Klik op 'Afronden' om terug te gaan naar het overzicht.",
+            "audio": null,
+            "button": "Afronden",
             "meta": null
         }
     ]
