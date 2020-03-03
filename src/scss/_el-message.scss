@@ -3,7 +3,7 @@
     display: flex;
     width: calc(100% - #{$padding * 2});
     max-width: $max-width;
-    padding: $padding * 2;
+    padding: $padding;
     background: rgba($c-2, 0.8);
     bottom: 0;
     display: none;
@@ -34,6 +34,7 @@
 
     &__input {
         display: flex;
+        align-items: center;
         width: 100%;
     }
 
@@ -43,7 +44,7 @@
     }
 
     &__menu > * {
-        margin: $padding * 2;
+        margin: 0 $padding * 2;
     }
 
     &__form {
