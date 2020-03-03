@@ -3,13 +3,25 @@
         <div class="screen__flex">
             <image-viewer
                 ref="viewer"
+                v-if="!['imagespotter', 'spotted'].includes(step.action)"
                 v-bind:disableZoom="disableZoom"
                 v-bind:key="artwork"
                 v-on:ready="viewerReady"
                 ></image-viewer>
 
+            <image-spotter
+                v-if="step.action === 'imagespotter'"
+                ref="spotter"
+                v-on:spot="questionVisible = true"></image-spotter>
+
+            <image-spotter
+                v-if="step.action === 'spotted'"
+                ref="spotted"
+                v-bind:spots="protoSpots"
+                v-on:spot="showNotice"></image-spotter>
+
             <el-hint
-                v-bind:visible="viewerShown"
+                v-bind:visible="stepsVisible"
                 align="left"
                 v-bind:prefix="step.step + '/' + maxStep"
                 v-bind:text="step.steplabel"></el-hint>
@@ -24,7 +36,7 @@
                 ref="question"
                 class="screen-course__bottom"
                 v-bind:text="step.text"
-                v-bind:visible="step.action === 'question'"
+                v-bind:visible="questionVisible"
                 v-on:submit="nextStep"></el-question>
 
             <el-comments
@@ -33,6 +45,23 @@
                 v-bind:text="step.text"
                 v-on:click="nextStep"
                 v-bind:visible="step.action === 'comments'"></el-comments>
+
+            <!-- This is used for ten times two and clicking on spots -->
+            <el-message
+                class="screen-course__bottom"
+                v-bind:visible="!!hasNotice"
+                v-bind:text="hasNotice ? hasNotice : ''">
+
+                <menu class="el-message__menu">
+                    <el-button
+                        text="OK"
+                        v-on:click="hasNotice = false"></el-button>
+
+                    <el-button
+                        text="Sluit les af"
+                        v-on:click="nextStep"></el-button>
+                </menu>
+            </el-message>
 
             <el-message
                 class="screen-course__bottom"
@@ -97,9 +126,10 @@
     import ElHint from './el-hint.vue';
     import ElMessage from './el-message.vue';
     import ElQuestion from './el-question.vue';
+    import ImageSpotter from './image-spotter.vue';
     import ImageViewer from './image-viewer.vue';
     import MenuBar from './menu-bar.vue';
-    import { PAINTING_VIEW_TIME } from '../const.js';
+    import { COURSE_ACTIONS, PAINTING_VIEW_TIME, PROTO_SPOTS } from '../const.js';
     import { timeout } from '../util.js';
 
     let timer;
@@ -111,6 +141,7 @@
             ElHint,
             ElMessage,
             ElQuestion,
+            ImageSpotter,
             ImageViewer,
             MenuBar
         },
@@ -133,8 +164,12 @@
             return {
                 confirmExit : false,
                 disableZoom : false,
+                hasNotice : false,
                 isViewerReady : false,
+                protoSpots : PROTO_SPOTS,
+                questionVisible : false,
                 showTimer : false,
+                stepsVisible : false,
                 time : null,
                 timer : null,
                 viewerShown : false
@@ -157,6 +192,7 @@
             },
 
             nextStep() {
+                this.questionVisible = false;
                 this.$store.dispatch('nextStep');
             },
 
@@ -181,6 +217,10 @@
                         this.showViewer();
                     }
 
+                    if (this.step.action === 'question') {
+                        this.questionVisible = true;
+                    }
+
                     if (this.step.action === 'resetcenter') {
                         this.$refs.viewer.reset();
                         this.nextStep();
@@ -196,6 +236,29 @@
                         this.nextStep();
                     }
 
+                    if (this.step.action === 'imagespotter') {
+                        // FIXME
+                        await timeout(250);
+                        this.$refs.spotter.reset();
+                    }
+
+                    if (this.step.action === 'showsteps') {
+                        this.stepsVisible = true;
+                        this.nextStep();
+                    }
+
+                    if (this.step.action === 'hidesteps') {
+                        this.stepsVisible = false;
+                        this.nextStep();
+                    }
+
+                    // If the action is not a valid action, just skip
+                    // to the next step and warn
+                    if (!COURSE_ACTIONS.includes(this.step.action)) {
+                        console.error(`Invalid action: ${this.step.action}`);
+                        this.nextStep();
+                    }
+
                     this.$refs.question.clear();
                     this.playSound();
                 }
@@ -205,6 +268,10 @@
                 if (this.step.audio) {
                     this.$sounds.play(this.step.audio);
                 }
+            },
+
+            showNotice(msg) {
+                this.hasNotice = msg;
             },
 
             showViewer() {

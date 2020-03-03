@@ -1,0 +1,25 @@
+.image-spotter {
+    @include wh(100%);
+    position: relative;
+
+    &__canvas {
+        @include transform-center;
+        position: relative;
+    }
+
+    &__spot {
+        @include wh(2.5rem);
+        border: 1px solid white;
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 2.5rem;
+        position: absolute;
+        margin-left: -1.25rem;
+        margin-top: -1.25rem;
+        opacity: 0;
+        transition: 300ms;
+    }
+
+    &__spot[visible] {
+        opacity: 1;
+    }
+}

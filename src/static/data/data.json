@@ -39,37 +39,32 @@
     ],
     "courses": [
         {
-            "course": "questions",
-            "datasheet": "art-tinder",
             "title": "Art Tinder",
+            "datasheet": "art-tinder",
             "description": null,
             "artwork": 10
         },
         {
-            "course": "questions",
-            "datasheet": "321-bridge",
             "title": "3-2-1 Bridge",
+            "datasheet": "321-bridge",
             "description": null,
             "artwork": 5
         },
         {
-            "course": "questions",
-            "datasheet": "step-inside",
             "title": "Step Inside",
+            "datasheet": "step-inside",
             "description": null,
             "artwork": 4
         },
         {
-            "course": "questions",
-            "datasheet": "321-bridge",
-            "title": "3-2-1 Bridge",
+            "title": "Ten Times Two",
+            "datasheet": "ten-times-two",
             "description": null,
-            "artwork": 3
+            "artwork": 2
         },
         {
-            "course": "questions",
-            "datasheet": "321-bridge",
             "title": "3-2-1 Bridge",
+            "datasheet": "321-bridge",
             "description": null,
             "artwork": 1
         }
@@ -195,6 +190,15 @@
             "meta": null
         },
         {
+            "action": "showsteps",
+            "step": null,
+            "steplabel": null,
+            "text": null,
+            "audio": null,
+            "button": null,
+            "meta": null
+        },
+        {
             "action": "study",
             "step": 1,
             "steplabel": "Bekijk",
@@ -249,6 +253,15 @@
             "meta": null
         },
         {
+            "action": "hidesteps",
+            "step": null,
+            "steplabel": null,
+            "text": null,
+            "audio": null,
+            "button": null,
+            "meta": null
+        },
+        {
             "action": "notice",
             "step": 5,
             "steplabel": "Afsluiting",
@@ -266,6 +279,15 @@
             "text": "Bij deze opdracht gaan we ons inleven in dit portret. Neem weer de tijd om het werk goed te bestuderen voordat we aan de slag gaan met de oefening.",
             "audio": "stepin_01",
             "button": "Start",
+            "meta": null
+        },
+        {
+            "action": "showsteps",
+            "step": null,
+            "steplabel": null,
+            "text": null,
+            "audio": null,
+            "button": null,
             "meta": null
         },
         {
@@ -323,10 +345,201 @@
             "meta": null
         },
         {
+            "action": "hidesteps",
+            "step": null,
+            "steplabel": null,
+            "text": null,
+            "audio": null,
+            "button": null,
+            "meta": null
+        },
+        {
             "action": "notice",
             "step": 7,
             "steplabel": "Einde",
             "text": "Dat was het. Klik op 'Afronden' om terug te gaan naar het overzicht.",
+            "audio": null,
+            "button": "Afronden",
+            "meta": null
+        }
+    ],
+    "ten-times-two": [
+        {
+            "action": "notice",
+            "step": null,
+            "steplabel": "Bekijk",
+            "text": "Net als bij de vorige opdracht nemen we weer de tijd om het werk te bekijken. Neem het werk goed tot je en over een minuut leg ik je uit wat we gaan doen.",
+            "audio": null,
+            "button": "Start",
+            "meta": null
+        },
+        {
+            "action": "study",
+            "step": null,
+            "steplabel": "Bekijk",
+            "text": null,
+            "audio": null,
+            "button": null,
+            "meta": 60
+        },
+        {
+            "action": "notice",
+            "step": null,
+            "steplabel": "Bekijk",
+            "text": "Heb je het pronkstuk goed bestudeerd? Dan zoomen we even uit en gaan we aan de slag. Benoem 10 dingen die je op het werk ziet. Klik eerst op een detail in het werk. En vul daarna in wat je daar ziet.",
+            "audio": null,
+            "button": "Aan de slag",
+            "meta": null
+        },
+        {
+            "action": "resetcenter",
+            "step": null,
+            "steplabel": null,
+            "text": null,
+            "audio": null,
+            "button": null,
+            "meta": null
+        },
+        {
+            "action": "disablezoom",
+            "step": null,
+            "steplabel": null,
+            "text": null,
+            "audio": null,
+            "button": null,
+            "meta": null
+        },
+        {
+            "action": "showsteps",
+            "step": null,
+            "steplabel": null,
+            "text": null,
+            "audio": null,
+            "button": null,
+            "meta": null
+        },
+        {
+            "action": "imagespotter",
+            "step": 1,
+            "steplabel": "Klik op een detail",
+            "text": "Wat zie je hier?",
+            "audio": null,
+            "button": null,
+            "meta": null
+        },
+        {
+            "action": "imagespotter",
+            "step": 2,
+            "steplabel": "Klik op een detail",
+            "text": "En wat zie je hier?",
+            "audio": null,
+            "button": null,
+            "meta": null
+        },
+        {
+            "action": "imagespotter",
+            "step": 3,
+            "steplabel": "Klik op een detail",
+            "text": "Wat heb je gevonden?",
+            "audio": null,
+            "button": null,
+            "meta": null
+        },
+        {
+            "action": "imagespotter",
+            "step": 4,
+            "steplabel": "Klik op een detail",
+            "text": "Wat is dit?",
+            "audio": null,
+            "button": null,
+            "meta": null
+        },
+        {
+            "action": "imagespotter",
+            "step": 5,
+            "steplabel": "Klik op een detail",
+            "text": "En wat is dit?",
+            "audio": null,
+            "button": null,
+            "meta": null
+        },
+        {
+            "action": "imagespotter",
+            "step": 6,
+            "steplabel": "Klik op een detail",
+            "text": "Hoe beschrijf je dit?",
+            "audio": null,
+            "button": null,
+            "meta": null
+        },
+        {
+            "action": "imagespotter",
+            "step": 7,
+            "steplabel": "Klik op een detail",
+            "text": "Hoe zou je dit beschrijven?",
+            "audio": null,
+            "button": null,
+            "meta": null
+        },
+        {
+            "action": "imagespotter",
+            "step": 8,
+            "steplabel": "Klik op een detail",
+            "text": "Beschrijf wat dit is.",
+            "audio": null,
+            "button": null,
+            "meta": null
+        },
+        {
+            "action": "imagespotter",
+            "step": 9,
+            "steplabel": "Klik op een detail",
+            "text": "Wat zie je hier?",
+            "audio": null,
+            "button": null,
+            "meta": null
+        },
+        {
+            "action": "imagespotter",
+            "step": 10,
+            "steplabel": "Klik op een detail",
+            "text": "En wat is dit?",
+            "audio": null,
+            "button": null,
+            "meta": null
+        },
+        {
+            "action": "hidesteps",
+            "step": null,
+            "steplabel": null,
+            "text": null,
+            "audio": null,
+            "button": null,
+            "meta": null
+        },
+        {
+            "action": "notice",
+            "step": null,
+            "steplabel": "Spot",
+            "text": "Heb je alles kunnen benoemen?  Zullen we eens kijken wat anderen zagen?",
+            "audio": null,
+            "button": "Toon anderen",
+            "meta": null
+        },
+        {
+            "action": "spotted",
+            "step": null,
+            "steplabel": null,
+            "text": null,
+            "audio": null,
+            "button": null,
+            "meta": null
+        },
+        {
+            "action": "notice",
+            "step": null,
+            "steplabel": "Einde",
+            "text": "Heb je dingen ontdekt die je eerder nog niet zag? In verschillende opdrachten kun je zien wat andere cursisten ontdekt hebben. Dit kan je helpen om met een nieuwe blik naar het werk te kijken. Want iedereen ziet weer wat anders.",
             "audio": null,
             "button": "Afronden",
             "meta": null
