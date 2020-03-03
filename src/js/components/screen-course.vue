@@ -193,6 +193,7 @@
 
             nextStep() {
                 this.questionVisible = false;
+                this.hasNotice = false;
                 this.$store.dispatch('nextStep');
             },
 

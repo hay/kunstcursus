@@ -2,9 +2,13 @@
     @include wh(100%);
     position: relative;
 
-    &__canvas {
+    &__wrapper {
         @include transform-center;
         position: relative;
+    }
+
+    &__image {
+        @include transform-center;
     }
 
     &__spot {
@@ -21,5 +25,10 @@
 
     &__spot[visible] {
         opacity: 1;
+        cursor: pointer;
+    }
+
+    &__spot[selected] {
+        background: rgba($c-1, 0.5);
     }
 }

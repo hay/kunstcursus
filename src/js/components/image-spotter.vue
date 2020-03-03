@@ -1,7 +1,8 @@
 <template>
     <div class="image-spotter"
          ref="canvas">
-        <div class="image-spotter__canvas">
+        <div class="image-spotter__wrapper"
+             ref="wrapper">
             <img class="image-spotter__image"
                  ref="img"
                  v-bind:src="src" />
@@ -15,6 +16,7 @@
                 <div v-for="spot in spots"
                      class="image-spotter__spot"
                      visible
+                     v-bind:selected="spot === spotSelected"
                      v-on:click="clickSpot(spot)"
                      v-bind:style="formatSpot(spot)"></div>
             </template>
@@ -32,6 +34,7 @@
 
         data() {
             return {
+                spotSelected : null,
                 spotStyle : {},
                 spotVisible : false,
                 src : ''
@@ -40,12 +43,14 @@
 
         methods : {
             clickSpot(spot) {
+                this.spotSelected = spot;
                 this.$emit('spot', spot.label);
             },
 
             fitImage() {
                 const img = this.$refs.img;
                 const canvas = this.$refs.canvas;
+                const wrapper = this.$refs.wrapper;
                 const canvasSize = canvas.getClientRects()[0];
                 const imgSize = img.getClientRects()[0];
 
@@ -56,6 +61,10 @@
 
                 img.width = imgSize.width * scaleFactor;
                 img.height = imgSize.height * scaleFactor;
+
+                // Fix the wrapper as well
+                wrapper.style.width = `${img.width}px`;
+                wrapper.style.height = `${img.height}px`;
             },
 
             formatSpot(spot) {
@@ -91,7 +100,7 @@
                     const y = (e.clientY - imgResized.top) / imgResized.height;
 
                     this.spotVisible = true;
-                    this.spotStyle = formatSpot({ x, y });
+                    this.spotStyle = this.formatSpot({ x, y });
                     this.$emit('spot');
                 });
             }
