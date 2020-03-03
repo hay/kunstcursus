@@ -81,12 +81,15 @@
                     inline : true,
                     minZoomRatio : this.minZoomRatio,
                     maxZoomRatio : 1.5,
+                    movable : !this.disableZoom,
                     navbar : false,
                     rotatable : false,
+                    scalable : !this.disableZoom,
                     title : false,
                     toggleOnDblclick : false,
                     toolbar : false,
-                    tooltip : false
+                    tooltip : false,
+                    zoomable : !this.disableZoom
                 });
             },
 
@@ -120,6 +123,13 @@
 
                 this.setupViewer();
             });
+        },
+
+        props : {
+            disableZoom : {
+                type : Boolean,
+                default : false
+            }
         }
     }
 </script>

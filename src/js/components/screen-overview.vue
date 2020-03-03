@@ -19,14 +19,15 @@
                 <li v-for="(course, index) in courses"
                     v-bind:disabled="index > lastCourse"
                     class="course-list__item">
-                    <header class="course-list__itemheader">
+                    <header class="course-list__itemheader"
+                            v-on:click="toggle(index)">
                         <h2 class="course-list__title">
                             <strong>Opdracht {{index + 1}}</strong>
                             <span>{{course.title}}</span>
                         </h2>
 
                         <menu class="course-list__status">
-                            <button v-on:click="toggle(index)">
+                            <button>
                                 <span v-if="index !== courseOpen">open</span>
                                 <span v-if="index === courseOpen">sluit</span>
                             </button>

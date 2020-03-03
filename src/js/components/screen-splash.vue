@@ -7,6 +7,12 @@
             <article class="screen-splash__text"
                      v-html="$msg('intro')"></article>
 
+            <div class="notice">
+                <img src="/static/img/icon-audio-white.svg"
+                     class="notice__icon" />
+                <p>Zet je geluid aan</p>
+            </div>
+
             <form class="screen-splash__form">
                 <input class="screen-splash__name"
                        type="text"

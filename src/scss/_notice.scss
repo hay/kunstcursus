@@ -1,0 +1,18 @@
+.notice {
+    background: $c-1;
+    border: 2px solid white;
+    color: white;
+    text-align: center;
+    border-radius: $padding;
+    padding: $padding;
+    margin: 0 auto #{$padding * 2} auto;
+    width: 100%;
+    max-width: $max-width;
+    text-transform: uppercase;
+    @include flex-center(row);
+
+    &__icon {
+        @include wh($menu-button-icon-size);
+        margin-right: 1rem;
+    }
+}

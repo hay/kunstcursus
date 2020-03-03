@@ -7,7 +7,8 @@
                 v-on:click="exit"></el-button>
         </div>
 
-        <div class="menu-bar__group">
+        <div class="menu-bar__group"
+             v-show="!disableZoom">
             <el-button
                 icon="plus"
                 text="Zoom in"
@@ -20,28 +21,43 @@
         </div>
 
         <div class="menu-bar__group">
-            <el-button
+            <!-- Disabled for now -->
+            <!-- el-button
                 icon="again"
                 text="Nogmaals"
-                v-on:click="again"></el-button>
+                v-on:click="again"></el-button> -->
 
-            <el-button
-                v-bind:icon="muteIcon"
-                text="Geluid uit / aan"
-                v-on:click="mute"></el-button>
+            <div class="menu-bar__audio">
+                <img src="/static/img/icon-no-audio.svg"
+                     alt="Geen geluid" />
+
+                <el-toggle
+                    v-bind:states="[true, false]"
+                    v-model="muted"></el-toggle>
+
+                <img src="/static/img/icon-audio.svg"
+                     alt="Wel geluid" />
+            </div>
         </div>
     </menu>
 </template>
 
 <script>
     import ElButton from './el-button.vue';
+    import ElToggle from './el-toggle.vue';
 
     export default {
-        components : { ElButton },
+        components : { ElButton, ElToggle },
 
         computed : {
             muteIcon() {
                 return this.$store.state.muted ? 'audio' : 'mute';
+            }
+        },
+
+        data() {
+            return {
+                muted : this.$store.state.muted
             }
         },
 
@@ -54,9 +70,6 @@
                 this.$emit('exit');
             },
 
-            mute() {
-                this.$store.commit('toggleMute');
-            },
 
             zoomIn() {
                 this.$emit('zoomin');
@@ -64,6 +77,19 @@
 
             zoomOut() {
                 this.$emit('zoomout');
+            }
+        },
+
+        props : {
+            disableZoom : {
+                type : Boolean,
+                default : false
+            }
+        },
+
+        watch : {
+            muted() {
+                this.$store.commit('muted', this.muted);
             }
         }
     }

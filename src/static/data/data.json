@@ -76,6 +76,15 @@
     ],
     "art-tinder": [
         {
+            "action": "disablezoom",
+            "step": null,
+            "steplabel": null,
+            "text": null,
+            "audio": null,
+            "button": null,
+            "meta": null
+        },
+        {
             "action": "notice",
             "step": 1,
             "steplabel": "Bekijk",
@@ -86,15 +95,6 @@
         },
         {
             "action": "showviewer",
-            "step": 1,
-            "steplabel": "Bekijk",
-            "text": null,
-            "audio": null,
-            "button": null,
-            "meta": null
-        },
-        {
-            "action": "starttimer",
             "step": 1,
             "steplabel": "Bekijk",
             "text": null,

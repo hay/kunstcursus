@@ -19,4 +19,13 @@
     &__group :last-child {
         margin-right: 0;
     }
+
+    &__audio {
+        @include flex-center(row);
+    }
+
+    &__audio img {
+        @include wh($menu-button-icon-size);
+        margin: 0 .5rem;
+    }
 }

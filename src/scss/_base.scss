@@ -24,3 +24,7 @@ main[v-cloak] {
         display: none;
     }
 }
+
+.sr-only {
+    @include sr-only;
+}

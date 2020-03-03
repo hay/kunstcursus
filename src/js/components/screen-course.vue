@@ -3,6 +3,7 @@
         <div class="screen__flex">
             <image-viewer
                 ref="viewer"
+                v-bind:disableZoom="disableZoom"
                 v-bind:key="artwork"
                 v-on:ready="viewerReady"
                 ></image-viewer>
@@ -14,7 +15,7 @@
                 v-bind:text="step.steplabel"></el-hint>
 
             <el-hint
-                v-bind:visible="viewerShown && !!time"
+                v-bind:visible="viewerShown && !!time && showTimer"
                 align="right"
                 v-on:click="skipTime"
                 v-bind:text="time"></el-hint>
@@ -80,6 +81,7 @@
 
         <div class="screen__fixed">
             <menu-bar
+                v-bind:disableZoom="disableZoom"
                 v-on:exit="confirmExit = true"
                 v-on:zoomin="zoomIn"
                 v-on:zoomout="zoomOut"
@@ -130,8 +132,9 @@
         data() {
             return {
                 confirmExit : false,
+                disableZoom : false,
                 isViewerReady : false,
-                startTime : null,
+                showTimer : false,
                 time : null,
                 timer : null,
                 viewerShown : false
@@ -172,11 +175,6 @@
                         this.startTimer([ PAINTING_VIEW_TIME ]);
                     }
 
-                    if (this.step.action === 'starttimer') {
-                        this.startTimer();
-                        this.nextStep();
-                    }
-
                     if (this.step.action === 'judge') {
                         // FIXME
                         await timeout(250);
@@ -190,6 +188,11 @@
 
                     if (this.step.action === 'showviewer') {
                         this.showViewer();
+                        this.nextStep();
+                    }
+
+                    if (this.step.action === 'disablezoom') {
+                        this.disableZoom = true;
                         this.nextStep();
                     }
 
@@ -214,6 +217,8 @@
             },
 
             startTimer(targets = []) {
+                this.showTimer = true;
+
                 timer = new ClockTimer({
                     callback: (e) => {
                         if (e.type === 'update') {
@@ -221,6 +226,7 @@
                         }
 
                         if (e.type === 'target') {
+                            this.showTimer = false;
                             this.nextStep();
                         }
                     },

@@ -101,8 +101,8 @@ export class Store {
                     logger.log(msg);
                 },
 
-                muted(state) {
-                    state.muted = true;
+                muted(state, muted) {
+                    state.muted = Boolean(muted);
                 },
 
                 screen(state, id) {

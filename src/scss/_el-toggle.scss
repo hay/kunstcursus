@@ -1,0 +1,26 @@
+.el-toggle {
+    background: $c-3;
+    height: $menu-button-icon-size;
+    border-radius: $menu-button-icon-size;
+    width: #{$menu-button-icon-size * 2};
+    position: relative;
+
+    &:before {
+        content: '';
+        @include wh($menu-button-icon-size - $padding);
+        border-radius: $menu-button-icon-size - $padding;
+        background: white;
+        display: block;
+        position: absolute;
+        transition: 300ms;
+        top: $padding / 2;
+    }
+
+    &[state="1"]:before {
+        left: $padding / 2;
+    }
+
+    &[state="2"]:before {
+        left: ($menu-button-icon-size * 2) - $menu-button-icon-size + ($padding / 2);
+    }
+}
