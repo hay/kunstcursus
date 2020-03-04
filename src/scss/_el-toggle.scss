@@ -9,7 +9,8 @@
         content: '';
         @include wh($toggle-dot-size);
         border-radius: $toggle-dot-size;
-        background: $c-4;
+        background: url('../static/img/el-toggledot.png');
+        background-size: contain;
         display: block;
         position: absolute;
         transition: 300ms;
@@ -18,7 +19,7 @@
 
     &[state="novalue"]:before {
         left: calc(50% - #{$toggle-dot-size / 2});
-        background: white;
+        filter: brightness(0) invert(1);
     }
 
     &[state="1"]:before {

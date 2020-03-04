@@ -15,16 +15,16 @@
 }
 
 @mixin text-button {
-    background: $c-1;
+    background: url('../static/img/bg-button.png') no-repeat center center;
+    background-size: contain;
+    @include wh(25.4rem, 5.6rem);
     color: white;
-    padding: $padding;
-    border-radius: $padding;
-    border: 1px solid white;
     transition: 300ms;
-    min-width: 10rem;
+    font-weight: bold;
+    @include flex-center;
 
     &[disabled] {
-        background: $c-2;
+        filter: grayscale(1);
     }
 }
 

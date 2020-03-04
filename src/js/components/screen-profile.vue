@@ -157,6 +157,7 @@
         methods : {
             nextPage() {
                 if (this.page === 1) {
+                    window.scrollTo(0, 0);
                     this.page = 2;
                 } else {
                     // Send profile to analytics

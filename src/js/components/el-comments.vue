@@ -14,21 +14,29 @@
             </li>
         </ul>
 
-        <button v-on:click="click"
-                v-html="button"
-                class="el-message__text-button"></button>
+        <el-button
+            v-on:click="click"
+            align="center"
+            v-bind:text="button"></el-button>
     </el-message>
 </template>
 
 <script>
+    import ElButton from './el-button.vue';
     import ElMessage from './el-message.vue';
 
     export default {
         components : {
-            ElMessage
+            ElButton, ElMessage
         },
 
         extends : ElMessage,
+
+        methods : {
+            click() {
+                this.$emit('click');
+            }
+        },
 
         props : {
             button : {

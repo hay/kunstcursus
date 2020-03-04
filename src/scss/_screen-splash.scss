@@ -1,7 +1,4 @@
 .screen-splash {
-    padding: 3rem;
-    text-align: center;
-
     &__title {
         position: relative;
     }
@@ -31,6 +28,7 @@
 
     &__form {
         @include flex-center;
+        margin-bottom: 3rem;
     }
 
     &__notice {

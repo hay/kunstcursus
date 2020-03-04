@@ -13,6 +13,7 @@
     &--modal {
         background: white;
         @include transform-center-horizontal;
+        z-index: 1;
     }
 
     &__text {
@@ -55,6 +56,8 @@
         border: 1px solid $c-3;
         flex: 1;
         margin-right: $padding * 2;
+        height: 4rem;
+        font-size: 1.8rem;
     }
 
     &__list {

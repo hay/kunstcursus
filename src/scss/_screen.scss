@@ -7,7 +7,7 @@
     }
 
     &__fixed {
-        background: $c-2;
+        background: white;
         @include wh(100%, $menu-height);
         @include flex-center;
     }
@@ -16,7 +16,7 @@
         background: url('../static/img/bg-light.png');
         width: 100%;
         min-height: 100vh;
-        padding: 3rem;
+        padding: 2rem;
         text-align: center;
     }
 

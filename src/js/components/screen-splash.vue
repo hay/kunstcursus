@@ -23,11 +23,10 @@
                        v-model="name"
                        v-bind:placeholder="$msg('form_name')" />
 
-                <button
-                    class="screen-splash__start"
-                    v-bind:disabled="!isValidName"
-                    v-on:click="start">
-                    {{$msg('btn_start')}}
+                <el-button
+                    v-on:click="start"
+                    v-bind:text="$msg('btn_start')"
+                    v-bind:disabled="!isValidName"></el-button>
                 </button>
             </form>
 
@@ -35,10 +34,7 @@
                 <small>{{$msg('disclaimer')}}</small>
             </div>
 
-            <el-button
-                v-on:click="about"
-                v-bind:text="$msg('about_header')"
-                align="center"></el-button>
+
         </div>
     </div>
 </template>

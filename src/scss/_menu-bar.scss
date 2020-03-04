@@ -4,7 +4,6 @@
     justify-content: space-between;
     padding: ($padding / 2);
     @include wh(100%);
-    max-width: $max-width;
     height: 100%;
 
     &__group {

@@ -17,16 +17,17 @@
     }
 
     &__inputs {
-        @include child-margins(2rem);
+        @include child-margins(3rem);
     }
 
     &__inputs > li {
         @include flex-center;
-        @include child-margins(1rem);
+        @include child-margins(.7rem);
     }
 
     &__inputs label {
         font-weight: normal;
+        font-size: 1.8rem;
     }
 
     &__input,
@@ -34,8 +35,14 @@
         padding: .5rem;
         border-radius: 1rem;
         border: 1px solid $c-3;
-        height: 4rem;
+        height: 3.5rem;
         text-align: center;
+        font-size: 1.8rem;
+    }
+
+    &__input {
+        width: 100%;
+        max-width: 40rem;
     }
 
     &__number {
@@ -54,10 +61,6 @@
 
     &__checkboxes > li > input {
         margin-right: .4rem;
-
-        // FIXME
-        position: relative;
-        top: -2px;
     }
 
     &__toggles {
