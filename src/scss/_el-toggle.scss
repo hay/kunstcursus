@@ -2,7 +2,7 @@
     background: $c-3;
     height: $menu-button-icon-size;
     border-radius: $menu-button-icon-size;
-    width: #{$menu-button-icon-size * 2};
+    width: $toggle-width;
     position: relative;
 
     &:before {

@@ -89,7 +89,7 @@
             "value": "Volgende stap"
         },
         {
-            "key": "profile_opinions",
+            "key": "profile_statements",
             "value": "Welke van de onderstaande stellingen past het best bij je? Je moet kiezen, dus denk er niet te lang over na."
         },
         {
@@ -122,7 +122,7 @@
         },
         {
             "key": "profile_pets2",
-            "value": "Ik houd van honde"
+            "value": "Ik houd van honden"
         },
         {
             "key": "profile_visit1",
@@ -187,7 +187,7 @@
             "action": "notice",
             "step": null,
             "steplabel": null,
-            "text": "Yes, we gaan kunst kijken! Het schijnt dat we gemiddeld maar 8 seconden naar een kunstwerk in het museum kijken. Kan jij net zo vliegensvlug de volgende kunstwerken beoordelen? Geef met de knoppen onder het kunstwerk aan wat je ervan vindt.",
+            "text": "Het schijnt dat we gemiddeld maar 8 seconden naar een kunstwerk in het museum kijken. Kan jij net zo vliegensvlug de volgende kunstwerken beoordelen? Geef met de knoppen onder het kunstwerk aan wat je ervan vindt.",
             "audio": "tinder_01",
             "button": "Start",
             "meta": null

@@ -55,4 +55,8 @@ export const PROTO_SPOTS = [
     return {label : s[0], x : s[1], y : s[2] }
 });
 
+export const STATEMENTS = [
+    'book', 'size', 'moment', 'pets', 'visit'
+];
+
 export const ZOOM_BTN_FACTOR = 0.25;

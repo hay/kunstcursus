@@ -2,12 +2,12 @@
     width: 100%;
     max-width: $max-width;
     @include margin-center;
-    padding: $padding;
+    padding: $padding * 2;
     text-align: center;
 
     &__header {
         color: $c-4;
-        font-size: 3rem;
+        font-size: 5rem;
         margin-bottom: 2rem;
     }
 
@@ -47,7 +47,34 @@
         @include flex-center(row);
     }
 
-    &__checkboxes > * {
+    &__checkboxes > li {
+        @include flex-center(row);
+        margin: 0 1rem;
+    }
+
+    &__checkboxes > li > input {
+        margin-right: .4rem;
+
+        // FIXME
+        position: relative;
+        top: -2px;
+    }
+
+    &__toggles {
+        @include flex-center;
+        list-style: none;
+        @include child-margins(3rem);
+        margin-bottom: 3rem;
+    }
+
+    &__toggle {
+        @include flex-center(row);
+        width: 100%;
+    }
+
+    &__toggle-label {
+        width: calc((100% - #{$toggle-width}) / 2);
         margin: 0 .5rem;
+        flex: 1;
     }
 }

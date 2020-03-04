@@ -1,7 +1,10 @@
 <template>
     <div class="screen screen--text">
-        <div class="profile">
-            <h2 class="profile__header">{{$msg('profile_header')}}</h2>
+        <div v-show="page === 1"
+             class="profile">
+            <h2 class="profile__header">
+                {{$msg('profile_header')}}
+            </h2>
 
             <p class="profile__intro">{{$msg('profile_intro')}}</p>
 
@@ -52,9 +55,7 @@
                         </li>
                     </ul>
 
-                    <li v-show="hasfavart === 'yes'">
-                        <input v-model="favart" class="profile__input" />
-                    </li>
+                    <input v-show="hasfavart === 'yes'" v-model="favart" class="profile__input" />
                 </li>
 
                 <li>
@@ -69,15 +70,44 @@
                 </li>
             </ul>
         </div>
+
+        <div v-show="page === 2"
+             class="profile">
+            <h2 class="profile__header">
+                {{$msg('profile_header')}}
+            </h2>
+
+            <p class="profile__intro">{{$msg('profile_statements')}}</p>
+
+            <ul class="profile__toggles">
+                <li
+                    class="profile__toggle"
+                    v-for="stat in statements">
+                    <span class="profile__toggle-label">{{stat.label1}}</span>
+
+                    <el-toggle
+                        v-bind:states="stat.states"
+                        v-model="stat.value"></el-toggle>
+
+                    <span class="profile__toggle-label">{{stat.label2}}</span>
+                </li>
+            </ul>
+
+            <el-button
+                v-bind:text="$msg('profile_nextstep')"
+                v-on:click="nextPage"></el-button>
+        </div>
     </div>
 </template>
 
 <script>
     import ElButton from './el-button.vue';
+    import ElToggle from './el-toggle.vue';
+    import { STATEMENTS } from '../const.js';
 
     export default {
         components : {
-            ElButton
+            ElButton, ElToggle
         },
 
         data() {
@@ -88,12 +118,28 @@
                 gender : null,
                 hasfavart : null,
                 location : null,
+                page : 1,
+                statements : STATEMENTS.map((stat) => {
+                    const state1 = `${stat}1`;
+                    const state2 = `${stat}2`;
+
+                    return {
+                        states : [state1, state2],
+                        label1 : this.$msg('profile_' + state1),
+                        label2 : this.$msg('profile_' + state2),
+                        value : null
+                    };
+                })
             }
         },
 
         methods : {
             nextPage() {
+                if (this.page === 1) {
+                    this.page = 2;
+                } else {
 
+                }
             }
         }
     }
