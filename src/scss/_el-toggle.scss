@@ -7,13 +7,18 @@
 
     &:before {
         content: '';
-        @include wh($menu-button-icon-size - $padding);
-        border-radius: $menu-button-icon-size - $padding;
-        background: white;
+        @include wh($toggle-dot-size);
+        border-radius: $toggle-dot-size;
+        background: $c-4;
         display: block;
         position: absolute;
         transition: 300ms;
         top: $padding / 2;
+    }
+
+    &[state="novalue"]:before {
+        left: calc(50% - #{$toggle-dot-size / 2});
+        background: white;
     }
 
     &[state="1"]:before {

@@ -83,13 +83,15 @@
                 <li
                     class="profile__toggle"
                     v-for="stat in statements">
-                    <span class="profile__toggle-label">{{stat.label1}}</span>
+                    <span class="profile__toggle-label"
+                          v-on:click="stat.value = stat.states[0]">{{stat.label1}}</span>
 
                     <el-toggle
                         v-bind:states="stat.states"
                         v-model="stat.value"></el-toggle>
 
-                    <span class="profile__toggle-label">{{stat.label2}}</span>
+                    <span class="profile__toggle-label"
+                          v-on:click="stat.value = stat.states[1]">{{stat.label2}}</span>
                 </li>
             </ul>
 
@@ -110,6 +112,24 @@
             ElButton, ElToggle
         },
 
+        computed : {
+            profile() {
+                const statements = this.statements.map((stat) => {
+                    return [stat.statement, stat.value];
+                });
+
+                return {
+                    age : this.age,
+                    favart : this.favart,
+                    favgenres : this.favgenres,
+                    gender : this.gender,
+                    hasfavart : this.hasfavart,
+                    location : this.location,
+                    statements : statements
+                };
+            }
+        },
+
         data() {
             return {
                 age : null,
@@ -124,6 +144,7 @@
                     const state2 = `${stat}2`;
 
                     return {
+                        statement : stat,
                         states : [state1, state2],
                         label1 : this.$msg('profile_' + state1),
                         label2 : this.$msg('profile_' + state2),
@@ -138,7 +159,8 @@
                 if (this.page === 1) {
                     this.page = 2;
                 } else {
-
+                    // Send profile to analytics
+                    this.$store.commit('screen', 'overview');
                 }
             }
         }

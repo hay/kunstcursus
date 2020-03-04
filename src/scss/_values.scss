@@ -13,4 +13,5 @@ $menu-height: 6rem;
 $menu-button-size: $menu-height - $padding;
 $menu-button-icon-size: $menu-button-size - $padding;
 $toggle-width: $menu-button-icon-size * 2;
+$toggle-dot-size: $menu-button-icon-size - $padding;
 $child-margins: 3rem;

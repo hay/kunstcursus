@@ -11,7 +11,11 @@
     export default {
         computed : {
             state() {
-                return this.value === this.states[0] ? 1 : 2;
+                if (this.value === null) {
+                    return 'novalue';
+                } else {
+                    return this.value === this.states[0] ? 1 : 2;
+                }
             }
         },
 
@@ -32,7 +36,7 @@
             },
 
             value : {
-                type : [String, Number, Boolean]
+                type : [String, Number, Boolean, null]
             }
         }
     }
