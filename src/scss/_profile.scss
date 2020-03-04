@@ -1,0 +1,53 @@
+.profile {
+    width: 100%;
+    max-width: $max-width;
+    @include margin-center;
+    padding: $padding;
+    text-align: center;
+
+    &__header {
+        color: $c-4;
+        font-size: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    &__intro {
+        margin-bottom: 2rem;
+        font-weight: bold;
+    }
+
+    &__inputs {
+        @include child-margins(2rem);
+    }
+
+    &__inputs > li {
+        @include flex-center;
+        @include child-margins(1rem);
+    }
+
+    &__inputs label {
+        font-weight: normal;
+    }
+
+    &__input,
+    &__number {
+        padding: .5rem;
+        border-radius: 1rem;
+        border: 1px solid $c-3;
+        height: 4rem;
+        text-align: center;
+    }
+
+    &__number {
+        width: 6rem;
+    }
+
+    &__checkboxes {
+        list-style: none;
+        @include flex-center(row);
+    }
+
+    &__checkboxes > * {
+        margin: 0 .5rem;
+    }
+}

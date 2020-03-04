@@ -2,6 +2,7 @@
     <main>
         <screen-course v-if="screen === 'course'"></screen-course>
         <screen-overview v-if="screen === 'overview'"></screen-overview>
+        <screen-profile v-if="screen === 'profile'"></screen-profile>
         <screen-splash v-if="screen === 'splash'"></screen-splash>
         <screen-slideshow v-if="screen === 'slideshow'"></screen-slideshow>
     </main>
@@ -10,6 +11,7 @@
 <script>
     import ScreenCourse from './screen-course.vue';
     import ScreenOverview from './screen-overview.vue';
+    import ScreenProfile from './screen-profile.vue';
     import ScreenSplash from './screen-splash.vue';
     import ScreenSlideshow from './screen-slideshow.vue';
 
@@ -17,6 +19,7 @@
         components : {
             ScreenCourse,
             ScreenOverview,
+            ScreenProfile,
             ScreenSplash,
             ScreenSlideshow
         },

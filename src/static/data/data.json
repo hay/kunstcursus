@@ -6,7 +6,11 @@
         },
         {
             "key": "intro",
-            "value": "<p>Daag jezelf met deze cursus uit om op een andere manier naar kunst te kijken. Leer meer over je eigen blik en ontdek de collectie van Museum Boijmans Van Beuningen op een verrassende manier.</p>\n<p>Vul je naam in en ontmoet Joost, je art mediator.</p>"
+            "value": "<p>Daag jezelf met deze cursus uit om op een andere manier naar kunst te kijken. Leer meer over je eigen blik en ontdek de collectie van Museum Boijmans Van Beuningen op een verrassende manier. Met verschillende opdrachten ga je ontdekken wat je van de werken vindt en wordt je uitgedaagd langer te kijken. </p>\nVul je naam hieronder in en ontmoet Joost, je art mediator. </p><br />"
+        },
+        {
+            "key": "enable_audio",
+            "value": "Voor het volgen van de cursus moet je je audio aanzetten."
         },
         {
             "key": "btn_start",
@@ -14,11 +18,15 @@
         },
         {
             "key": "form_name",
-            "value": "Vul je naam hier in"
+            "value": "Vul je naam in"
+        },
+        {
+            "key": "disclaimer",
+            "value": "Deze website is een prototype om te laten zien hoe de cursus ongeveer zal werken. Niet alle functies doen het momenteel, maar je kunt wel de eerste vijf opdrachten doen."
         },
         {
             "key": "credits",
-            "value": "Dit prototype is gemaakt door Brigitte Jansen en Hay Kranen in samenwerking met Museum Boijmans Van Beuningen."
+            "value": "<p>Dit prototype is deel van het onderzoek “De Digitale Tentoonstelling” van Brigitte Jansen en Museum Boijmans Van Beuningen. Deze website is een prototype om te laten zien hoe de cursus ongeveer zal werken. Niet alle functies doen het momenteel, maar je kunt wel de eerste vijf opdrachten doen.</p>\n \n<p>Onderzoek: Brigitte Jansen en Museum Boijmans Van Beuningen <br />\nOntwerp: Brigitte Jansen <br />\nOntwikkeling prototype: Hay Kranen <br />\nAnimatie: Joris van Raaij <br />\nMet extra dank aan Nico Thöne, Kachiri van Zwam, Rianne Schoonderbeek en Yoeri Meessen.</p>\n \n<p>Dit project is mogelijk gemaakt door het Stimuleringsfonds voor de Creatieve Industrie. </p>"
         },
         {
             "key": "course_overview",
@@ -35,35 +43,131 @@
         {
             "key": "profile_intro",
             "value": "Voordat we van start gaan wil ik je graag wat beter leren kennen. Kan je me iets meer over jezelf vertellen?"
+        },
+        {
+            "key": "profile_location",
+            "value": "Wat is je woonplaats?"
+        },
+        {
+            "key": "profile_age",
+            "value": "Hoe oud ben je?"
+        },
+        {
+            "key": "profile_gender",
+            "value": "Wat is je geslacht?"
+        },
+        {
+            "key": "profile_male",
+            "value": "Man"
+        },
+        {
+            "key": "profile_female",
+            "value": "Vrouw"
+        },
+        {
+            "key": "profile_othergender",
+            "value": "Anders"
+        },
+        {
+            "key": "profile_favart",
+            "value": "Heb je al een favoriet kunstwerk?"
+        },
+        {
+            "key": "profile_no",
+            "value": "Nee"
+        },
+        {
+            "key": "profile_yesspec",
+            "value": "Ja, namelijk"
+        },
+        {
+            "key": "profile_favgenres",
+            "value": "Zijn er thema's of kunststromingen die je helemaal niet leuk vind?"
+        },
+        {
+            "key": "profile_nextstep",
+            "value": "Volgende stap"
+        },
+        {
+            "key": "profile_opinions",
+            "value": "Welke van de onderstaande stellingen past het best bij je? Je moet kiezen, dus denk er niet te lang over na."
+        },
+        {
+            "key": "profile_book1",
+            "value": "Ik lees liever een boek"
+        },
+        {
+            "key": "profile_book2",
+            "value": "Ik zie liever de film"
+        },
+        {
+            "key": "profile_size1",
+            "value": "Ik ben groot"
+        },
+        {
+            "key": "profile_size2",
+            "value": "Ik ben klein"
+        },
+        {
+            "key": "profile_moment1",
+            "value": "Ik ben een avondmens"
+        },
+        {
+            "key": "profile_moment2",
+            "value": "Ik ben een ochtendmens"
+        },
+        {
+            "key": "profile_pets1",
+            "value": "Ik houd van katten"
+        },
+        {
+            "key": "profile_pets2",
+            "value": "Ik houd van honde"
+        },
+        {
+            "key": "profile_visit1",
+            "value": "Ik ben al eens in Museum Boijmans van Beuningen geweest"
+        },
+        {
+            "key": "profile_visit2",
+            "value": "Ik ben nog nooit in Museum Boijmans van Beuningen geweest"
+        },
+        {
+            "key": "profile_create",
+            "value": "Profiel aanmaken"
+        },
+        {
+            "key": "profile_header",
+            "value": "Profiel maken"
         }
     ],
     "courses": [
         {
-            "title": "Art Tinder",
+            "title": "Thumbs up",
             "datasheet": "art-tinder",
             "description": null,
             "artwork": 10
         },
         {
-            "title": "3-2-1 Bridge",
+            "title": "3 - 2 - 1",
             "datasheet": "321-bridge",
             "description": null,
             "artwork": 5
         },
         {
-            "title": "Step Inside",
+            "title": "Leef je in",
             "datasheet": "step-inside",
             "description": null,
             "artwork": 4
         },
         {
-            "title": "Ten Times Two",
+            "title": "Twee keer tien",
             "datasheet": "ten-times-two",
             "description": null,
             "artwork": 2
         },
         {
-            "title": "3-2-1 Bridge",
+            "title": "Details",
             "datasheet": "321-bridge",
             "description": null,
             "artwork": 1
@@ -234,8 +338,8 @@
         },
         {
             "action": "timefeedback",
-            "step": 2,
-            "steplabel": "Tijd",
+            "step": null,
+            "steplabel": null,
             "text": "Phoe dat ging snel. Heb je de smaak te pakken? Ga snel door naar de volgende opdracht.",
             "audio": "tinder_02",
             "button": null,
@@ -243,8 +347,8 @@
         },
         {
             "action": "timefeedback",
-            "step": 2,
-            "steplabel": "Tijd",
+            "step": null,
+            "steplabel": null,
             "text": "Je kijkt al wat langer dan de gemiddelde museumbezoeker!",
             "audio": "tinder_03",
             "button": null,
@@ -252,8 +356,8 @@
         },
         {
             "action": "notice",
-            "step": 3,
-            "steplabel": "Klaar",
+            "step": null,
+            "steplabel": null,
             "text": "Heb je de smaak te pakken? Ga snel door naar de volgende opdracht.",
             "audio": "tinder_04",
             "button": "Afronden",
@@ -265,9 +369,9 @@
             "action": "notice",
             "step": null,
             "steplabel": null,
-            "text": "Het is tijd om een kunstwerk écht goed tot je te nemen. Je krijgt een minuut de tijd. Zodra je op OK klikt begin je.",
+            "text": null,
             "audio": "bridge_01",
-            "button": "OK",
+            "button": "Start",
             "meta": null
         },
         {
@@ -292,7 +396,7 @@
             "action": "notice",
             "step": null,
             "steplabel": null,
-            "text": "Wat vond je ervan? Eén minuut is nog helemaal niet zo lang, hé. Je krijgt nu drie korte vragen. Je antwoorden kan je steeds in het tekstveld invullen en met de knop versturen. Denk eraan: er zijn geen foute antwoorden. Het gaat namelijk over jouw interpretatie van het werk.",
+            "text": "Je krijgt nu drie korte vragen. Denk eraan: er zijn geen foute antwoorden. Het gaat namelijk over jouw interpretatie van het werk.",
             "audio": "bridge_02",
             "button": "Bekijk vragen",
             "meta": null
@@ -346,7 +450,7 @@
             "action": "notice",
             "step": null,
             "steplabel": null,
-            "text": "Zo, wat vond je ervan? Heeft deze opdracht je anders naar het kunstwerk laten kijken?",
+            "text": null,
             "audio": "bridge_06",
             "button": "Afronden",
             "meta": null
@@ -357,7 +461,7 @@
             "action": "notice",
             "step": null,
             "steplabel": null,
-            "text": "Bij deze opdracht gaan we ons inleven in dit portret. Neem weer de tijd om het werk goed te bestuderen voordat we aan de slag gaan met de oefening.",
+            "text": null,
             "audio": "stepin_01",
             "button": "Start",
             "meta": null
@@ -384,7 +488,7 @@
             "action": "question",
             "step": 1,
             "steplabel": "Horen",
-            "text": "Leef je in. Wat hoort deze persoon? En kun je uitleggen waarom je dat denkt?",
+            "text": "Wat hoort deze persoon? En kun je uitleggen waarom je dat denkt?",
             "audio": "stepin_02",
             "button": null,
             "meta": null
@@ -419,9 +523,18 @@
         {
             "action": "question",
             "step": 5,
-            "steplabel": "Bordje",
-            "text": "Je hebt het kunstwerk nu uitgebreid bekeken en je ingeleefd in het portret. Bedenk nu een titel die omschrijft wat het werk voor jou betekent en schrijf hier een bordje bij.",
+            "steplabel": "Titel",
+            "text": "Bedenk een titel die omschrijft wat het werk voor jou betekent.",
             "audio": "stepin_06",
+            "button": null,
+            "meta": null
+        },
+        {
+            "action": "question",
+            "step": 6,
+            "steplabel": "Bordje",
+            "text": "Kun je bij de titel nu een museumbordje met uitleg schrijven? Wat zou jij een museumbezoeker over het werk willen vertellen?",
+            "audio": null,
             "button": null,
             "meta": null
         },
@@ -438,7 +551,7 @@
             "action": "notice",
             "step": null,
             "steplabel": null,
-            "text": "Dat was het. Klik op 'Afronden' om terug te gaan naar het overzicht.",
+            "text": "Klik op 'Afronden' om terug te gaan naar het lesoverzicht.",
             "audio": null,
             "button": "Afronden",
             "meta": null
@@ -449,7 +562,7 @@
             "action": "notice",
             "step": null,
             "steplabel": "Bekijk",
-            "text": "Net als bij de vorige opdracht nemen we weer de tijd om het werk te bekijken. Neem het werk goed tot je en over een minuut leg ik je uit wat we gaan doen.",
+            "text": null,
             "audio": null,
             "button": "Start",
             "meta": null
@@ -467,7 +580,7 @@
             "action": "notice",
             "step": null,
             "steplabel": "Bekijk",
-            "text": "Heb je het pronkstuk goed bestudeerd? Dan zoomen we even uit en gaan we aan de slag. Benoem 10 dingen die je op het werk ziet. Klik eerst op een detail in het werk. En vul daarna in wat je daar ziet.",
+            "text": "Benoem 10 dingen die je op het werk ziet. Klik eerst op een detail in het werk. En vul daarna in wat je daar ziet.",
             "audio": null,
             "button": "Aan de slag",
             "meta": null

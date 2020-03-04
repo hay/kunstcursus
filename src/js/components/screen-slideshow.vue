@@ -36,7 +36,7 @@
             },
 
             skip() {
-                this.$store.commit('screen', 'overview');
+                this.$store.commit('screen', 'profile');
             }
         },
 

@@ -11,4 +11,10 @@
         @include wh(100%, $menu-height);
         @include flex-center;
     }
+
+    &--text {
+        background: url('../static/img/bg-light.png');
+        min-height: 100vh;
+        color: black;
+    }
 }
