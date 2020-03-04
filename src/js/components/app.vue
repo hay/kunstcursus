@@ -1,5 +1,6 @@
 <template>
     <main>
+        <screen-about v-if="screen === 'about'"></screen-about>
         <screen-course v-if="screen === 'course'"></screen-course>
         <screen-overview v-if="screen === 'overview'"></screen-overview>
         <screen-profile v-if="screen === 'profile'"></screen-profile>
@@ -9,6 +10,7 @@
 </template>
 
 <script>
+    import ScreenAbout from './screen-about.vue';
     import ScreenCourse from './screen-course.vue';
     import ScreenOverview from './screen-overview.vue';
     import ScreenProfile from './screen-profile.vue';
@@ -17,6 +19,7 @@
 
     export default {
         components : {
+            ScreenAbout,
             ScreenCourse,
             ScreenOverview,
             ScreenProfile,

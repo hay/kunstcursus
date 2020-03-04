@@ -21,12 +21,6 @@
         </div>
 
         <div class="menu-bar__group">
-            <!-- Disabled for now -->
-            <!-- el-button
-                icon="again"
-                text="Nogmaals"
-                v-on:click="again"></el-button> -->
-
             <div class="menu-bar__audio">
                 <img src="/static/img/icon-no-audio.svg"
                      alt="Geen geluid" />
@@ -62,10 +56,6 @@
         },
 
         methods : {
-            again() {
-                this.$store.dispatch('previousStep');
-            },
-
             exit() {
                 this.$emit('exit');
             },

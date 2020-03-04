@@ -1,36 +1,29 @@
 .screen-splash {
-    background: url('../static/img/logo-splash.png') no-repeat center center;
-    width: 100%;
-    min-height: 100vh;
-    position: relative;
-    z-index: 1;
-
-    &:before {
-        content: '';
-        position: absolute;
-        @include pos(0);
-        background: rgba(255, 255, 255, 0.2);
-    }
-
-    &__content {
-        position: relative;
-        width: 100%;
-        min-height: 100vh;
-        @include margin-center;
-        max-width: $max-width;
-        @include flex-center;
-        padding: $padding;
-    }
+    padding: 3rem;
+    text-align: center;
 
     &__title {
+        position: relative;
+    }
+
+    &__title-image {
+        width: 20rem;
+        @include margin-center;
+        display: block;
+    }
+
+    &__title-text {
+        position: relative;
+        top: -15rem;
         text-align: center;
         font-size: 7rem;
         line-height: 0.8;
-        margin-bottom: 5rem;
+        margin-bottom: -10rem;
     }
 
     &__text {
         @include child-margins(2rem);
+        @include margin-center;
         margin-bottom: 2rem;
         text-align: center;
         max-width: 50rem;
@@ -38,6 +31,24 @@
 
     &__form {
         @include flex-center;
+    }
+
+    &__notice {
+        font-weight: bold;
+        margin-bottom: 3rem;
+        display: inline-block;
+    }
+
+    &__notice p {
+        margin-bottom: 1rem;
+    }
+
+    &__notice:after {
+        content: '';
+        @include wh(100%, 3rem);
+        background: url('../static/img/el-line.png') no-repeat;
+        background-size: contain;
+        display: block;
     }
 
     &__name {
@@ -58,9 +69,16 @@
         transition: 300ms;
         color: $c-1;
         font-weight: bold;
+        margin-bottom: 3rem;
     }
 
     &__start[disabled] {
         color: $c-3;
+    }
+
+    &__small {
+        font-style: italic;
+        font-style: 1.6rem;
+        margin-bottom: 3rem;
     }
 }

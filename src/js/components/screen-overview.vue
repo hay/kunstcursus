@@ -51,6 +51,11 @@
                     </article>
                 </li>
             </ul>
+
+            <el-button
+                v-on:click="about"
+                v-bind:text="$msg('about_header')"
+                align="center"></el-button>
         </div>
     </div>
 </template>
@@ -86,8 +91,8 @@
         },
 
         methods : {
-            back() {
-                this.$store.commit('screen', 'splash');
+            about() {
+                this.$store.commit('screen', 'about');
             },
 
             setCourse(index) {
