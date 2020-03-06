@@ -71,13 +71,25 @@
     }
 
     &__toggle {
-        @include flex-center(row);
+        @include flex-center;
         width: 100%;
+    }
+
+    &__toggle-title {
+        margin-bottom: .5rem;
+    }
+
+    &__toggle-btn {
+        @include flex-center(row);
+    }
+
+    &__toggle-toggle {
+        flex-shrink: 0;
     }
 
     &__toggle-label {
         width: calc((100% - #{$toggle-width}) / 2);
         margin: 0 .5rem;
-        flex: 1;
+        flex-shrink: 0;
     }
 }

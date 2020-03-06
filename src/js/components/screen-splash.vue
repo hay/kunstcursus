@@ -1,6 +1,13 @@
 <template>
     <div class="screen screen-splash screen--text">
         <div class="screen__content">
+            <el-button
+                align="right"
+                flair="noborder"
+                icon="info.png"
+                text="Over dit prototype"
+                v-on:click="about"></el-button>
+
             <h1 class="screen-splash__title">
                 <img class="screen-splash__title-image"
                      src="/static/img/logo-splash.png"

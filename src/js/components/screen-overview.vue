@@ -1,6 +1,13 @@
 <template>
     <div class="screen screen-overview">
         <div class="screen-overview__content">
+            <el-button
+                align="right"
+                flair="noborder"
+                icon="info.png"
+                text="Over dit prototype"
+                v-on:click="about"></el-button>
+
             <h1 class="screen-overview__title"
                 v-html="$msg('title')"></h1>
 
@@ -51,11 +58,6 @@
                     </article>
                 </li>
             </ul>
-
-            <el-button
-                v-on:click="about"
-                v-bind:text="$msg('about_header')"
-                align="center"></el-button>
         </div>
     </div>
 </template>

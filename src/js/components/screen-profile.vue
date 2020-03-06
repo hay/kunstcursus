@@ -65,6 +65,7 @@
 
                 <li>
                     <el-button
+                        align="center"
                         v-bind:text="$msg('profile_nextstep')"
                         v-on:click="nextPage"></el-button>
                 </li>
@@ -83,19 +84,28 @@
                 <li
                     class="profile__toggle"
                     v-for="stat in statements">
-                    <span class="profile__toggle-label"
-                          v-on:click="stat.value = stat.states[0]">{{stat.label1}}</span>
 
-                    <el-toggle
-                        v-bind:states="stat.states"
-                        v-model="stat.value"></el-toggle>
+                    <label class="profile__toggle-title">
+                        {{stat.label}}
+                    </label>
 
-                    <span class="profile__toggle-label"
-                          v-on:click="stat.value = stat.states[1]">{{stat.label2}}</span>
+                    <div class="profile__toggle-btn">
+                        <span class="profile__toggle-label"
+                              v-on:click="stat.value = stat.states[0]">{{stat.label1}}</span>
+
+                        <el-toggle
+                            class="profile__toggle-toggle"
+                            v-bind:states="stat.states"
+                            v-model="stat.value"></el-toggle>
+
+                        <span class="profile__toggle-label"
+                              v-on:click="stat.value = stat.states[1]">{{stat.label2}}</span>
+                    </div>
                 </li>
             </ul>
 
             <el-button
+                align="center"
                 v-bind:text="$msg('profile_nextstep')"
                 v-on:click="nextPage"></el-button>
         </div>
@@ -146,6 +156,7 @@
                     return {
                         statement : stat,
                         states : [state1, state2],
+                        label : this.$msg('profile_' + stat),
                         label1 : this.$msg('profile_' + state1),
                         label2 : this.$msg('profile_' + state2),
                         value : null

@@ -5,7 +5,7 @@
             v-on:click="click">
 
         <img v-if="type === 'icon'"
-             v-bind:src="'img/icon-' + icon + '.svg'"
+             v-bind:src="iconSrc"
              v-bind:alt="text" />
 
         <span v-if="type === 'text'"
@@ -23,7 +23,20 @@
                     classes.push('el-button--' + this.align);
                 }
 
+                if (this.flair) {
+                    classes.push('el-button--' + this.flair);
+                }
+
                 return classes;
+            },
+
+            iconSrc() {
+                // FIXME
+                if (this.icon.endsWith('.png')) {
+                    return `img/icon-${this.icon}`;
+                } else {
+                    return `img/icon-${this.icon}.svg`;
+                }
             },
 
             type() {
@@ -45,6 +58,10 @@
             disabled : {
                 type : Boolean,
                 default : false
+            },
+
+            flair : {
+                type : String
             },
 
             icon : {

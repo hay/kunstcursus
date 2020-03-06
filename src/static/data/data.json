@@ -101,44 +101,64 @@
             "value": "Welke van de onderstaande stellingen past het best bij je? Je moet kiezen, dus denk er niet te lang over na."
         },
         {
+            "key": "profile_book",
+            "value": "Lees je liever een boek of kijk je een film?"
+        },
+        {
             "key": "profile_book1",
-            "value": "Ik lees liever een boek"
+            "value": "boek"
         },
         {
             "key": "profile_book2",
-            "value": "Ik zie liever de film"
+            "value": "film"
+        },
+        {
+            "key": "profile_size",
+            "value": "Wat ben je?"
         },
         {
             "key": "profile_size1",
-            "value": "Ik ben groot"
+            "value": "groot"
         },
         {
             "key": "profile_size2",
-            "value": "Ik ben klein"
+            "value": "klein"
+        },
+        {
+            "key": "profile_moment",
+            "value": "Wat ben je?"
         },
         {
             "key": "profile_moment1",
-            "value": "Ik ben een avondmens"
+            "value": "avondmens"
         },
         {
             "key": "profile_moment2",
-            "value": "Ik ben een ochtendmens"
+            "value": "ochtendmens"
+        },
+        {
+            "key": "profile_pets",
+            "value": "Waar hou je van?"
         },
         {
             "key": "profile_pets1",
-            "value": "Ik houd van katten"
+            "value": "katten"
         },
         {
             "key": "profile_pets2",
-            "value": "Ik houd van honden"
+            "value": "honden"
+        },
+        {
+            "key": "profile_visit",
+            "value": "Ben je al eens in Museum Boijmans van Beuningen geweest?"
         },
         {
             "key": "profile_visit1",
-            "value": "Ik ben al eens in Museum Boijmans van Beuningen geweest"
+            "value": "Ja"
         },
         {
             "key": "profile_visit2",
-            "value": "Ik ben nog nooit in Museum Boijmans van Beuningen geweest"
+            "value": "Nee"
         },
         {
             "key": "profile_create",
