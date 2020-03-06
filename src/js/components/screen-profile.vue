@@ -22,7 +22,7 @@
                 <li>
                     <label>{{$msg('profile_gender')}}</label>
 
-                    <ul class="profile__checkboxes">
+                    <ul class="profile__radios">
                         <li>
                             <input id="profile_male" type="radio" v-model="gender" value="male" />
                             <label for="profile_male">{{$msg('profile_male')}}</label>
@@ -43,7 +43,7 @@
                 <li>
                     <label>{{$msg('profile_favart')}}</label>
 
-                    <ul class="profile__checkboxes">
+                    <ul class="profile__radios">
                         <li>
                             <input id="profile_nofavart" type="radio" v-model="hasfavart" value="no" />
                             <label for="profile_nofavart">{{$msg('profile_no')}}</label>
