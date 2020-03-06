@@ -2,17 +2,20 @@
     list-style: none;
     @include flex-center;
     width: 100%;
+    margin-top: 4rem;
 
     &__item {
+        background: $c-4;
+        padding: $padding * 2;
         margin-bottom: 1rem;
         padding: $padding;
         border-radius: $padding;
-        border: 1px solid $c-2;
         width: 100%;
     }
 
     &__item[disabled] {
-        background: $c-2;
+        background: $c-3;
+        color: $c-2;
     }
 
     &__itemheader {
@@ -23,20 +26,24 @@
         cursor: pointer;
     }
 
-    &__title strong {
-        color: $c-1;
-    }
-
-    &__title,
-    &__status,
-    &__description,
-    &__info {
-        font-size: 1.8rem;
-        font-weight: normal;
+    &__title {
+        font-weight: bold;
+        font-size: 2rem;
     }
 
     &__info {
+        text-align: left;
         margin-top: 1rem;
         @include child-margins(1rem);
+    }
+
+    &__meta {
+        margin-top: 2rem;
+        list-style: none;
+        font-size: 1.8rem;
+    }
+
+    &__meta a {
+        color: black;
     }
 }

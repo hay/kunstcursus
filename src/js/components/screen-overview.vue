@@ -1,5 +1,5 @@
 <template>
-    <div class="screen screen-overview">
+    <div class="screen screen-overview screen--text">
         <div class="screen-overview__content">
             <el-button
                 align="right"
@@ -23,43 +23,42 @@
                class="screen-overview__description"
                v-html="$msg('wow_text', { name : name})"></p>
 
+            <el-button
+                flair="course"
+                v-bind:text="$msg('enter_course', { course : nextCourseLabel })"
+                v-on:click="nextCourse"></el-button>
+
             <ul class="course-list">
                 <li v-for="(course, index) in courses"
-                    v-bind:disabled="index > lastCourse"
+                    v-bind:disabled="index >= lastCourse"
                     class="course-list__item">
-                    <header class="course-list__itemheader"
-                            v-on:click="toggle(index)">
+                    <header class="course-list__itemheader">
                         <h2 class="course-list__title">
-                            <strong>{{$msg('course_label')}} {{index + 1}}</strong>
-                            <span>{{course.title}}</span>
+                            {{course.title}}
                         </h2>
-
-                        <menu class="course-list__status">
-                            <button>
-                                <span v-if="index !== courseOpen">
-                                    {{$msg('open_label')}}
-                                </span>
-
-                                <span v-if="index === courseOpen">
-                                    {{$msg('close_label')}}
-                                </span>
-                            </button>
-                        </menu>
                     </header>
 
                     <article
-                        v-show="index === courseOpen"
+                        v-show="index < lastCourse"
                         class="course-list__info">
+
                         <p>{{course.description}}</p>
 
-                        <el-button
-                            v-if="index > lastCourse"
-                            v-bind:text="$msg('finish_course_first', { course : lastCourse + 1 })"
-                            v-bind:disabled="true"></el-button>
+                        <ul class="course-list__meta">
+                            <li v-if="course.artlabel && course.artlink">
+                                <span>{{$msg('label_artwork')}}:</span>
+
+                                <a v-bind:href="course.artlink"
+                                   target="_blank">
+                                   {{course.artlabel}}
+                                </a>
+                            </li>
+                        </ul>
 
                         <el-button
+                            align="right"
                             v-if="index <= lastCourse"
-                            v-bind:text="$msg('enter_course', { course : index + 1 })"
+                            msg="enter_course_again"
                             v-on:click="setCourse(index)"></el-button>
                     </article>
                 </li>
@@ -89,13 +88,11 @@
 
             name() {
                 return this.$store.state.userName;
-            }
-        },
+            },
 
-        data() {
-            return {
-                courseOpen : this.$store.state.lastCourse
-            };
+            nextCourseLabel() {
+                return this.courses[this.$store.state.lastCourse].title;
+            }
         },
 
         methods : {
@@ -103,17 +100,13 @@
                 this.$store.commit('screen', 'about');
             },
 
+            nextCourse() {
+                this.setCourse(this.lastCourse);
+            },
+
             setCourse(index) {
                 this.$store.commit('courseIndex', index);
                 this.$store.commit('screen', 'course');
-            },
-
-            toggle(index) {
-                if (this.courseOpen === index) {
-                    this.courseOpen = -1;
-                } else {
-                    this.courseOpen = index;
-                }
             }
         }
     }

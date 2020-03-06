@@ -4,6 +4,7 @@
         <div class="el-message__input">
             <textarea
                 class="el-message__form"
+                v-bind:placeholder="placeholder"
                 ref="form"
                 v-model="input"></textarea>
 
@@ -60,6 +61,12 @@
                     this.$store.commit('log', `question:${this.input}`);
                     this.$emit('submit');
                 }
+            }
+        },
+
+        props : {
+            placeholder : {
+                type : String
             }
         }
     }

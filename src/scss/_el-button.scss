@@ -20,4 +20,21 @@
     &--noborder {
         background: none;
     }
+
+    &--course {
+        background: $c-1;
+        border-radius: $padding;
+        width: 100%;
+        @include flex-center(row);
+        justify-content: space-between;
+        padding: 1rem;
+        max-width: 30rem;
+    }
+
+    &--course:after {
+        content: '';
+        @include wh(2.5rem);
+        background: url('../static/img/icon-start.png') no-repeat;
+        background-size: contain;
+    }
 }

@@ -35,6 +35,7 @@
             <el-question
                 ref="question"
                 class="screen-course__bottom"
+                v-bind:placeholder="step.placeholder"
                 v-bind:text="step.text"
                 v-bind:visible="questionVisible"
                 v-on:submit="nextStep"></el-question>
