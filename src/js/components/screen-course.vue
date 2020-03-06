@@ -90,28 +90,11 @@
                 </menu>
             </el-message>
 
-            <el-message
+            <el-judge
                 class="screen-course__bottom"
                 v-bind:visible="step.action === 'judge'"
-                v-bind:text="$msg('judge_artwork')">
-
-                <menu class="el-message__menu">
-                    <el-button
-                        icon="thumbsup"
-                        msg="judge_good"
-                        v-on:click="nextStep"></el-button>
-
-                    <el-button
-                        icon="thumbsavg"
-                        msg="judge_avg"
-                        v-on:click="nextStep"></el-button>
-
-                    <el-button
-                        icon="thumbsdown"
-                        msg="judge_bad"
-                        v-on:click="nextStep"></el-button>
-                </menu>
-            </el-message>
+                v-bind:text="$msg('judge_artwork')"
+                v-on:click="judge"></el-judge>
         </div>
 
         <div class="screen__fixed">
@@ -130,6 +113,7 @@
     import ElButton from './el-button.vue';
     import ElComments from './el-comments.vue';
     import ElHint from './el-hint.vue';
+    import ElJudge from './el-judge.vue';
     import ElMessage from './el-message.vue';
     import ElQuestion from './el-question.vue';
     import ImageSpotter from './image-spotter.vue';
@@ -145,6 +129,7 @@
             ElButton,
             ElComments,
             ElHint,
+            ElJudge,
             ElMessage,
             ElQuestion,
             ImageSpotter,
@@ -211,6 +196,12 @@
 
                     }
                 });
+            },
+
+            judge(rating) {
+                const evt = `judge:${this.artwork}:${rating}`;
+                this.$store.commit('log', evt);
+                this.nextStep();
             },
 
             nextStep() {
