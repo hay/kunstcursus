@@ -8,7 +8,7 @@
                 text="Over dit prototype"
                 v-on:click="about"></el-button>
 
-            <h1 class="screen-splash__logo">
+            <h1 class="logo">
                 <img src="/static/img/logo-splash.png"
                      alt="Logo van 'Kunst Kijken met Boijmans'" />
 

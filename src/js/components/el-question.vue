@@ -51,6 +51,10 @@
                 this.$refs.form.focus();
             },
 
+            isFocused() {
+                return document.activeElement === this.$refs.form;
+            },
+
             submit() {
                 if (!this.buttonDisabled) {
                     this.$store.commit('log', `question:${this.input}`);

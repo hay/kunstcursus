@@ -1,10 +1,4 @@
 .screen-splash {
-    &__logo img {
-        width: 30rem;
-        @include margin-center;
-        display: block;
-    }
-
     &__text {
         @include child-margins(2rem);
         @include margin-center;

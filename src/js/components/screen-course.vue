@@ -200,6 +200,18 @@
                 this.courseDone();
             },
 
+            fixKeyboardFocus() {
+                // When in imagespotter modus, make sure a keydown gives
+                // focus to the question
+                window.addEventListener('keydown', (e) => {
+                    if ((this.step.action === 'imagespotter') &&
+                        !this.$refs.question.isFocused()) {
+                        this.$refs.question.focus();
+
+                    }
+                });
+            },
+
             nextStep() {
                 this.questionVisible = false;
                 this.hasNotice = false;
@@ -329,6 +341,7 @@
 
         mounted() {
             this.parseStep();
+            this.fixKeyboardFocus();
         },
 
         watch : {

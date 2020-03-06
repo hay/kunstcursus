@@ -8,8 +8,12 @@
                 msg="about_prototype"
                 v-on:click="about"></el-button>
 
-            <h1 class="screen-overview__title"
-                v-html="$msg('title')"></h1>
+            <h1 class="logo">
+                <img src="/static/img/logo-splash.png"
+                     alt="Logo van 'Kunst Kijken met Boijmans'" />
+
+                <span class="sr-only">{{$msg('title')}}</span>
+            </h1>
 
             <p v-if="!allDone"
                class="screen-overview__description"
