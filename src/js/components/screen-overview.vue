@@ -4,23 +4,20 @@
             <el-button
                 align="right"
                 flair="noborder"
-                icon="info.png"
-                text="Over dit prototype"
+                icon="info"
+                msg="about_prototype"
                 v-on:click="about"></el-button>
 
             <h1 class="screen-overview__title"
                 v-html="$msg('title')"></h1>
 
             <p v-if="!allDone"
-               class="screen-overview__description">
-                Hee <strong>{{name}}</strong>! {{$msg('course_overview')}}.
-            </p>
+               class="screen-overview__description"
+                v-html="$msg('course_overview', { name : name})"></p>
 
             <p v-if="allDone"
-               class="screen-overview__description">
-               Wauw <strong>{{name}}</strong>! Je hebt alle opdrachten gedaan!
-               Gefeliciteerd!
-            </p>
+               class="screen-overview__description"
+               v-html="$msg('wow_text', { name : name})"></p>
 
             <ul class="course-list">
                 <li v-for="(course, index) in courses"
@@ -29,14 +26,19 @@
                     <header class="course-list__itemheader"
                             v-on:click="toggle(index)">
                         <h2 class="course-list__title">
-                            <strong>Opdracht {{index + 1}}</strong>
+                            <strong>{{$msg('course_label')}} {{index + 1}}</strong>
                             <span>{{course.title}}</span>
                         </h2>
 
                         <menu class="course-list__status">
                             <button>
-                                <span v-if="index !== courseOpen">open</span>
-                                <span v-if="index === courseOpen">sluit</span>
+                                <span v-if="index !== courseOpen">
+                                    {{$msg('open_label')}}
+                                </span>
+
+                                <span v-if="index === courseOpen">
+                                    {{$msg('close_label')}}
+                                </span>
                             </button>
                         </menu>
                     </header>
@@ -48,12 +50,12 @@
 
                         <el-button
                             v-if="index > lastCourse"
-                            v-bind:disabled="true"
-                            v-bind:text="'Je moet eerst opdracht ' + (lastCourse + 1) + ' doen'"></el-button>
+                            v-bind:text="$msg('finish_course_first', { course : lastCourse + 1 })"
+                            v-bind:disabled="true"></el-button>
 
                         <el-button
                             v-if="index <= lastCourse"
-                            v-bind:text="'Doe opdracht ' + (index + 1)"
+                            v-bind:text="$msg('enter_course', { course : index + 1 })"
                             v-on:click="setCourse(index)"></el-button>
                     </article>
                 </li>

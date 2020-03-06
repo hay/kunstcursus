@@ -22,14 +22,14 @@
 
         <div class="menu-bar__group">
             <div class="menu-bar__audio">
-                <img src="/static/img/icon-no-audio.svg"
+                <img src="/static/img/icon-no-audio.png"
                      alt="Geen geluid" />
 
                 <el-toggle
                     v-bind:states="[true, false]"
                     v-model="muted"></el-toggle>
 
-                <img src="/static/img/icon-audio.svg"
+                <img src="/static/img/icon-audio.png"
                      alt="Wel geluid" />
             </div>
         </div>

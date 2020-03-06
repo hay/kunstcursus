@@ -76,15 +76,15 @@
             <el-message
                 type="modal"
                 v-bind:visible="confirmExit"
-                text="Weet je zeker dat je deze les wilt verlaten?">
+                v-bind:text="$msg('confirm_exit')">
 
                 <menu class="el-message__menu">
                     <el-button
-                        text="Ja, stop de les"
+                        msg="confirm_yes"
                         v-on:click="exit"></el-button>
 
                     <el-button
-                        text="Nee, ga verder"
+                        msg="confirm_no"
                         v-on:click="confirmExit = false"></el-button>
                 </menu>
             </el-message>
@@ -92,17 +92,22 @@
             <el-message
                 class="screen-course__bottom"
                 v-bind:visible="step.action === 'judge'"
-                text="Wat vind je van dit kunstwerk?">
+                v-bind:text="$msg('judge_artwork')">
 
                 <menu class="el-message__menu">
                     <el-button
-                        icon="like"
-                        text="Vind ik leuk"
+                        icon="thumbsup"
+                        msg="judge_good"
                         v-on:click="nextStep"></el-button>
 
                     <el-button
-                        icon="notlike"
-                        text="Vind ik niet leuk"
+                        icon="thumbsavg"
+                        msg="judge_avg"
+                        v-on:click="nextStep"></el-button>
+
+                    <el-button
+                        icon="thumbsdown"
+                        msg="judge_bad"
                         v-on:click="nextStep"></el-button>
                 </menu>
             </el-message>

@@ -1,4 +1,4 @@
-import { map, max } from 'lodash';
+import { map, max, template } from 'lodash';
 import Vue from 'vue'
 import Vuex from 'vuex'
 import { Logger } from './logger.js';
@@ -71,8 +71,15 @@ export class Store {
                 },
 
                 message(state, getters) {
-                    return function(id, data) {
-                        return state.messages[id];
+                    return function(id, data = null) {
+                        const msg = state.messages[id];
+
+                        if (data) {
+                            const tmpl = template(msg);
+                            return tmpl(data);
+                        } else {
+                            return msg;
+                        }
                     }
                 },
 

@@ -2,7 +2,7 @@
     "messages": [
         {
             "key": "title",
-            "value": "Kunst<br />kijken met<br />Boijmans"
+            "value": "Kunst kijken met Boijmans"
         },
         {
             "key": "intro",
@@ -10,7 +10,7 @@
         },
         {
             "key": "enable_audio",
-            "value": "Voor het volgen van de cursus moet je je audio aanzetten."
+            "value": "Voor het volgen van de cursus moet je audio aanstaan."
         },
         {
             "key": "btn_start",
@@ -25,20 +25,16 @@
             "value": "Deze website is een prototype om te laten zien hoe de cursus ongeveer zal werken. Je kunt de eerste vijf opdrachten van de cursus doen."
         },
         {
-            "key": "about_header",
-            "value": "Over dit prototype"
-        },
-        {
             "key": "btn_back",
             "value": "Terug naar vorig scherm"
         },
         {
             "key": "credits",
-            "value": "<p>Dit prototype is deel van het onderzoek “De Digitale Tentoonstelling” van Brigitte Jansen en Museum Boijmans Van Beuningen. Deze website is een prototype om te laten zien hoe de cursus ongeveer zal werken. Niet alle functies doen het momenteel, maar je kunt wel de eerste vijf opdrachten doen.</p>\n \n<p>Onderzoek: Brigitte Jansen en Museum Boijmans Van Beuningen <br />\nOntwerp: Brigitte Jansen <br />\nOntwikkeling prototype: Hay Kranen <br /> Voice-over: Hay Kranden <br />\nAnimatie: Joris van Raaij <br />\nMet extra dank aan Nico Thöne, Kachiri van Zwam, Rianne Schoonderbeek en Yoeri Meessen.</p>\n \n<p>Dit project is mogelijk gemaakt door het Stimuleringsfonds voor de Creatieve Industrie. </p>"
+            "value": "<p>Dit prototype is deel van het onderzoek “De Digitale Tentoonstelling” van Brigitte Jansen en Museum Boijmans Van Beuningen. Deze website is een prototype om te laten zien hoe de cursus ongeveer zal werken. Niet alle functies doen het momenteel, maar je kunt wel de eerste vijf opdrachten doen.</p>\n \n<p>Onderzoek: Brigitte Jansen en Museum Boijmans Van Beuningen <br />\nOntwerp: Brigitte Jansen <br />\nOntwikkeling prototype: <a href=\"http://www.haykranen.nl\" target=\"_blank\">Hay Kranen</a> <br /> Voice-over: Hay Kranden <br />\nAnimatie: Joris van Raaij <br />\nMet extra dank aan Nico Thöne, Kachiri van Zwam, Rianne Schoonderbeek en Yoeri Meessen.</p>\n \n<p>Dit project is mogelijk gemaakt door het Stimuleringsfonds voor de Creatieve Industrie. </p>"
         },
         {
             "key": "course_overview",
-            "value": "Hier zie je een overzicht van alle opdrachten die je kan volgen"
+            "value": "Hee <strong><%= name %></strong>. Hier zie je een overzicht van alle opdrachten die je kan volgen"
         },
         {
             "key": "btn_back",
@@ -167,6 +163,62 @@
         {
             "key": "profile_header",
             "value": "Profiel maken"
+        },
+        {
+            "key": "confirm_exit",
+            "value": "Weet je zeker dat je deze les wilt verlaten?"
+        },
+        {
+            "key": "confirm_yes",
+            "value": "Ja, stop de les"
+        },
+        {
+            "key": "confirm_no",
+            "value": "Nee, ga verder"
+        },
+        {
+            "key": "judge_art",
+            "value": "Wat vind je van dit kunstwerk?"
+        },
+        {
+            "key": "judge_good",
+            "value": "Vind ik leuk"
+        },
+        {
+            "key": "judge_avg",
+            "value": "Geen mening"
+        },
+        {
+            "key": "judge_bad",
+            "value": "Vind ik niet leuk"
+        },
+        {
+            "key": "about_prototype",
+            "value": "Over dit prototype"
+        },
+        {
+            "key": "wow_text",
+            "value": "Wauw <strong><%= name %></strong> Je hebt alle opdrachten gedaan! Gefeliciteerd!"
+        },
+        {
+            "key": "course_label",
+            "value": "Opdracht"
+        },
+        {
+            "key": "open_label",
+            "value": "open"
+        },
+        {
+            "key": "close_label",
+            "value": "sluit"
+        },
+        {
+            "key": "finish_course_first",
+            "value": "Je moet eerst opdracht <%= course %> doen."
+        },
+        {
+            "key": "enter_course",
+            "value": "Doe opdracht <%= course %>"
         }
     ],
     "courses": [

@@ -9,13 +9,23 @@
              v-bind:alt="text" />
 
         <span v-if="type === 'text'"
-              v-html="text"></span>
+              v-html="buttonText"></span>
     </button>
 </template>
 
 <script>
     export default {
         computed : {
+            buttonText() {
+                if (this.text) {
+                    return this.text;
+                } else if (this.msg) {
+                    return this.$msg(this.msg);
+                } else {
+                    return null;
+                }
+            },
+
             classes() {
                 const classes = ['el-button--' + this.type];
 
@@ -31,16 +41,11 @@
             },
 
             iconSrc() {
-                // FIXME
-                if (this.icon.endsWith('.png')) {
-                    return `img/icon-${this.icon}`;
-                } else {
-                    return `img/icon-${this.icon}.svg`;
-                }
+                return `img/icon-${this.icon}.png`;
             },
 
             type() {
-                return this.icon && this.text ? 'icon' : 'text';
+                return this.icon && this.buttonText ? 'icon' : 'text';
             }
         },
 
@@ -66,6 +71,10 @@
 
             icon : {
                 type : String,
+            },
+
+            msg : {
+                type : String
             },
 
             text : {

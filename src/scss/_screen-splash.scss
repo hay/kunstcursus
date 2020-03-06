@@ -1,21 +1,8 @@
 .screen-splash {
-    &__title {
-        position: relative;
-    }
-
-    &__title-image {
-        width: 20rem;
+    &__logo img {
+        width: 30rem;
         @include margin-center;
         display: block;
-    }
-
-    &__title-text {
-        position: relative;
-        top: -15rem;
-        text-align: center;
-        font-size: 7rem;
-        line-height: 0.8;
-        margin-bottom: -10rem;
     }
 
     &__text {

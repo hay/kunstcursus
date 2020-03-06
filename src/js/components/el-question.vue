@@ -11,7 +11,7 @@
                 v-on:click="submit"
                 v-bind:disabled="buttonDisabled"
                 class="el-message__icon-button">
-                <img src="/static/img/icon-send.svg"
+                <img src="/static/img/icon-send.png"
                      alt="Verstuur" />
             </button>
         </div>

@@ -4,17 +4,15 @@
             <el-button
                 align="right"
                 flair="noborder"
-                icon="info.png"
+                icon="info"
                 text="Over dit prototype"
                 v-on:click="about"></el-button>
 
-            <h1 class="screen-splash__title">
-                <img class="screen-splash__title-image"
-                     src="/static/img/logo-splash.png"
-                     alt="De 'B' van Boijmans" />
+            <h1 class="screen-splash__logo">
+                <img src="/static/img/logo-splash.png"
+                     alt="Logo van 'Kunst Kijken met Boijmans'" />
 
-                <div class="screen-splash__title-text"
-                     v-html="$msg('title')"></div>
+                <span class="sr-only">{{$msg('title')}}</span>
             </h1>
 
             <article class="screen-splash__text"
