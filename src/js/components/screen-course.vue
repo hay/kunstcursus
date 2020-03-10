@@ -110,7 +110,6 @@
 
 <script>
     import ClockTimer from '../clocktimer.js';
-    import ElButton from './el-button.vue';
     import ElComments from './el-comments.vue';
     import ElHint from './el-hint.vue';
     import ElJudge from './el-judge.vue';
@@ -126,7 +125,6 @@
 
     export default {
         components : {
-            ElButton,
             ElComments,
             ElHint,
             ElJudge,

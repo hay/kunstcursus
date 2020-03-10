@@ -2,9 +2,12 @@
     <div class="screen screen--text">
         <div class="screen__content">
             <el-button
+                align="right"
+                flair="link"
                 v-on:click="back"
-                v-bind:text="$msg('btn_back')"
-                align="center"></el-button>
+                v-bind:text="$msg('btn_back')"></el-button>
+
+            <el-logo></el-logo>
 
             <h1 class="screen__title">
                 {{$msg('about_header')}}
@@ -12,17 +15,20 @@
 
             <article class="screen__text"
                      v-html="$msg('credits')"></article>
+
+            <el-button
+                v-on:click="back"
+                v-bind:text="$msg('btn_back')"
+                align="center"></el-button>
         </div>
     </div>
 </template>
 
 <script>
-    import ElButton from './el-button.vue';
+    import ElLogo from './el-logo.vue';
 
     export default {
-        components : {
-            ElButton
-        },
+        components : { ElLogo },
 
         methods : {
             back() {

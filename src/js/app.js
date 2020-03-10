@@ -1,10 +1,13 @@
 import 'regenerator-runtime/runtime';
 import Vue from 'vue';
-import App from './components/app.vue';
-import { parseHash } from './router.js';
 
+import App from './components/app.vue';
+import ElButton from './components/el-button.vue';
 import Sounds from './sounds.js';
+import { parseHash } from './router.js';
 import { Store } from './store.js';
+
+Vue.component('el-button', ElButton);
 
 (async function() {
     const store = new Store();

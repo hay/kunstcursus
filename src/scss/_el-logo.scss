@@ -1,5 +1,5 @@
 .logo {
-    img {
+    &__image {
         width: 30rem;
         @include margin-center;
         display: block;

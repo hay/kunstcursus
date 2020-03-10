@@ -113,14 +113,11 @@
 </template>
 
 <script>
-    import ElButton from './el-button.vue';
     import ElToggle from './el-toggle.vue';
     import { STATEMENTS } from '../const.js';
 
     export default {
-        components : {
-            ElButton, ElToggle
-        },
+        components : { ElToggle },
 
         computed : {
             profile() {

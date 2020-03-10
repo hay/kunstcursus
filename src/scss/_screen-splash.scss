@@ -1,5 +1,8 @@
 .screen-splash {
     &__text {
+        background: url('../static/img/el-circle2.png') no-repeat 0 0,
+                    url('../static/img/el-blurb1.png') no-repeat 100% 50%;
+        background-size: 10rem, 15rem;
         @include child-margins(2rem);
         @include margin-center;
         margin-bottom: 2rem;
@@ -37,22 +40,6 @@
         padding: $padding;
         text-align: center;
         font-style: italic;
-    }
-
-    &__start {
-        border-radius: $padding;
-        border: 1px solid $c-3;
-        padding: $padding ($padding * 2);
-        text-align: center;
-        background: white;
-        transition: 300ms;
-        color: $c-1;
-        font-weight: bold;
-        margin-bottom: 3rem;
-    }
-
-    &__start[disabled] {
-        color: $c-3;
     }
 
     &__small {

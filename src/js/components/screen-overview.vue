@@ -8,12 +8,7 @@
                 msg="about_prototype"
                 v-on:click="about"></el-button>
 
-            <h1 class="logo">
-                <img src="/static/img/logo-splash.png"
-                     alt="Logo van 'Kunst Kijken met Boijmans'" />
-
-                <span class="sr-only">{{$msg('title')}}</span>
-            </h1>
+            <el-logo></el-logo>
 
             <p v-if="!allDone"
                class="screen-overview__description"
@@ -68,7 +63,7 @@
 </template>
 
 <script>
-    import ElButton from './el-button.vue';
+    import ElLogo from './el-logo.vue';
 
     export default {
         components : { ElButton },

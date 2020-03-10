@@ -8,12 +8,7 @@
                 text="Over dit prototype"
                 v-on:click="about"></el-button>
 
-            <h1 class="logo">
-                <img src="/static/img/logo-splash.png"
-                     alt="Logo van 'Kunst Kijken met Boijmans'" />
-
-                <span class="sr-only">{{$msg('title')}}</span>
-            </h1>
+            <el-logo></el-logo>
 
             <article class="screen-splash__text"
                      v-html="$msg('intro')"></article>
@@ -45,12 +40,10 @@
 </template>
 
 <script>
-    import ElButton from './el-button.vue';
+    import ElLogo from './el-logo.vue';
 
     export default {
-        components : {
-            ElButton
-        },
+        components : { ElButton },
 
         computed : {
             isValidName() {
