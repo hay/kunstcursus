@@ -6,6 +6,11 @@ import ElButton from './components/el-button.vue';
 import Sounds from './sounds.js';
 import { parseHash } from './router.js';
 import { Store } from './store.js';
+import { Tracker } from './tracker.js';
+
+Vue.prototype.$tracker = new Tracker({
+    log : window.location.href.includes('debug')
+});
 
 Vue.component('el-button', ElButton);
 
