@@ -2,23 +2,27 @@
     <div class="screen screen-course">
         <div class="screen__flex">
             <image-viewer
+                v-if="viewerType === 'viewer'"
                 ref="viewer"
-                v-if="!['imagespotter', 'spotted'].includes(step.action)"
                 v-bind:disableZoom="disableZoom"
                 v-bind:key="artwork"
                 v-on:ready="viewerReady"
                 ></image-viewer>
 
             <image-spotter
-                v-if="step.action === 'imagespotter'"
+                v-if="viewerType === 'spotter' && step.action === 'imagespotter'"
                 ref="spotter"
                 v-on:spot="questionVisible = true"></image-spotter>
 
             <image-spotter
-                v-if="step.action === 'spotted'"
+                v-if="viewerType === 'spotter' && step.action === 'spotted'"
                 ref="spotted"
                 v-bind:spots="protoSpots"
                 v-on:spot="showNotice"></image-spotter>
+
+            <image-single
+                v-if="viewerType === 'single'"
+                v-bind:src="step.meta"></image-single>
 
             <el-hint
                 v-bind:visible="stepsVisible"
@@ -115,6 +119,7 @@
     import ElJudge from './el-judge.vue';
     import ElMessage from './el-message.vue';
     import ElQuestion from './el-question.vue';
+    import ImageSingle from './image-single.vue';
     import ImageSpotter from './image-spotter.vue';
     import ImageViewer from './image-viewer.vue';
     import MenuBar from './menu-bar.vue';
@@ -130,6 +135,7 @@
             ElJudge,
             ElMessage,
             ElQuestion,
+            ImageSingle,
             ImageSpotter,
             ImageViewer,
             MenuBar
@@ -146,6 +152,18 @@
 
             step() {
                 return this.$store.getters.step;
+            },
+
+            viewerType() {
+                const action = this.step.action;
+
+                if (this.useSingleImageViewer) {
+                    return 'single';
+                } else if (['imagespotter', 'spotted'].includes(action)) {
+                    return 'spotter';
+                } else {
+                    return 'viewer';
+                }
             }
         },
 
@@ -161,6 +179,7 @@
                 stepsVisible : false,
                 time : null,
                 timer : null,
+                useSingleImageViewer : false,
                 viewerShown : false
             }
         },
@@ -216,6 +235,16 @@
                         // TOOD: implement
                         this.nextStep();
                         return;
+                    }
+
+                    if (this.step.action === 'singleimageon') {
+                        this.useSingleImageViewer = true;
+                        this.nextStep();
+                    }
+
+                    if (this.step.action === 'singleimageoff') {
+                        this.useSingleImageViewer = false;
+                        this.nextStep();
                     }
 
                     if (this.step.action === 'study') {
@@ -286,7 +315,8 @@
                 this.hasNotice = msg;
             },
 
-            showViewer() {
+            async showViewer() {
+                await timeout(250); // FIXME
                 this.viewerShown = true;
                 this.$refs.viewer.show();
             },

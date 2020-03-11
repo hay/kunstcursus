@@ -22,6 +22,7 @@
     transition: 300ms;
     font-weight: bold;
     @include flex-center;
+    text-decoration: none;
 
     &[disabled] {
         filter: grayscale(1);

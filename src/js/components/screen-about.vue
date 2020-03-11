@@ -6,7 +6,6 @@
                 flair="link"
                 v-on:click="back"
                 v-bind:text="$msg('btn_back')"></el-button>
-
             <el-logo></el-logo>
 
             <h1 class="screen__title">
@@ -16,10 +15,13 @@
             <article class="screen__text"
                      v-html="$msg('credits')"></article>
 
-            <el-button
-                v-on:click="back"
-                v-bind:text="$msg('btn_back')"
-                align="center"></el-button>
+            <a v-bind:href="$msg('feedback_url')"
+               target="_blank"
+               class="el-button el-button--text el-button--center">
+                <span>
+                    {{$msg('give_feedback')}}
+                </span>
+            </a>
         </div>
     </div>
 </template>

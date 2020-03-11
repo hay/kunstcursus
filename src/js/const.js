@@ -45,29 +45,31 @@ export const COURSE_ACTIONS = [
     "resetcenter",
     "showsteps",
     "showviewer",
+    "singleimageoff",
+    "singleimageon",
     "spotted",
     "study",
     "timefeedback"
 ];
 export const DEFAULT_SCREEN = 'splash';
 export const LOG_API = 'https://projects.haykranen.nl/kunstcursus/api/log.php';
-export const MIN_QUESTION_LENGTH = 5;
+export const MIN_QUESTION_LENGTH = 3;
 export const MIN_ZOOM_RATIO = 0.25;
 export const MAX_ZOOM_RATIO = 1.5;
 export const PAINTING_VIEW_TIME = 60;
 
 // FIXME
 export const PROTO_SPOTS = [
-    ["Een perzik", 0.2640, 0.5867],
-    ["Citroenschil", 0.5120, 0.7444],
-    ["Geschilde citroen", 0.5573, 0.5282],
-    ["Een kelk of zoiets?", 0.4373, 0.4403],
-    ["Fraai tapij", 0.9253, 0.7061],
-    ["Delftsblauw keramiek", 0.8267, 0.4606],
-    ["Een tomaat? Of een paprika?", 0.5600, 0.4583],
-    ["Een mes, denk ik", 0.690, 0.7106],
-    ["Zilveren schaal??", 0.0773, 0.6408],
-    ["Een kleine pompoen??", 0.7280, 0.4899]
+    ["Citroenschil", 0.5251, 0.7359],
+    ["Een mes", 0.6508, 0.7048],
+    ["Een vaas", 0.4849, 0.1398],
+    ["Weerspiegeling van de pompoen", 0.5184, 0.4025],
+    ["Een keramieken schaal", 0.7764, 0.5452],
+    ["Fraai tapijt", 0.7898, 0.8093],
+    ["Is dit een sinaasappel?", 0.6943, 0.4859],
+    ["Er zit schimmel op deze perzik", 0.2454, 0.6285],
+    ["Een geschilde citroen", 0.5637, 0.5381],
+    ["Blaadjes", 0.7596, 0.3305]
 ].map((s) => {
     return {label : s[0], x : s[1], y : s[2] }
 });

@@ -1,4 +1,8 @@
 .el-button {
+    &--link {
+        color: white;
+    }
+
     &--center {
         @include margin-center;
         display: block;

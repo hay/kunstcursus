@@ -30,6 +30,7 @@ export class Store {
                 messages : model.getMessages(),
                 muted : false,
                 screen : null,
+                seenOverview : false,
                 skipIntro : false,
                 stepIndex : null,
                 userName : null
@@ -120,6 +121,10 @@ export class Store {
 
                 screen(state, id) {
                     state.screen = id;
+                },
+
+                seenOverview(state) {
+                    state.seenOverview = true;
                 },
 
                 skipIntro(state) {

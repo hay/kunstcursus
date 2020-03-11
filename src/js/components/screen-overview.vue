@@ -90,12 +90,6 @@
             }
         },
 
-        data() {
-            return {
-                firstEntry : true
-            };
-        },
-
         methods : {
             about() {
                 this.$store.commit('screen', 'about');
@@ -112,9 +106,9 @@
         },
 
         mounted() {
-            if (this.firstEntry) {
+            if (!this.$store.state.seenOverview) {
                 this.$sounds.play('overview_01');
-                this.firstEntry = false;
+                this.$store.commit('seenOverview');
             }
 
             if (this.allDone) {

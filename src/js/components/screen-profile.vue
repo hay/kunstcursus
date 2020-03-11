@@ -6,7 +6,8 @@
                 {{$msg('profile_header')}}
             </h2>
 
-            <p class="profile__intro">{{$msg('profile_intro')}}</p>
+            <p class="profile__intro"
+               v-html="$msg('profile_intro')"></p>
 
             <ul class="profile__inputs">
                 <li>
@@ -78,7 +79,8 @@
                 {{$msg('profile_header')}}
             </h2>
 
-            <p class="profile__intro">{{$msg('profile_statements')}}</p>
+            <p class="profile__intro"
+               v-html="$msg('profile_statements')"></p>
 
             <ul class="profile__toggles">
                 <li

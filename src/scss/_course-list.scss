@@ -6,9 +6,8 @@
 
     &__item {
         background: $c-4;
-        padding: $padding * 2;
+        padding: $padding * 1.5;
         margin-bottom: 1rem;
-        padding: $padding;
         border-radius: $padding;
         width: 100%;
     }
@@ -27,7 +26,12 @@
 
     &__title {
         font-weight: bold;
-        font-size: 2rem;
+        font-size: 2.2rem;
+        color: $c-1;
+    }
+
+    &__item[disabled] &__title {
+        color: white;
     }
 
     &__info {

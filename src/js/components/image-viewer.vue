@@ -51,6 +51,8 @@
             setupViewer() {
                 let img = this.$refs.img;
 
+                if (!img) return;
+
                 img.addEventListener('ready', () => {
                     this.$emit('ready');
                 });

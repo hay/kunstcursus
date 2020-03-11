@@ -40,4 +40,8 @@
         max-width: 50rem;
         font-size: 1.8rem;
     }
+
+    &--text &__text a {
+        color: black;
+    }
 }

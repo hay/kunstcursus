@@ -17,7 +17,7 @@
     export default {
         computed : {
             buttonText() {
-                if (this.text) {
+                if (this.text || this.flair === 'link') {
                     return this.text;
                 } else if (this.msg) {
                     return this.$msg(this.msg);
@@ -45,7 +45,11 @@
             },
 
             type() {
-                return this.icon && this.buttonText ? 'icon' : 'text';
+                if (this.flair === 'link') {
+                    return this.flair;
+                } else {
+                    return this.icon && this.buttonText ? 'icon' : 'text';
+                }
             }
         },
 
