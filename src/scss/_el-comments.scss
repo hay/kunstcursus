@@ -1,37 +1,62 @@
 .el-comments {
-    @include flex-center;
-    @include margin-center;
-    width: 100%;
-    max-width: $max-width;
-    padding: $padding;
-    background: rgba($c-2, 0.9);
     display: none;
-    bottom: 0;
 
-    &__title {
-        text-align: left;
-        font-size: 1.8rem;
-        color: $c-1;
-        margin-bottom: 1rem;
+    &[visible] {
+        @include flex-center;
+    }
+
+    &__listcontainer {
+        width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    &__listcontainer,
+    &__list,
+    &__comment {
+        max-height: calc(100vh - #{$menu-height * 2}); // Failsafe for really small screens
     }
 
     &__list {
-        margin-bottom: 1rem;
+        display: flex;
         list-style: none;
+        margin: 1rem;
     }
 
-    &__list li {
-        margin-bottom: 1rem;
+    &__comment {
+        display: flex;
+        flex-direction: column;
+        margin: 0 1rem;
+        background: rgba(white, 0.8);
+        padding: 2rem;
+        border-radius: 1rem;
+        flex: none;
+        width: 32rem;
+        overflow-y: auto;
+        max-height: calc(100vh - 15rem);
+    }
+
+    &__name {
+        align-self: flex-end;
+        text-align: right;
+        font-weight: bold;
+        color: $c-1;
+        font-size: 2.2rem;
+    }
+
+    &__text {
         font-size: 1.8rem;
+        background: url('../static/img/el-quotes-open.png') no-repeat 0 0,
+                    url('../static/img/el-quotes-close.png') no-repeat 100% 100%;
+        background-size: 3rem, 3rem;
+        padding-top: 1rem;
+        padding-bottom: 3rem;
+        text-indent: 3.5rem;
+        margin-bottom: 1rem;
     }
 
-    &__button {
-        @include text-button;
-        display: block;
-        margin: 0 auto $padding auto;
-    }
-
-    &[is-visible] {
-        display: block;
+    &__votebtn {
+        margin-top: auto;
     }
 }

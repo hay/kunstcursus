@@ -1,26 +1,25 @@
-@import "../../node_modules/valenski/valenski-reset";
+@import "../../node_modules/valenski/valenski";
 @import "../../node_modules/viewerjs/dist/viewer";
 @import "values";
 @import "fonts";
 @import "mixins";
 @import "base";
 @import "course-list";
+@import "el-button";
+@import "el-comments";
 @import "el-hint";
+@import "el-logo";
 @import "el-message";
+@import "el-toggle";
+@import "image-single";
+@import "image-spotter";
 @import "image-viewer";
+@import "intro";
 @import "menu-bar";
 @import "modal-dialog";
+@import "profile";
 @import "screen";
 @import "screen-course";
 @import "screen-overview";
 @import "screen-slideshow";
 @import "screen-splash";
-@import "el-button";
-@import "el-toggle";
-@import "image-spotter";
-@import "profile";
-@import "el-logo";
-
-@import "intro";
-
-@import "image-single";

@@ -239,6 +239,10 @@
         {
             "key": "feedback_url",
             "value": "https://docs.google.com/forms/d/e/1FAIpQLSekOrhDsMaUUMsqSmP72mpIa-FfFvdSkdmMWdtzcMOSLJrwxg/viewform?usp=sf_link"
+        },
+        {
+            "key": "vote_comment",
+            "value": "Stem op deze"
         }
     ],
     "courses": [
@@ -289,6 +293,56 @@
             "artwork": 1,
             "artlabel": "Les Coteaux d'Auvers uit 1882 van Camille Pissarro",
             "artlink": "https://www.boijmans.nl/collectie/kunstwerken/2397/les-coteaux-d-auvers-de-heuvels-van-auvers"
+        }
+    ],
+    "comments": [
+        {
+            "name": "Sarie, 25 jaar",
+            "text": "Zij hoort het druppelen van water in de douche, en dit denk ik door het kleurgebruik en de naakte dame. Ze lijkt me een beetje naar beneden te kijken, dus het doucheputje. Ze ruikt algemene geur van de badkamer, volgens mij heeft ze nog geen shampoo gebruikt.",
+            "course": "step-inside",
+            "meta": null
+        },
+        {
+            "name": "Daniël, 21 jaar",
+            "text": "Naar mijn mening gaat dit werk over een liefdesbreuk of een ander droevig verhaal. Ze kijkt echt naar beneden om niet haar verdrietige gezicht te laten zien. Ook de harde lijnen en donkere kleuren symboliseren dit. Ze kijkt naar haar handen. Ze ruikt bloemen, want die zijn zwart door alle spijt.",
+            "course": "step-inside",
+            "meta": null
+        },
+        {
+            "name": "Sasha, 41 jaar",
+            "text": "De vrouw is aan het werken met haar handen, hier hoort ze de geluiden van. Ze ziet een vreemdeling voorbij lopen. Ze ruikt het houten gereedschap wat ze gebruikt en misschien wat zweet.",
+            "course": "step-inside",
+            "meta": null
+        },
+        {
+            "name": "Jos, 62 jaar",
+            "text": "Ik kijk naar een landschap schilderij. Het is een heuvelig landschap in een Europees warm land. Er is rus geschilderd en je ziet de verfstreken goed. In het landschap lopen twee vrouwen over de weg en je ziet verschillende witte huisjes, eentje heeft een blauw dak.",
+            "course": "oma",
+            "meta": "vote"
+        },
+        {
+            "name": "Laura, 24 jaar",
+            "text": "Hoi oma! Ik zie een schilderij van een Grieks landschap. Het is een berg of een heuvel met een klein drop erop. Er is geen groen en bomen en de heuvel is bedekt met gras. Schuin door het schilderij loopt een weg. Hierop loopt een vrouw richting het dorp en de andere loopt het dorp uit. Allebei hebben ze traditionele kleren aan.",
+            "course": "oma",
+            "meta": "vote"
+        },
+        {
+            "name": "Niels, 49 jaar",
+            "text": "Het is een impressionistische schilderij van Pissarro. In snelle toetsen is een uitzicht op een dorp neergezet. In groen, blauwe en bruine is de natuur in het dorpje opgezet. In het wit verschijnen enkele huizen tussen de bomen en struiken. Door het dorp lopen twee vrouwen die ieder een andere kant opgaan.",
+            "course": "oma",
+            "meta": "vote"
+        },
+        {
+            "name": "Winston, 31 jaar",
+            "text": "Ik zie twee mensfiguren. Zij lopen op een weg, maar waar die precies heen gaat zie je niet zo goed. Volgens mij loopt de weg verder de bergen in, maar ook langs enkele huisjes. De huisjes zijn wit, waarvan eentje een blauw dak heeft. Het landschap is rotsig en ik zie een aantal bomen. Het schilderij is niet waarheidsgetrouw getekend.",
+            "course": "oma",
+            "meta": "vote"
+        },
+        {
+            "name": "Fleur, 17 jaar",
+            "text": "Een landschap met een rustig dorpje. Het doet me denken aan vakantie in Frankrijk op een plattelands dorpje. Er is veel groen en de lucht is onrustig met veel verschillende kleuren.",
+            "course": "oma",
+            "meta": "vote"
         }
     ],
     "art-tinder": [
@@ -1058,7 +1112,7 @@
             "steplabel": "Stem",
             "text": "Lees eens deze vijf omschrijvingen die andere cursisten schreven. Stem op jouw favoriete omschrijving.",
             "audio": "oma_03",
-            "button": null,
+            "button": "Ga verder",
             "meta": "x"
         },
         {
