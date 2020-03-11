@@ -10,7 +10,8 @@ import { Store } from './store.js';
 import { Tracker } from './tracker.js';
 
 Vue.prototype.$track = new Tracker({
-    log : window.location.href.includes('debug')
+    log : window.location.href.includes('debug'),
+    trackerName : 'gtm1'
 });
 
 Vue.component('el-button', ElButton);
