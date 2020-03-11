@@ -17,6 +17,11 @@
         @include text-button;
     }
 
+    &--text em {
+        font-style: normal;
+        font-weight: normal;
+    }
+
     &--noborder {
         background: none;
     }
@@ -46,5 +51,10 @@
         font-weight: bold;
         color: $c-1;
         font-size: 2.2rem;
+    }
+
+    &--solid {
+        background: $c-1;
+        border-radius: 1rem;
     }
 }

@@ -14,7 +14,7 @@
     }
 
     &--modal {
-        background: white;
+        background: white !important; // FIXME
         @include transform-center-horizontal;
         z-index: 1;
     }
@@ -58,7 +58,7 @@
         width: 100%;
         border: 1px solid $c-3;
         flex: 1;
-        margin-right: $padding * 2;
+        margin-right: $padding;
         height: 4rem;
         font-size: 1.8rem;
     }
@@ -75,6 +75,12 @@
 
     &__icon-button {
         @include icon-button;
+        height: 4rem;
+    }
+
+    &__icon-button img {
+        height: 3rem;
+        object-fit: contain;
     }
 
     &[is-visible] {

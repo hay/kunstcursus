@@ -59,10 +59,12 @@
 
                 <menu class="el-message__menu">
                     <el-button
+                        flair="solid"
                         text="OK"
                         v-on:click="hasNotice = false"></el-button>
 
                     <el-button
+                        flair="solid"
                         text="Sluit les af"
                         v-on:click="nextStep"></el-button>
                 </menu>
@@ -73,6 +75,7 @@
                 v-bind:visible="step.action === 'notice'"
                 v-bind:text="step.text">
                 <el-button
+                    flair="solid"
                     align="center"
                     v-bind:text="step.button"
                     v-on:click="nextStep"></el-notice>
@@ -85,10 +88,12 @@
 
                 <menu class="el-message__menu">
                     <el-button
+                        flair="solid"
                         msg="confirm_yes"
                         v-on:click="exit"></el-button>
 
                     <el-button
+                        flair="solid"
                         msg="confirm_no"
                         v-on:click="confirmExit = false"></el-button>
                 </menu>

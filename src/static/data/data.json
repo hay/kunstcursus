@@ -214,7 +214,7 @@
         },
         {
             "key": "enter_course",
-            "value": "Start <strong><%= course %></strong>"
+            "value": "<em>Start</em> <%= course %>"
         },
         {
             "key": "enter_course_again",
