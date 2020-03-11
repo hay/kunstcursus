@@ -4,11 +4,14 @@
     width: calc(100% - #{$padding * 2});
     max-width: $max-width;
     padding: $padding;
-    background: rgba($c-2, 0.8);
     bottom: 0;
     display: none;
     border-top-left-radius: $padding;
     border-top-right-radius: $padding;
+
+    &[has-text] {
+        background: rgba($c-2, 0.8);
+    }
 
     &--modal {
         background: white;

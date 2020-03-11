@@ -52,6 +52,7 @@
 
                         <el-button
                             align="right"
+                            flair="link"
                             v-if="index <= lastCourse"
                             msg="enter_course_again"
                             v-on:click="setCourse(index)"></el-button>

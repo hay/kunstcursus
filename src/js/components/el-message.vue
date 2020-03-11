@@ -1,6 +1,7 @@
 <template>
     <div class="el-message"
          v-bind:class="'el-message--' + type"
+         v-bind:has-text="!!text"
          v-bind:is-visible="visible">
         <div class="el-message__text"
              v-if="text">

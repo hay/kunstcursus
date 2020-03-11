@@ -2,15 +2,16 @@
     <div class="screen screen--text">
         <div class="screen__content">
             <el-button
-                align="center"
+                align="right"
                 flair="link"
                 v-on:click="back"
-                v-bind:text="$msg('btn_back')"></el-button>
+                msg="btn_back"></el-button>
+
             <el-logo></el-logo>
 
-            <h1 class="screen__title">
-                {{$msg('about_header')}}
-            </h1>
+            <h2 class="screen__subtitle">
+                {{$msg('about_prototype')}}
+            </h2>
 
             <article class="screen__text"
                      v-html="$msg('credits')"></article>

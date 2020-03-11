@@ -1,8 +1,4 @@
 .el-button {
-    &--link {
-        color: white;
-    }
-
     &--center {
         @include margin-center;
         display: block;
@@ -40,5 +36,15 @@
         @include wh(2.5rem);
         background: url('../static/img/icon-start.png') no-repeat;
         background-size: contain;
+    }
+
+    // FIXME: flairs and stuff is a mess
+    &--link {
+        background: none;
+        @include wh(inherit);
+        text-decoration: underline;
+        font-weight: bold;
+        color: $c-1;
+        font-size: 2.2rem;
     }
 }
