@@ -895,7 +895,7 @@
             "text": null,
             "audio": "details_01",
             "button": "Start",
-            "meta": null
+            "meta": "details/detail1-blurred.png"
         },
         {
             "action": "showsteps",
@@ -967,7 +967,7 @@
             "text": "Waar denk je dat het kunstwerk over gaat? Probeer dit te omschrijven en maak duidelijk waar je dit aan zag.",
             "audio": "details_02",
             "button": null,
-            "meta": null
+            "meta": "details/compilation.jpg"
         },
         {
             "action": "singleimageoff",

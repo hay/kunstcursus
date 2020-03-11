@@ -1,7 +1,7 @@
 .screen-splash {
     &__text {
         background: url('../static/img/el-circle2.png') no-repeat 0 0,
-                    url('../static/img/el-blurb1.png') no-repeat 100% 50%;
+                    url('../static/img/el-blurb4.png') no-repeat 100% 50%;
         background-size: 10rem, 15rem;
         @include child-margins(2rem);
         @include margin-center;
