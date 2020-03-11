@@ -58,7 +58,7 @@
 
             submit() {
                 if (!this.buttonDisabled) {
-                    this.$store.commit('log', `question:${this.input}`);
+                    this.$track.track('question', this.input);
                     this.$emit('submit');
                 }
             }

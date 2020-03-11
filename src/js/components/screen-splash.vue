@@ -65,6 +65,7 @@
             start() {
                 this.$store.commit('userName', this.name);
                 this.$store.commit('screen', 'intro');
+                this.$track.trackOnce('start');
             }
         }
     }

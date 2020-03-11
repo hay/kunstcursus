@@ -14,7 +14,7 @@
 
         <el-button
             class="intro__skip"
-            v-on:click="close"
+            v-on:click="skip"
             msg="skip_intro"></el-button>
     </div>
 </template>
@@ -71,6 +71,11 @@
                 })
             },
 
+            skip() {
+                this.$track.trackOnce('skip-intro');
+                this.close();
+            },
+
             startVoiceover() {
                 this.voiceover = true;
                 const sound = this.$sounds.play('intro_01');
@@ -90,6 +95,7 @@
                 // This is a bit of a kludge, but make sure both voiceover
                 // *and* animation are finished
                 if (this.done >= 2) {
+                    this.$track.trackOnce('finished-complete-intro');
                     this.close();
                 }
             }

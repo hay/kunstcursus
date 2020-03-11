@@ -52,7 +52,6 @@ export const COURSE_ACTIONS = [
     "timefeedback"
 ];
 export const DEFAULT_SCREEN = 'splash';
-export const LOG_API = 'https://projects.haykranen.nl/kunstcursus/api/log.php';
 export const MIN_QUESTION_LENGTH = 3;
 export const MIN_ZOOM_RATIO = 0.25;
 export const MAX_ZOOM_RATIO = 1.5;
@@ -77,5 +76,7 @@ export const PROTO_SPOTS = [
 export const STATEMENTS = [
     'book', 'size', 'moment', 'pets', 'visit'
 ];
+
+export const TRACK_TIME_INTERVAL = 1000 * 10; // Every ten seconds
 
 export const ZOOM_BTN_FACTOR = 0.25;

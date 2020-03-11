@@ -1,12 +1,11 @@
-import { LOG_API } from './const.js';
+import { Tracker } from './tracker.js';
 
-export class Logger {
-    constructor() {
+const tracker = new Tracker({
+    log : window.location.href.includes('debug')
+});
 
-    }
-
-    async log(msg) {
-        const url = `${LOG_API}?msg=${window.encodeURIComponent(msg)}`;
-        window.fetch(url);
-    }
+export function vuexPlugin(store) {
+    store.subscribe((m) => {
+        tracker.track(m.type, m.payload);
+    });
 }

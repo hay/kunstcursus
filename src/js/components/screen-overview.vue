@@ -55,7 +55,7 @@
                             flair="link"
                             v-if="index <= lastCourse"
                             msg="enter_course_again"
-                            v-on:click="setCourse(index)"></el-button>
+                            v-on:click="setCourseAgain(index)"></el-button>
                     </article>
                 </li>
             </ul>
@@ -103,6 +103,11 @@
             setCourse(index) {
                 this.$store.commit('courseIndex', index);
                 this.$store.commit('screen', 'course');
+            },
+
+            setCourseAgain(index) {
+                this.$track.track('course-again', index);
+                this.setCourse(index);
             }
         },
 
@@ -113,6 +118,7 @@
             }
 
             if (this.allDone) {
+                this.$track.trackOnce('all-coursed-done');
                 this.$sounds.play('outro_01');
             }
         }

@@ -200,10 +200,13 @@
                 await timeout(1000);
                 this.$store.commit('courseDone');
                 this.$store.commit('screen', 'overview');
+
+                const courseLabel = this.$store.getters.course.title;
+                this.$track.track('course-done', courseLabel)
             },
 
             exit() {
-                this.$store.commit('log', `action:exit`);
+                this.$track.track('action', `exit`);
                 this.confirmExit = false;
                 this.courseDone();
             },
@@ -221,8 +224,8 @@
             },
 
             judge(rating) {
-                const evt = `judge:${this.artwork}:${rating}`;
-                this.$store.commit('log', evt);
+                const evt = `${this.artwork}:${rating}`;
+                this.$track.track('judge', evt);
                 this.nextStep();
             },
 
@@ -327,6 +330,7 @@
             },
 
             skipTime() {
+                this.$track.trackOnce('skip-time');
                 timer.updateSeconds(PAINTING_VIEW_TIME - 1);
             },
 

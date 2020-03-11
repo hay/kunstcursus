@@ -1,22 +1,10 @@
 import { map, max, template } from 'lodash';
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { Logger } from './logger.js';
+import { vuexPlugin } from './logger.js';
 import { Model } from './model.js';
 
 Vue.use(Vuex);
-const logger = new Logger();
-
-function loggerPlugin(store) {
-    store.subscribe((m) => {
-        const msg = `[mutation] ${m.type}:${m.payload}`;
-        console.log(msg);
-
-        if (m.type !== 'log') {
-            logger.log(msg);
-        }
-    });
-}
 
 export class Store {
     constructor() {
@@ -38,7 +26,7 @@ export class Store {
         }
 
         this.store = new Vuex.Store({
-            plugins : [ loggerPlugin ],
+            plugins : [ vuexPlugin ],
 
             state : getInitialState(),
 
@@ -109,10 +97,6 @@ export class Store {
                 // Another debug thing
                 lastCourse(state, course) {
                     state.lastCourse = course;
-                },
-
-                log(state, msg) {
-                    logger.log(msg);
                 },
 
                 muted(state, muted) {

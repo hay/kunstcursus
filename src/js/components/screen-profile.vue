@@ -170,8 +170,11 @@
                     window.scrollTo(0, 0);
                     this.page = 2;
                     this.$sounds.play('profile_02');
+                    this.$track.track('profile-page-2');
                 } else {
                     // Send profile to analytics
+                    const profile = JSON.stringify(this.profile);
+                    this.$track.track('profiledata', profile);
                     this.$store.commit('screen', 'overview');
                 }
             }

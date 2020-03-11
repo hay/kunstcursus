@@ -57,15 +57,17 @@
         methods : {
             exit() {
                 this.$emit('exit');
+                this.$track.trackOnce('menu-exit');
             },
-
 
             zoomIn() {
                 this.$emit('zoomin');
+                this.$track.trackOnce('menu-zoomin');
             },
 
             zoomOut() {
                 this.$emit('zoomout');
+                this.$track.trackOnce('menu-zoomout');
             }
         },
 
@@ -78,6 +80,7 @@
 
         watch : {
             muted() {
+                this.$track.trackOnce('menu-muted');
                 this.$store.commit('muted', this.muted);
             }
         }
