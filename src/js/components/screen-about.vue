@@ -2,7 +2,7 @@
     <div class="screen screen--text">
         <div class="screen__content">
             <el-button
-                align="right"
+                align="center"
                 flair="link"
                 v-on:click="back"
                 v-bind:text="$msg('btn_back')"></el-button>

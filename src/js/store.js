@@ -83,6 +83,12 @@ export class Store {
                     }
                 },
 
+                nextCourseLabel(state) {
+                    if (state.lastCourse < state.courses.length) {
+                        return state.courses[state.lastCourse].title;
+                    }
+                },
+
                 step(state, getters) {
                     const step = getters.courseData[state.stepIndex];
                     return step === undefined ? 0 : step;

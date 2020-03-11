@@ -167,11 +167,16 @@
                 if (this.page === 1) {
                     window.scrollTo(0, 0);
                     this.page = 2;
+                    this.$sounds.play('profile_02');
                 } else {
                     // Send profile to analytics
                     this.$store.commit('screen', 'overview');
                 }
             }
+        },
+
+        mounted() {
+            this.$sounds.play('profile_01');
         }
     }
 </script>

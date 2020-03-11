@@ -237,7 +237,7 @@
         {
             "title": "Thumbs up",
             "datasheet": "art-tinder",
-            "description": null,
+            "description": "Je keek vliegensvlug naar 15 kunstwerken en gaf je met drie knoppen jouw mening is over de kunstwerken. Durf je van de schilderijen iets te vinden zonder titel en uitleg?",
             "artwork": 10,
             "artlabel": null,
             "artlink": null
@@ -245,7 +245,7 @@
         {
             "title": "3 - 2 - 1",
             "datasheet": "321-bridge",
-            "description": "In deze opdracht werd je gevraagd om met je eigen voorkennis associatief te denken. We begonnen makkelijk met drie woorden om zo enkele basisideeën te activeren. Daarna stelde je twee vragen. Als laatste omschreef je één object of situatie om te zien hoe jij het kunstwerk ziet en in welk referentiekader je het plaatst.",
+            "description": "In deze opdracht werd je gevraagd om met eigen voorkennis associatief te denken. We begonnen makkelijk met drie woorden om zo enkele basisideeën te activeren. Daarna formuleerde je twee vragen over het kunstwerk. Als laatste omschreef je één object of situatie om te zien hoe jij het kunstwerk ziet en in welk referentiekader je het plaatst.",
             "artwork": 5,
             "artlabel": "Strahlenlinien uit 1927 van Wassily Kandinsky",
             "artlink": "https://www.boijmans.nl/en/collection/artworks/3974/strahlenlinien"
@@ -253,7 +253,7 @@
         {
             "title": "Twee keer tien",
             "datasheet": "ten-times-two",
-            "description": null,
+            "description": "Na het kunstwerk een minuut te bestuderen ging je aan de slag met benoemen wat er te zien is op het schilderij. Je werd hierdoor uitgedaagd om goed te kijken, maar ook zelf te verwoorden wat je zag. Na 10 dingen benoemd te hebben zag je ook dingen die andere cursisten benoemd hebben. Misschien zag je hierdoor wel details die jou niet eerder op viel.",
             "artwork": 2,
             "artlabel": "Stilleven met een Ming-schaal uit circa 1660 van Kalf Willem",
             "artlink": "https://www.boijmans.nl/collectie/kunstwerken/3209/stilleven-met-een-ming-schaal"
@@ -261,7 +261,7 @@
         {
             "title": "Leef je in",
             "datasheet": "step-inside",
-            "description": null,
+            "description": "Je hebt je ingeleefd in het portret. Je verdiepte je in het schilderij door je af te vragen wat de geportretteerde beleeft en ging op empatisch niveau het kunstwerk bekijken. Met de reacties van andere cursisten zag hoe andere op verschillende manieren het schilderij interpreteerden. Als laatste stap moest je een titelbordje schrijven bij het kunstwerk. Om zo jouw idee over het werk te delen met anderen.",
             "artwork": 4,
             "artlabel": "Halbakt uit circa 1910 van Alexej von Jawlensky",
             "artlink": "https://www.boijmans.nl/collectie/kunstwerken/3921/halbakt"
@@ -269,7 +269,7 @@
         {
             "title": "Details",
             "datasheet": "details",
-            "description": null,
+            "description": "In deze opdracht kreeg je losse details uit het kunstwerk te zien en werd je gevraagd om elk detail te observeren en een aanname over het schilderij te ontwikkelen. Met elk stukje nieuwe visuele informatie werd je gevraagd om je eerste interpretatie te heroverwegen. Door slechts delen van het kunstwerk tegelijk te onthullen, ontstaat een betrokkenheid die het soms niet mogelijk is wanneer je hele beeld in een keer ziet.",
             "artwork": 3,
             "artlabel": "De val der engelen met de heilige Michael die de draak bestrijdt uit circa 1480 van Neri di Bicci",
             "artlink": "https://www.boijmans.nl/collectie/kunstwerken/3845/de-val-der-engelen-met-de-heilige-michael-die-de-draak-bestrijdt"
@@ -277,7 +277,7 @@
         {
             "title": "Oma",
             "datasheet": "oma",
-            "description": null,
+            "description": "Met het denkbeeldige telefoongesprek leg je het kunstwerk uit aan iemand die het op dit moment niet kan zien. Het laat je verwoorden wat je ziet, maar laat je ook nadenken wat een feitelijke omschrijving is en wat interpretatie. Zou oma het kunstwerk na kunnen tekenen op basis van jouw omschrijving?",
             "artwork": 1,
             "artlabel": "Les Coteaux d'Auvers uit 1882 van Camille Pissarro",
             "artlink": "https://www.boijmans.nl/collectie/kunstwerken/2397/les-coteaux-d-auvers-de-heuvels-van-auvers"
@@ -480,7 +480,7 @@
             "step": null,
             "steplabel": null,
             "text": null,
-            "audio": "bridge_01",
+            "audio": "321_01",
             "button": "Start",
             "meta": null
         },
@@ -507,7 +507,7 @@
             "step": null,
             "steplabel": null,
             "text": "Je krijgt nu drie korte vragen. Denk eraan: er zijn geen foute antwoorden. Het gaat namelijk over jouw interpretatie van het werk.",
-            "audio": "bridge_02",
+            "audio": "321_02",
             "button": "Bekijk vragen",
             "meta": null
         },
@@ -525,7 +525,7 @@
             "step": 1,
             "steplabel": "Drie woorden",
             "text": "Geef drie woorden die in je opkomen. Scheid ze met een komma.",
-            "audio": "bridge_03",
+            "audio": "321_03",
             "button": null,
             "meta": null
         },
@@ -534,7 +534,7 @@
             "step": 2,
             "steplabel": "Twee vragen",
             "text": "Welke twee vragen komen in je op?",
-            "audio": "bridge_04",
+            "audio": "321_04",
             "button": null,
             "meta": null
         },
@@ -543,7 +543,7 @@
             "step": 3,
             "steplabel": "Eén situatie",
             "text": "Omschrijf een object of situatie uit jouw leven waar dit werk je aan doet denken.",
-            "audio": "bridge_05",
+            "audio": "321_05",
             "button": null,
             "meta": null
         },
@@ -561,7 +561,7 @@
             "step": null,
             "steplabel": null,
             "text": null,
-            "audio": "bridge_06",
+            "audio": "321_06",
             "button": "Afronden",
             "meta": null
         }
@@ -572,7 +572,7 @@
             "step": null,
             "steplabel": "Bekijk",
             "text": null,
-            "audio": "x",
+            "audio": "2x10_01",
             "button": "Start",
             "meta": null
         },
@@ -590,7 +590,7 @@
             "step": null,
             "steplabel": "Bekijk",
             "text": "Benoem 10 dingen die je op het werk ziet. Klik eerst op een detail in het werk en vul daarna in wat je daar ziet.",
-            "audio": "x",
+            "audio": "2x10_02",
             "button": "Aan de slag",
             "meta": null
         },
@@ -725,7 +725,7 @@
             "step": null,
             "steplabel": "Spot",
             "text": "Laten we bekijken wat andere op het schilderij zagen.",
-            "audio": "x",
+            "audio": "2x10_03",
             "button": "Toon anderen",
             "meta": null
         },
@@ -743,7 +743,7 @@
             "step": null,
             "steplabel": "Einde",
             "text": null,
-            "audio": "x",
+            "audio": "2x10_04",
             "button": "Afronden",
             "meta": null
         }
@@ -754,7 +754,7 @@
             "step": null,
             "steplabel": null,
             "text": null,
-            "audio": "stepin_01",
+            "audio": "stepinside_01",
             "button": "Start",
             "meta": null,
             "placeholder": null
@@ -794,7 +794,7 @@
             "step": 1,
             "steplabel": "Horen",
             "text": "Wat hoort deze persoon? En kun je uitleggen waarom je dat denkt?",
-            "audio": "stepin_02",
+            "audio": "stepinside_02",
             "button": null,
             "meta": null,
             "placeholder": "Ze hoort"
@@ -804,7 +804,7 @@
             "step": 2,
             "steplabel": "Zien",
             "text": "En wat ziet deze persoon?",
-            "audio": "stepin_03",
+            "audio": "stepinside_03",
             "button": null,
             "meta": null,
             "placeholder": "Ze ziet"
@@ -814,7 +814,7 @@
             "step": 3,
             "steplabel": "Ruiken",
             "text": "Wat zal deze persoon ruiken en waar zie je dit aan?",
-            "audio": "stepin_04",
+            "audio": "stepinside_04",
             "button": null,
             "meta": null,
             "placeholder": "Ze ruikt"
@@ -824,7 +824,7 @@
             "step": 4,
             "steplabel": "Antwoorden",
             "text": "Benieuwd wat andere cursisten dachten? Hier lees je hun antwoorden.",
-            "audio": "stepin_05",
+            "audio": "stepinside_05",
             "button": "Ga verder",
             "meta": null,
             "placeholder": null
@@ -834,7 +834,7 @@
             "step": 5,
             "steplabel": "Titel",
             "text": "Bedenk een titel die omschrijft wat het werk voor jou betekent.",
-            "audio": "stepin_06",
+            "audio": "stepinside_06",
             "button": null,
             "meta": null,
             "placeholder": null
@@ -844,7 +844,7 @@
             "step": 6,
             "steplabel": "Bordje",
             "text": "Kun je bij de titel nu een museumbordje met uitleg schrijven? Wat zou jij een museumbezoeker over het werk willen vertellen?",
-            "audio": "x",
+            "audio": "stepinside_07",
             "button": null,
             "meta": null,
             "placeholder": null
@@ -864,7 +864,7 @@
             "step": null,
             "steplabel": null,
             "text": null,
-            "audio": "x",
+            "audio": "stepinside_08",
             "button": "Afronden",
             "meta": null,
             "placeholder": null
@@ -876,7 +876,7 @@
             "step": null,
             "steplabel": null,
             "text": null,
-            "audio": "x",
+            "audio": "details_01",
             "button": "Start",
             "meta": null
         },
@@ -903,7 +903,7 @@
             "step": 1,
             "steplabel": "detail",
             "text": null,
-            "audio": "x",
+            "audio": "details_02",
             "button": "Volgende",
             "meta": "x"
         },
@@ -939,7 +939,7 @@
             "step": 5,
             "steplabel": "Omschrijf",
             "text": "Waar denk je dat het kunstwerk over gaat? Probeer dit te omschrijven en maak duidelijk waar je dit aan zag.",
-            "audio": "x",
+            "audio": "details_03",
             "button": null,
             "meta": "x"
         },
@@ -948,7 +948,7 @@
             "step": 6,
             "steplabel": "Hele kunstwerk",
             "text": "Verandert je idee nu je het hele schilderij ziet? Omschrijf wat je van het gehele kunstwerk vindt.",
-            "audio": "x",
+            "audio": "details_03",
             "button": null,
             "meta": "x"
         },
@@ -966,7 +966,7 @@
             "step": null,
             "steplabel": null,
             "text": null,
-            "audio": "x",
+            "audio": "details_05",
             "button": "Afronden",
             "meta": null
         }
@@ -977,7 +977,7 @@
             "step": null,
             "steplabel": null,
             "text": null,
-            "audio": "x",
+            "audio": "oma_01",
             "button": "Start",
             "meta": null
         },
@@ -1004,7 +1004,7 @@
             "step": 1,
             "steplabel": "Omschrijf",
             "text": "Oma belt en vraagt wat je momenteel op het kunstwerk ziet. Probeer haar zo duidelijk mogelijk een omschrijving te geven.",
-            "audio": "x",
+            "audio": "oma_02",
             "button": null,
             "meta": "x"
         },
@@ -1013,7 +1013,7 @@
             "step": 2,
             "steplabel": "Stem",
             "text": "Lees eens deze vijf omschrijvingen die andere cursisten schreven. Stem op jouw favoriete omschrijving.",
-            "audio": "x",
+            "audio": "oma_03",
             "button": null,
             "meta": "x"
         },
@@ -1031,7 +1031,7 @@
             "step": null,
             "steplabel": null,
             "text": null,
-            "audio": "x",
+            "audio": "oma_04",
             "button": "Afronden",
             "meta": null
         }

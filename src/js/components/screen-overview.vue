@@ -86,8 +86,14 @@
             },
 
             nextCourseLabel() {
-                return this.courses[this.$store.state.lastCourse].title;
+                return this.$store.getters.nextCourseLabel;
             }
+        },
+
+        data() {
+            return {
+                firstEntry : true
+            };
         },
 
         methods : {
@@ -102,6 +108,17 @@
             setCourse(index) {
                 this.$store.commit('courseIndex', index);
                 this.$store.commit('screen', 'course');
+            }
+        },
+
+        mounted() {
+            if (this.firstEntry) {
+                this.$sounds.play('overview_01');
+                this.firstEntry = false;
+            }
+
+            if (this.allDone) {
+                this.$sounds.play('outro_01');
             }
         }
     }
