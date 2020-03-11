@@ -19,6 +19,7 @@
                v-html="$msg('wow_text', { name : name})"></p>
 
             <el-button
+                v-if="!allDone"
                 flair="course"
                 v-bind:text="$msg('enter_course', { course : nextCourseLabel })"
                 v-on:click="nextCourse"></el-button>
