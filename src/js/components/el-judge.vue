@@ -22,13 +22,10 @@
 </template>
 
 <script>
-    import ElButton from './el-button.vue';
     import ElMessage from './el-message.vue';
 
     export default {
-        components : {
-            ElButton, ElMessage
-        },
+        components : { ElMessage },
 
         extends : ElMessage,
 

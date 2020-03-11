@@ -66,7 +66,7 @@
     import ElLogo from './el-logo.vue';
 
     export default {
-        components : { ElButton },
+        components : { ElLogo },
 
         computed : {
             allDone() {

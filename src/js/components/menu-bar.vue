@@ -37,11 +37,10 @@
 </template>
 
 <script>
-    import ElButton from './el-button.vue';
     import ElToggle from './el-toggle.vue';
 
     export default {
-        components : { ElButton, ElToggle },
+        components : { ElToggle },
 
         computed : {
             muteIcon() {
