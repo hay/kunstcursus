@@ -6,7 +6,7 @@
         },
         {
             "key": "intro",
-            "value": "<p>Daag jezelf met deze cursus uit om op een andere manier naar kunst te kijken. Leer meer over je eigen blik en ontdek de collectie van Museum Boijmans Van Beuningen op een verrassende manier. Met verschillende opdrachten ga je ontdekken wat je van de werken vindt en wordt je uitgedaagd langer te kijken. </p>\nVul je naam hieronder in en ontmoet Joost, je art mediator. </p><br />"
+            "value": "<p>Daag jezelf met deze cursus uit om op een andere manier naar kunst te kijken. Leer meer over je eigen blik en ontdek de collectie van Museum Boijmans Van Beuningen op een verrassende manier. Met verschillende opdrachten ga je ontdekken wat je van de werken vindt en wordt je uitgedaagd langer te kijken. </p>\nVul je naam hieronder in en ontmoet Joost, je art mediator. </p>"
         },
         {
             "key": "enable_audio",
@@ -42,7 +42,7 @@
         },
         {
             "key": "profile_intro",
-            "value": "Voordat we van start gaan met de cursus wil ik je graag wat beter leren kennen. <br />Kun je me iets meer over jezelf vertellen?"
+            "value": "Voordat we van start gaan met de cursus wil ik je graag wat beter leren kennen. <br /> Kun je me iets meer over jezelf vertellen?"
         },
         {
             "key": "profile_location",
@@ -90,7 +90,7 @@
         },
         {
             "key": "profile_statements",
-            "value": "Hier beneden staan een paar stellingen. <br />Je moet kiezen, dus denk er niet te lang over na."
+            "value": "Hier beneden staan een paar stellingen. <br />  Je moet kiezen, dus denk er niet te lang over na."
         },
         {
             "key": "profile_book",
@@ -223,6 +223,14 @@
         {
             "key": "label_artwork",
             "value": "Kunstwerk"
+        },
+        {
+            "key": "skip_intro",
+            "value": "Sla intro over"
+        },
+        {
+            "key": "loading_intro",
+            "value": "Introductie laden..."
         }
     ],
     "courses": [
@@ -237,42 +245,42 @@
         {
             "title": "3 - 2 - 1",
             "datasheet": "321-bridge",
-            "description": "Test hier iets",
+            "description": "In deze opdracht werd je gevraagd om met je eigen voorkennis associatief te denken. We begonnen makkelijk met drie woorden om zo enkele basisideeën te activeren. Daarna stelde je twee vragen. Als laatste omschreef je één object of situatie om te zien hoe jij het kunstwerk ziet en in welk referentiekader je het plaatst.",
             "artwork": 5,
-            "artlabel": "Iets van Kandinsky",
-            "artlink": "https://www.boijmans.nl"
+            "artlabel": "Strahlenlinien uit 1927 van Wassily Kandinsky",
+            "artlink": "https://www.boijmans.nl/en/collection/artworks/3974/strahlenlinien"
         },
         {
             "title": "Twee keer tien",
             "datasheet": "ten-times-two",
             "description": null,
             "artwork": 2,
-            "artlabel": null,
-            "artlink": null
+            "artlabel": "Stilleven met een Ming-schaal uit circa 1660 van Kalf Willem",
+            "artlink": "https://www.boijmans.nl/collectie/kunstwerken/3209/stilleven-met-een-ming-schaal"
         },
         {
             "title": "Leef je in",
             "datasheet": "step-inside",
             "description": null,
             "artwork": 4,
-            "artlabel": null,
-            "artlink": null
+            "artlabel": "Halbakt uit circa 1910 van Alexej von Jawlensky",
+            "artlink": "https://www.boijmans.nl/collectie/kunstwerken/3921/halbakt"
         },
         {
             "title": "Details",
             "datasheet": "details",
             "description": null,
-            "artwork": 1,
-            "artlabel": null,
-            "artlink": null
+            "artwork": 3,
+            "artlabel": "De val der engelen met de heilige Michael die de draak bestrijdt uit circa 1480 van Neri di Bicci",
+            "artlink": "https://www.boijmans.nl/collectie/kunstwerken/3845/de-val-der-engelen-met-de-heilige-michael-die-de-draak-bestrijdt"
         },
         {
             "title": "Oma",
             "datasheet": "oma",
             "description": null,
             "artwork": 1,
-            "artlabel": null,
-            "artlink": null
+            "artlabel": "Les Coteaux d'Auvers uit 1882 van Camille Pissarro",
+            "artlink": "https://www.boijmans.nl/collectie/kunstwerken/2397/les-coteaux-d-auvers-de-heuvels-van-auvers"
         }
     ],
     "art-tinder": [
@@ -1001,9 +1009,9 @@
             "meta": "x"
         },
         {
-            "action": "question",
-            "step": 6,
-            "steplabel": "Hele kunstwerk",
+            "action": "comments",
+            "step": 2,
+            "steplabel": "Stem",
             "text": "Lees eens deze vijf omschrijvingen die andere cursisten schreven. Stem op jouw favoriete omschrijving.",
             "audio": "x",
             "button": null,

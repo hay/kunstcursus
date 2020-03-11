@@ -1,8 +1,33 @@
 .intro {
+    background: url('../static/img/bg-light.png');
     @include wh(100vw, 100vh);
     overflow: hidden;
+    position: relative;
 
     &__canvas {
         @include wh(100%);
+    }
+
+    &__loading {
+        @include transform-center;
+        font-size: 4rem;
+        color: $c-1;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    &__progress {
+        position: absolute;
+        left: 0;
+        height: 2rem;
+        background: $c-1;
+        width: 100%;
+        top: 0;
+    }
+
+    &__skip {
+        position: absolute;
+        bottom: 1rem;
+        @include transform-center-horizontal;
     }
 }
