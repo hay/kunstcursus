@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf dist && parcel build --public-url '.' src/index.html",
+    "build": "npm run fetch-data && rm -rf dist && parcel build --public-url '.' src/index.html",
     "dev": "parcel src/index.html",
     "fetch-data": "node ./etc/update-data.js"
   },

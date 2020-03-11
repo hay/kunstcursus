@@ -48,7 +48,7 @@
                 class="screen-course__bottom"
                 v-bind:button="step.button"
                 v-bind:text="step.text"
-                v-on:click="nextStep"
+                v-on:close="nextStep"
                 v-bind:visible="step.action === 'comments'"></el-comments>
 
             <!-- This is used for ten times two and clicking on spots -->
