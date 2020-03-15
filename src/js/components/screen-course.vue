@@ -285,6 +285,11 @@
                         this.nextStep();
                     }
 
+                    if (this.step.action === 'enablezoom') {
+                        this.disableZoom = false;
+                        this.nextStep();
+                    }
+
                     if (this.step.action === 'imagespotter') {
                         // FIXME
                         await timeout(250);

@@ -934,6 +934,15 @@
     ],
     "details": [
         {
+            "action": "disablezoom",
+            "step": null,
+            "steplabel": null,
+            "text": null,
+            "audio": null,
+            "button": null,
+            "meta": null
+        },
+        {
             "action": "singleimageon",
             "step": null,
             "steplabel": null,
@@ -1034,6 +1043,15 @@
         },
         {
             "action": "showviewer",
+            "step": null,
+            "steplabel": null,
+            "text": null,
+            "audio": null,
+            "button": null,
+            "meta": null
+        },
+        {
+            "action": "enablezoom",
             "step": null,
             "steplabel": null,
             "text": null,

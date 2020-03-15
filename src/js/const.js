@@ -37,6 +37,7 @@ export const AUDIO_FILES = [
 export const COURSE_ACTIONS = [
     "comments",
     "disablezoom",
+    "enablezoom",
     "hidesteps",
     "imagespotter",
     "judge",
