@@ -6,7 +6,7 @@
         },
         {
             "key": "intro",
-            "value": "<p>Daag jezelf met deze cursus uit om op een andere manier naar kunst te kijken. Leer meer over je eigen blik en ontdek de collectie van Museum Boijmans Van Beuningen op een verrassende manier. Met verschillende opdrachten ga je ontdekken wat je van de werken vindt en wordt je uitgedaagd langer te kijken. </p>\nVul je naam hieronder in en ontmoet Joost, je art mediator. </p>"
+            "value": "<p>Daag jezelf met deze cursus uit om op een andere manier naar kunst te kijken. Leer meer over je eigen blik en ontdek de collectie van Museum Boijmans Van Beuningen op een verrassende manier. Met verschillende opdrachten ga je ontdekken wat je van de werken vindt en word je uitgedaagd langer te kijken. </p>\nVul je naam hieronder in en ontmoet Joost, je art mediator. </p>"
         },
         {
             "key": "enable_audio",
@@ -22,7 +22,7 @@
         },
         {
             "key": "disclaimer",
-            "value": "Deze website is een prototype om te laten zien hoe de cursus ongeveer zal werken. Je kunt de eerste vijf opdrachten van de cursus doen."
+            "value": "Deze website is een prototype om te laten zien hoe de cursus ongeveer zal werken. Je kunt de eerste zes opdrachten van de cursus doen."
         },
         {
             "key": "credits",
@@ -30,7 +30,7 @@
         },
         {
             "key": "course_overview",
-            "value": "Hoi <strong><%= name %></strong>, hier vindt je de opdrachten en kun je zien hoe ver je bent. Met de grote roze knop start je de volgende opdracht."
+            "value": "Hoi <strong><%= name %></strong>, hier vind je de opdrachten en kun je zien hoe ver je bent. Met de grote roze knop start je de volgende opdracht."
         },
         {
             "key": "btn_back",
@@ -273,7 +273,7 @@
         {
             "title": "Leef je in",
             "datasheet": "step-inside",
-            "description": "Je hebt je ingeleefd in het portret. Je verdiepte je in het schilderij door je af te vragen wat de geportretteerde beleeft en ging op empatisch niveau het kunstwerk bekijken. Met de reacties van andere cursisten zag hoe andere op verschillende manieren het schilderij interpreteerden. Als laatste stap moest je een titelbordje schrijven bij het kunstwerk. Om zo jouw idee over het werk te delen met anderen.",
+            "description": "Je hebt je ingeleefd in het portret. Je verdiepte je in het schilderij door je af te vragen wat de geportretteerde beleeft en ging op empatisch niveau het kunstwerk bekijken. Met de reacties van andere cursisten zag hoe anderen op verschillende manieren het schilderij interpreteerden. Als laatste stap moest je een titelbordje schrijven bij het kunstwerk. Om zo jouw idee over het werk te delen met anderen.",
             "artwork": 4,
             "artlabel": "Halbakt uit circa 1910 van Alexej von Jawlensky",
             "artlink": "https://www.boijmans.nl/collectie/kunstwerken/3921/halbakt"
@@ -316,7 +316,7 @@
         },
         {
             "name": "Jos, 62 jaar",
-            "text": "Ik kijk naar een landschap schilderij. Het is een heuvelig landschap in een Europees warm land. Er is rus geschilderd en je ziet de verfstreken goed. In het landschap lopen twee vrouwen over de weg en je ziet verschillende witte huisjes, eentje heeft een blauw dak.",
+            "text": "Ik kijk naar een landschap schilderij. Het is een heuvelig landschap in een Europees warm land. Er is ruw geschilderd en je ziet de verfstreken goed. In het landschap lopen twee vrouwen over de weg en je ziet verschillende witte huisjes, eentje heeft een blauw dak.",
             "course": "oma",
             "meta": "vote"
         },
@@ -328,7 +328,7 @@
         },
         {
             "name": "Niels, 49 jaar",
-            "text": "Het is een impressionistische schilderij van Pissarro. In snelle toetsen is een uitzicht op een dorp neergezet. In groen, blauwe en bruine is de natuur in het dorpje opgezet. In het wit verschijnen enkele huizen tussen de bomen en struiken. Door het dorp lopen twee vrouwen die ieder een andere kant opgaan.",
+            "text": "Het is een impressionistische schilderij van Pissarro. In snelle toetsen is een uitzicht op een dorp neergezet. In groen, blauw en bruin is de natuur in het dorpje opgezet. In het wit verschijnen enkele huizen tussen de bomen en struiken. Door het dorp lopen twee vrouwen die ieder een andere kant op gaan.",
             "course": "oma",
             "meta": "vote"
         },
@@ -586,7 +586,7 @@
             "action": "question",
             "step": 1,
             "steplabel": "Drie woorden",
-            "text": "Geef drie woorden die in je opkomen. Scheid ze met een komma.",
+            "text": "Geef drie woorden die in je opkomen. Scheidt ze met een komma.",
             "audio": "321_03",
             "button": null,
             "meta": null
