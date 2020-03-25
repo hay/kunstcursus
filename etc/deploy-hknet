@@ -1,4 +1,4 @@
 #!/bin/bash
 cd ../
 npm run build
-rsync -avz --delete dist/* hknet.bykr.org:/var/www/projects.haykranen.nl/htdocs/kunstcursus/
+rsync -avz --delete dist/* hknet.bykr.org:/var/www/projects.haykranen.nl/htdocs/kunstkijken/
