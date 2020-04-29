@@ -7,7 +7,7 @@ Een online cursus om op een andere manier naar kunst te kijken.
 * [Nieuwsartikel op de site van Boijmans](https://www.boijmans.nl/nieuws/art-mediation-en-de-digitale-tentoonstellingsruimte)
 
 ## Over deze applicatie
-Deze applicatie is bedacht en ontworpen door [Brigitte Jansen](http://www.brigittejansen.com/) en gebouwd door [Hay Kranen](https://www.haykranen.nl/). Het is een volledig statisch gebouwde applicatie. Dat wil zeggen dat er geen backend-technologie aan vast zit, zoals een CMS of een database. De inhoud wordt beheerd door middel van een Google Spreadsheet. De applicatie zelf is gebouwd in HTML, CSS en Javascript, op basis van het [Vue.js](https://vuejs.org/) framework.
+Deze applicatie is bedacht en ontworpen door [Brigitte Jansen](http://www.brigittejansen.com/) en gebouwd door [Hay Kranen](https://www.haykranen.nl/). Het is een volledig statisch gebouwde applicatie. Dat wil zeggen dat er geen backend-technologie aan vast zit, zoals een CMS of een database. De inhoud wordt beheerd door middel van een Google Spreadsheet. Een versie van de data is ook te vinden als Excelsheet in de `etc` map. De applicatie is gebouwd in HTML, CSS en Javascript, op basis van het [Vue.js](https://vuejs.org/) framework.
 
 ## Installatie
 Je hebt een recente versie nodig van [Node.js](https://nodejs.org/en/). Eerst clone je deze repo:
